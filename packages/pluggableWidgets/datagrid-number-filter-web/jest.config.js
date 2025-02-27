@@ -1,5 +1,9 @@
 module.exports = {
+<<<<<<< HEAD
     ...require("@mendix/pluggable-widgets-tools/test-config/jest.enzyme-free.config.js"),
+=======
+    ...require("@mendix/pluggable-widgets-tools/test-config/jest.config"),
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     /** Prevent usage of "jest-react-hooks-shallow" as it breaks useResetEvent hook. */
     setupFilesAfterEnv: undefined,
     /**

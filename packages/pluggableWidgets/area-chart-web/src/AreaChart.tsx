@@ -5,7 +5,11 @@ import {
     containerPropsEqual,
     getPlotChartDataTransforms,
     usePlotChartDataSeries
+<<<<<<< HEAD
 } from "@mendix/shared-charts/main";
+=======
+} from "@mendix/shared-charts/common";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import "@mendix/shared-charts/ui/Chart.scss";
 import classNames from "classnames";
 import { createElement, memo, ReactElement, useCallback } from "react";

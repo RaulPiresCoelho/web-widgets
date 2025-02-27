@@ -7,7 +7,10 @@ import { SingleSelector, SelectionBaseProps } from "./helpers/types";
 import "./ui/Combobox.scss";
 import { AssociationPreviewSelector } from "./helpers/Association/Preview/AssociationPreviewSelector";
 import { StaticPreviewSelector } from "./helpers/Static/Preview/StaticPreviewSelector";
+<<<<<<< HEAD
 import { DatabasePreviewSelector } from "./helpers/Database/Preview/DatabasePreviewSelector";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
 export const preview = (props: ComboboxPreviewProps): ReactElement => {
     const id = generateUUID().toString();
@@ -45,9 +48,12 @@ export const preview = (props: ComboboxPreviewProps): ReactElement => {
         if (props.source === "static") {
             return new StaticPreviewSelector(props);
         }
+<<<<<<< HEAD
         if (props.source === "database") {
             return new DatabasePreviewSelector(props);
         }
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         return new AssociationPreviewSelector(props);
     }, [props]);
     return (

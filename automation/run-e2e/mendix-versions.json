@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
     "latest": "10.18.0.54340",
+=======
+    "latest": "10.12.1.39914",
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     "9": "9.24.0.2965",
     "8": "8.18.24.2858"
 }

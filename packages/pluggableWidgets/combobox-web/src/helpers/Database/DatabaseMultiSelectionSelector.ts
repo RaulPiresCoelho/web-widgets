@@ -1,5 +1,10 @@
 import { ThreeStateCheckBoxEnum } from "@mendix/widget-plugin-component-kit/ThreeStateCheckBox";
+<<<<<<< HEAD
 import { ListAttributeValue, ObjectItem, SelectionMultiValue } from "mendix";
+=======
+import { executeAction } from "@mendix/widget-plugin-platform/framework/execute-action";
+import { ActionValue, ListAttributeValue, ObjectItem, SelectionMultiValue } from "mendix";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import {
     ComboboxContainerProps,
     LoadingTypeEnum,
@@ -30,6 +35,10 @@ export class DatabaseMultiSelectionSelector implements MultiSelector {
     type = "multi" as const;
     protected lazyLoader: LazyLoadProvider = new LazyLoadProvider();
     private _objectsMap: Map<string, ObjectItem> = new Map();
+<<<<<<< HEAD
+=======
+    private onChangeEvent?: ActionValue;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
     constructor() {
         this.caption = new DatabaseCaptionsProvider(this._objectsMap);
@@ -72,7 +81,12 @@ export class DatabaseMultiSelectionSelector implements MultiSelector {
             filterType,
             lazyLoading,
             loadingType,
+<<<<<<< HEAD
             valueSourceAttribute
+=======
+            onChangeEvent,
+            valueAttribute
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         } = extractDatabaseProps(props);
 
         if (
@@ -97,7 +111,11 @@ export class DatabaseMultiSelectionSelector implements MultiSelector {
             formattingAttributeOrExpression: captionProvider,
             customContent,
             customContentType,
+<<<<<<< HEAD
             attribute: valueSourceAttribute,
+=======
+            attribute: valueAttribute,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             caption: undefined
         });
         this.options._updateProps({
@@ -115,6 +133,10 @@ export class DatabaseMultiSelectionSelector implements MultiSelector {
         this.customContentType = customContentType;
         this.lazyLoading = lazyLoading;
         this.loadingType = loadingType;
+<<<<<<< HEAD
+=======
+        this.onChangeEvent = onChangeEvent;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         this.selectAllButton = props.selectAllButton;
         this.selectedItemsStyle = props.selectedItemsStyle;
         this.selection = props.optionsSourceDatabaseItemSelection as SelectionMultiValue;
@@ -127,5 +149,9 @@ export class DatabaseMultiSelectionSelector implements MultiSelector {
         if (newValue) {
             this.selection?.setSelection(newValue);
         }
+<<<<<<< HEAD
+=======
+        executeAction(this.onChangeEvent);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     }
 }

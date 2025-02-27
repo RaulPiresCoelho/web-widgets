@@ -2,8 +2,13 @@ name: Clear GitHub actions cache
 on:
     schedule:
         # From https://crontab.guru:
+<<<<<<< HEAD
         # “At 00:00 on Monday and Thursday.”
         - cron: "0 0 * * 1,4"
+=======
+        # “At 00:00 on Monday, Wednesday, and Friday.”
+        - cron: "0 0 * * 1,3,5"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     workflow_dispatch:
 
 jobs:
@@ -18,7 +23,10 @@ jobs:
                   delete --all
               env:
                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+<<<<<<< HEAD
     populate-caches:
         needs:
             - clear-github-caches
         uses: ./.github/workflows/CreateMxtoolsCache.yml
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)

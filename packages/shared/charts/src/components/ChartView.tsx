@@ -29,11 +29,17 @@ export const ChartView = ({
     const handleChartClick = useCallback<NonNullable<PlotParams["onClick"]>>(
         event => {
             // As this is click handler, this event has single, "clicked" point, so we can destruct.
+<<<<<<< HEAD
             const [{ curveNumber, pointIndex, pointIndices, pointNumber, pointNumbers }] = event.points;
             const index = pointIndex ?? pointNumber;
             const indices = pointIndices ?? pointNumbers;
             const itemIndex = getItemIndex(index, indices);
             const { dataSourceItems, onClick } = data[curveNumber];
+=======
+            const [{ curveNumber, pointIndex, pointIndices }] = event.points;
+            const { dataSourceItems, onClick } = data[curveNumber];
+            const itemIndex = getItemIndex(pointIndex, pointIndices);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             const item = dataSourceItems[itemIndex];
             onClick?.(item);
         },

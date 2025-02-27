@@ -4,17 +4,29 @@ import {
     flip,
     offset,
     Placement,
+<<<<<<< HEAD
     ReferenceElement,
     safePolygon,
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     shift,
     useClick,
     useDismiss,
     useFloating,
+<<<<<<< HEAD
     UseFloatingReturn,
     useFocus,
     useHover,
     useInteractions,
     useRole
+=======
+    useFocus,
+    useHover,
+    useInteractions,
+    useRole,
+    UseFloatingReturn,
+    ReferenceElement
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 } from "@floating-ui/react";
 import { useCallback } from "react";
 import { OpenOnEnum } from "../../typings/TooltipProps";
@@ -61,6 +73,7 @@ export function useFloatingUI(props: FloatingProps): FloatingPropsReturn {
         whileElementsMounted: autoUpdate
     });
 
+<<<<<<< HEAD
     const hover = useHover(context, {
         enabled: ["hover", "hoverFocus"].includes(openOn),
         move: false,
@@ -78,6 +91,18 @@ export function useFloatingUI(props: FloatingProps): FloatingPropsReturn {
 
     const onShow = useCallback(() => setShowTooltip(true), [setShowTooltip]);
     const onHide = useCallback(() => setShowTooltip(false), [setShowTooltip]);
+=======
+    const hover = useHover(context, { enabled: ["hover", "hoverFocus"].includes(openOn), move: false });
+    const focus = useFocus(context, { enabled: openOn === "hoverFocus" });
+    const click = useClick(context, { toggle: showTooltip, enabled: openOn === "click" });
+    const dismiss = useDismiss(context, { outsidePress: true });
+    const role = useRole(context, {
+        role: "tooltip"
+    });
+
+    const onShow = useCallback(() => setShowTooltip(true), []);
+    const onHide = useCallback(() => setShowTooltip(false), []);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     const blurFocusEvents = { onFocus: onShow, onBlur: onHide };
 
     const side = placement.split("-")[0];
@@ -101,6 +126,7 @@ export function useFloatingUI(props: FloatingProps): FloatingPropsReturn {
 
     const { getReferenceProps, getFloatingProps } = useInteractions([focus, hover, click, dismiss, role]);
     return {
+<<<<<<< HEAD
         arrowStyles,
         blurFocusEvents,
         floatingStyles,
@@ -108,5 +134,14 @@ export function useFloatingUI(props: FloatingProps): FloatingPropsReturn {
         getReferenceProps,
         refs,
         staticSide
+=======
+        refs,
+        floatingStyles,
+        staticSide,
+        arrowStyles,
+        getReferenceProps,
+        getFloatingProps,
+        blurFocusEvents
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     };
 }

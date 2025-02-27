@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useCallback, useEffect, useState } from "react";
+=======
+import { useState, useEffect, useCallback } from "react";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { ExportController } from "./ExportController";
 import { ProgressStore } from "./ProgressStore";
 import { getExportRegistry } from "./registry";
@@ -15,6 +19,7 @@ export function useDataExport(
     columnsStore: IColumnGroupStore,
     progress: ProgressStore
 ): [store: ProgressStore, abort: () => void] {
+<<<<<<< HEAD
     const [entry] = useState(() => createEntry(props.name, progress));
     const abort = useCallback(() => entry?.controller.abort(), [entry]);
 
@@ -26,6 +31,19 @@ export function useDataExport(
             removeController(entry);
         };
     }, [entry]);
+=======
+    const [entry] = useState(() => addController(props.name, progress));
+    const abort = useCallback(() => entry?.controller.abort(), [entry]);
+
+    // Remove entry when widget unmounted.
+    useEffect(
+        () => () => {
+            entry?.controller.abort();
+            removeController(entry);
+        },
+        [entry]
+    );
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
     useEffect(() => {
         entry?.controller.emit("sourcechange", props.datasource);
@@ -45,6 +63,7 @@ export function useDataExport(
     return [progress, abort];
 }
 
+<<<<<<< HEAD
 function createEntry(name: string, progress: ProgressStore): ResourceEntry {
     return {
         key: name,
@@ -75,5 +94,27 @@ function removeController(entry: ResourceEntry | null): void {
     // in this case we don't do anything.
     if (registry.get(entry.key) === entry.controller) {
         registry.delete(entry.key);
+=======
+function addController(name: string, progress: ProgressStore): ResourceEntry | null {
+    const registry = getExportRegistry();
+
+    if (registry.has(name)) {
+        return null;
+    }
+
+    const entry = {
+        key: name,
+        controller: new ExportController(progress)
+    };
+
+    registry.set(entry.key, entry.controller);
+
+    return entry;
+}
+
+function removeController(entry: ResourceEntry | null): void {
+    if (entry) {
+        getExportRegistry().delete(entry.key);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     }
 }

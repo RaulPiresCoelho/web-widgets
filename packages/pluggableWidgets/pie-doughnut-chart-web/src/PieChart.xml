@@ -51,6 +51,7 @@
                     <description />
                     <returnType type="String" />
                 </property>
+<<<<<<< HEAD
                 <property key="seriesItemSelection" type="selection" dataSource="seriesDataSource">
                     <caption>Selection type</caption>
                     <description />
@@ -59,6 +60,8 @@
                         <selectionType name="Single" />
                     </selectionTypes>
                 </property>
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             </propertyGroup>
             <propertyGroup caption="General">
                 <property key="enableAdvancedOptions" type="boolean" defaultValue="false">
@@ -125,7 +128,11 @@
         </propertyGroup>
         <propertyGroup caption="Events">
             <propertyGroup caption="Events">
+<<<<<<< HEAD
                 <property key="onClickAction" type="action" required="false" dataSource="seriesDataSource">
+=======
+                <property key="onClickAction" type="action" required="false">
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     <caption>On click action</caption>
                     <description />
                 </property>

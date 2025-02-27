@@ -74,7 +74,10 @@ export interface GalleryPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     advanced: boolean;
     datasource: {} | { caption: string } | { type: string } | null;
     itemSelection: "None" | "Single" | "Multi";

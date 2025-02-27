@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [1.4.2] - 2024-10-31
 
 ### Fixed
@@ -18,6 +19,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   We fixed placement issues with tooltip when placed inside a layout container by adjusting the width of the trigger's container
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ## [1.4.0] - 2024-08-14
 
 ### Fixed

@@ -55,7 +55,10 @@ export interface RangeSliderContainerProps {
 
 export interface RangeSliderPreviewProps {
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     lowerBoundAttribute: string;
     upperBoundAttribute: string;
     advanced: boolean;

@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [5.1.0] - 2024-10-28
 
 ### Changed
@@ -18,6 +19,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   We fixed an issue where the widget is not automatically resized inside a pop up dialog.
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ## [3.1.3] - 2023-11-21
 
 ### Fixed

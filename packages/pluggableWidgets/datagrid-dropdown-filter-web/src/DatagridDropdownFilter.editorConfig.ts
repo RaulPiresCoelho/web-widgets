@@ -1,5 +1,9 @@
 import { DatagridDropdownFilterPreviewProps } from "../typings/DatagridDropdownFilterProps";
+<<<<<<< HEAD
 import { chevronDownIcon, chevronDownIconDark } from "@mendix/widget-plugin-filtering/preview/editor-preview-icons";
+=======
+import { chevronDownIcon, chevronDownIconDark } from "@mendix/widget-plugin-filter-selector/editor-preview-icons";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import {
     ContainerProps,
     ImageProps,
@@ -24,7 +28,10 @@ export function getProperties(
     } else {
         hidePropertyIn(defaultProperties, values, "advanced");
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     return defaultProperties;
 }
 

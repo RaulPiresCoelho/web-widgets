@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { ChartWidget, ChartWidgetProps } from "@mendix/shared-charts/main";
+=======
+import { ChartWidget, ChartWidgetProps } from "@mendix/shared-charts/common";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import "@mendix/shared-charts/ui/Chart.scss";
 import classNames from "classnames";
 import { createElement, ReactElement, useMemo } from "react";

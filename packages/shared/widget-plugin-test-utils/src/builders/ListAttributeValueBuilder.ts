@@ -50,7 +50,11 @@ export class ListAttributeValueBuilder<T extends string | boolean | Date | Big> 
         return this;
     }
 
+<<<<<<< HEAD
     withFormatter(format: (value?: any) => string, parse: (value?: any) => any): ListAttributeValueBuilder<T> {
+=======
+    withFormatter(format: (value?: any) => string, parse: () => any): ListAttributeValueBuilder<T> {
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         this.listAttribute.formatter = {
             format,
             parse

@@ -30,6 +30,7 @@ function GoogleTagBasicPageView(props: GoogleTagContainerProps): ReactElement | 
             return;
         }
 
+<<<<<<< HEAD
         const configProps = new Map<string, string | boolean>([["send_page_view", false]]);
 
         if (props.sendUserID && window.mx.session.getUserId() !== undefined) {
@@ -38,6 +39,17 @@ function GoogleTagBasicPageView(props: GoogleTagContainerProps): ReactElement | 
 
         // execute config if not yet executed
         executeCommand("config", "", Object.fromEntries(configProps), props.targetId.value);
+=======
+        // execute config if not yet executed
+        executeCommand(
+            "config",
+            "",
+            {
+                send_page_view: false
+            },
+            props.targetId.value
+        );
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
         // execute event page_view
         executeCommand(

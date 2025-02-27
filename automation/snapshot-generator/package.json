@@ -8,7 +8,11 @@
     "lib"
   ],
   "engines": {
+<<<<<<< HEAD
     "node": ">= 18.20.4"
+=======
+    "node": ">= 18.20.2"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   },
   "license": "MIT",
   "scripts": {
@@ -16,7 +20,11 @@
     "lint": "eslint --ext .js lib/ bin/"
   },
   "dependencies": {
+<<<<<<< HEAD
     "chance": "^1.1.12"
+=======
+    "chance": "^1.1.11"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   },
   "devDependencies": {
     "@mendix/prettier-config-web-widgets": "workspace:*"

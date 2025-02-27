@@ -49,7 +49,10 @@ export interface ImagePreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     datasource: DatasourceEnum;
     imageObject: { type: "static"; imageUrl: string; } | { type: "dynamic"; entity: string; } | null;
     defaultImageDynamic: { type: "static"; imageUrl: string; } | { type: "dynamic"; entity: string; } | null;

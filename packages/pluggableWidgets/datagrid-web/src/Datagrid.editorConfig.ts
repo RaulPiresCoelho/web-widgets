@@ -78,6 +78,7 @@ export function getProperties(
         if (!column.filterAssociation) {
             hideNestedPropertiesIn(defaultProperties, values, "columns", index, [
                 "filterAssociationOptions",
+<<<<<<< HEAD
                 "filterAssociationOptionLabel",
                 "fetchOptionsLazy"
             ]);
@@ -93,6 +94,16 @@ export function getProperties(
         }
     }
 
+=======
+                "filterAssociationOptionLabel"
+            ]);
+        }
+    });
+    if (values.pagination !== "buttons") {
+        hidePropertyIn(defaultProperties, values, "showPagingButtons");
+        hidePropertyIn(defaultProperties, values, "pagingPosition");
+    }
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     if (values.pagination !== "loadMore") {
         hidePropertyIn(defaultProperties, values, "loadMoreButtonCaption");
     }
@@ -218,8 +229,12 @@ export const getPreview = (
                   minWidth: "auto",
                   minWidthLimit: 100,
                   allowEventPropagation: true,
+<<<<<<< HEAD
                   exportValue: "",
                   fetchOptionsLazy: true
+=======
+                  exportValue: ""
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
               }
           ];
     const columns = rowLayout({

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { PlaygroundData, fallback } from "@mendix/shared-charts/main";
+=======
+import { PlaygroundData, fallback } from "@mendix/shared-charts/common";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { EditorChangeHandler } from "../components/CodeEditor";
 import { useMemo, useState } from "react";
 import { ComposedEditorProps } from "../components/ComposedEditor";

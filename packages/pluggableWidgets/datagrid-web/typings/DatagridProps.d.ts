@@ -4,15 +4,22 @@
  * @author Mendix Widgets Framework Team
  */
 import { ComponentType, CSSProperties, ReactNode } from "react";
+<<<<<<< HEAD
 import { ActionValue, DynamicValue, EditableValue, ListValue, ListActionValue, ListAttributeValue, ListAttributeListValue, ListExpressionValue, ListReferenceValue, ListReferenceSetValue, ListWidgetValue, SelectionSingleValue, SelectionMultiValue } from "mendix";
+=======
+import { ActionValue, DynamicValue, EditableValue, ListValue, ListActionValue, ListAttributeValue, ListExpressionValue, ListReferenceValue, ListReferenceSetValue, ListWidgetValue, SelectionSingleValue, SelectionMultiValue } from "mendix";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { Big } from "big.js";
 
 export type ItemSelectionMethodEnum = "checkbox" | "rowClick";
 
 export type ItemSelectionModeEnum = "toggle" | "clear";
 
+<<<<<<< HEAD
 export type LoadingTypeEnum = "spinner" | "skeleton";
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 export type ShowContentAsEnum = "attribute" | "dynamicText" | "customContent";
 
 export type HidableEnum = "yes" | "hidden" | "no";
@@ -25,7 +32,11 @@ export type AlignmentEnum = "left" | "center" | "right";
 
 export interface ColumnsType {
     showContentAs: ShowContentAsEnum;
+<<<<<<< HEAD
     attribute?: ListAttributeValue<string | Big | boolean | Date> | ListAttributeListValue<string | Big | boolean | Date>;
+=======
+    attribute?: ListAttributeValue<string | Big | boolean | Date>;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     content?: ListWidgetValue;
     dynamicText?: ListExpressionValue<string>;
     exportValue?: ListExpressionValue<string>;
@@ -34,7 +45,10 @@ export interface ColumnsType {
     filter?: ReactNode;
     filterAssociation?: ListReferenceValue | ListReferenceSetValue;
     filterAssociationOptions?: ListValue;
+<<<<<<< HEAD
     fetchOptionsLazy: boolean;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     filterAssociationOptionLabel?: ListExpressionValue<string>;
     visible: DynamicValue<boolean>;
     sortable: boolean;
@@ -53,10 +67,17 @@ export interface ColumnsType {
 
 export type PaginationEnum = "buttons" | "virtualScrolling" | "loadMore";
 
+<<<<<<< HEAD
 export type ShowPagingButtonsEnum = "always" | "auto";
 
 export type PagingPositionEnum = "bottom" | "top" | "both";
 
+=======
+export type PagingPositionEnum = "bottom" | "top" | "both";
+
+export type ShowPagingButtonsEnum = "always" | "auto";
+
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 export type ShowEmptyPlaceholderEnum = "none" | "custom";
 
 export type OnClickTriggerEnum = "single" | "double";
@@ -78,7 +99,10 @@ export interface ColumnsPreviewType {
     filter: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
     filterAssociation: string;
     filterAssociationOptions: {} | { caption: string } | { type: string } | null;
+<<<<<<< HEAD
     fetchOptionsLazy: boolean;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     filterAssociationOptionLabel: string;
     visible: string;
     sortable: boolean;
@@ -111,14 +135,22 @@ export interface DatagridContainerProps {
     itemSelectionMethod: ItemSelectionMethodEnum;
     itemSelectionMode: ItemSelectionModeEnum;
     showSelectAllToggle: boolean;
+<<<<<<< HEAD
     loadingType: LoadingTypeEnum;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     columns: ColumnsType[];
     columnsFilterable: boolean;
     pageSize: number;
     pagination: PaginationEnum;
+<<<<<<< HEAD
     showPagingButtons: ShowPagingButtonsEnum;
     showNumberOfRows: boolean;
     pagingPosition: PagingPositionEnum;
+=======
+    pagingPosition: PagingPositionEnum;
+    showPagingButtons: ShowPagingButtonsEnum;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     loadMoreButtonCaption?: DynamicValue<string>;
     showEmptyPlaceholder: ShowEmptyPlaceholderEnum;
     emptyPlaceholder?: ReactNode;
@@ -132,7 +164,10 @@ export interface DatagridContainerProps {
     columnsHidable: boolean;
     configurationStorageType: ConfigurationStorageTypeEnum;
     configurationAttribute?: EditableValue<string>;
+<<<<<<< HEAD
     storeFiltersInPersonalization: boolean;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     filterList: FilterListType[];
     filtersPlaceholder?: ReactNode;
     filterSectionTitle?: DynamicValue<string>;
@@ -150,7 +185,10 @@ export interface DatagridPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     advanced: boolean;
     datasource: {} | { caption: string } | { type: string } | null;
     refreshInterval: number | null;
@@ -158,14 +196,22 @@ export interface DatagridPreviewProps {
     itemSelectionMethod: ItemSelectionMethodEnum;
     itemSelectionMode: ItemSelectionModeEnum;
     showSelectAllToggle: boolean;
+<<<<<<< HEAD
     loadingType: LoadingTypeEnum;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     columns: ColumnsPreviewType[];
     columnsFilterable: boolean;
     pageSize: number | null;
     pagination: PaginationEnum;
+<<<<<<< HEAD
     showPagingButtons: ShowPagingButtonsEnum;
     showNumberOfRows: boolean;
     pagingPosition: PagingPositionEnum;
+=======
+    pagingPosition: PagingPositionEnum;
+    showPagingButtons: ShowPagingButtonsEnum;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     loadMoreButtonCaption: string;
     showEmptyPlaceholder: ShowEmptyPlaceholderEnum;
     emptyPlaceholder: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
@@ -179,7 +225,10 @@ export interface DatagridPreviewProps {
     columnsHidable: boolean;
     configurationStorageType: ConfigurationStorageTypeEnum;
     configurationAttribute: string;
+<<<<<<< HEAD
     storeFiltersInPersonalization: boolean;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     onConfigurationChange: {} | null;
     filterList: FilterListPreviewType[];
     filtersPlaceholder: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };

@@ -1,7 +1,10 @@
 import {
     DynamicValue,
     ListAttributeValue,
+<<<<<<< HEAD
     ListAttributeListValue,
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     ListExpressionValue,
     ListWidgetValue,
     ObjectItem,
@@ -28,16 +31,23 @@ export class ColumnStore implements GridColumn {
     private baseInfo: BaseColumnInfo;
     private parentStore: IColumnParentStore;
 
+<<<<<<< HEAD
     private frozenSize: number | undefined;
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     // dynamic props from PW API
     private _visible?: DynamicValue<boolean> = undefined; // can't render when unavailable
     private _header?: DynamicValue<string> = undefined; // can render when unavailable
     private _columnClass?: ListExpressionValue<string> = undefined; // can render when unavailable
     private _tooltip?: ListExpressionValue<string> = undefined; // part of attribute or dynamicText
+<<<<<<< HEAD
     private _attribute?:
         | ListAttributeValue<string | Big | boolean | Date>
         | ListAttributeListValue<string | Big | boolean | Date> = undefined; // as "attribute"
+=======
+    private _attribute?: ListAttributeValue<string | Big | boolean | Date> = undefined; // as "attribute"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     private _dynamicText?: ListExpressionValue<string> = undefined; // as "dynamicText"
     private _content?: ListWidgetValue = undefined; // as "customContent"
 
@@ -186,7 +196,10 @@ export class ColumnStore implements GridColumn {
 
     takeSizeSnapshot(): void {
         const size = this.headerElementRef?.clientWidth;
+<<<<<<< HEAD
         this.frozenSize = this.size;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         if (size) {
             this.setSize(size);
         }
@@ -233,11 +246,20 @@ export class ColumnStore implements GridColumn {
     get settings(): ColumnPersonalizationSettings {
         return {
             columnId: this.columnId,
+<<<<<<< HEAD
             size: this.parentStore.isResizing ? this.frozenSize : this.size,
             hidden: this.isHidden,
             orderWeight: this.orderWeight,
             sortDir: this.sortDir,
             sortWeight: this.sortWeight
+=======
+            size: this.size,
+            hidden: this.isHidden,
+            orderWeight: this.orderWeight,
+            sortDir: this.sortDir,
+            sortWeight: this.sortWeight,
+            filterSettings: undefined
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         };
     }
 

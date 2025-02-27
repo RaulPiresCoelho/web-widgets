@@ -1,6 +1,10 @@
 {
   "name": "@mendix/anychart-buildingblocks",
+<<<<<<< HEAD
   "version": "3.0.4",
+=======
+  "version": "3.0.3",
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   "description": "Module for publishing AnyChart widget along with building blocks",
   "license": "Apache-2.0",
   "copyright": "© Mendix Technology BV 2022. All rights reserved.",

@@ -9,8 +9,12 @@ declare global {
             };
             session: {
                 getSessionObjectId(): string,
+<<<<<<< HEAD
                 getConfig() : { locale: { code: string } },
                 getUserId(): string
+=======
+                getConfig() : { locale: { code: string } }
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             }
         };
         dojo: {

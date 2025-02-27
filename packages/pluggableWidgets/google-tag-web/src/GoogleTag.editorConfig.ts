@@ -20,7 +20,11 @@ export function getProperties(values: GoogleTagPreviewProps, defaultProperties: 
                 break;
             }
             case "event": {
+<<<<<<< HEAD
                 hidePropertiesIn(defaultProperties, values, ["targetId", "sendUserID"]);
+=======
+                hidePropertiesIn(defaultProperties, values, ["targetId"]);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 handleValueTypes(values, defaultProperties);
                 break;
             }

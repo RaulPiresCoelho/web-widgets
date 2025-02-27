@@ -27,7 +27,11 @@ test.describe("datagrid-dropdown-filter-web", () => {
     test.describe("using enumeration as attribute", () => {
         test("shows the expected result", async ({ page }) => {
             await page.click(".mx-name-datagrid1 .dropdown-container:first-child");
+<<<<<<< HEAD
             await page.click(".dropdown-list > li:nth-child(2)");
+=======
+            await page.click(".dropdown-list > li:nth-child(1)");
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             await page.click("#DataGrid4-column0");
             const cells = await page.$$eval(".mx-name-datagrid1 .td", elements =>
                 elements.map(element => element.textContent)
@@ -37,8 +41,13 @@ test.describe("datagrid-dropdown-filter-web", () => {
 
         test("shows the expected result with multiple selected items", async ({ page }) => {
             await page.click(".mx-name-datagrid1 .dropdown-container:first-child");
+<<<<<<< HEAD
             await page.click(".dropdown-list > li:nth-child(2)");
             await page.click(".dropdown-list > li:nth-child(3)");
+=======
+            await page.click(".dropdown-list > li:nth-child(1)");
+            await page.click(".dropdown-list > li:nth-child(2)");
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             await page.click("#DataGrid4-column0");
             const cells = await page.$$eval(".mx-name-datagrid1 .td", elements =>
                 elements.map(element => element.textContent)
@@ -81,12 +90,20 @@ test.describe("with Default value", () => {
             "OpheliaYes"
         ];
 
+<<<<<<< HEAD
         const rows = page.locator(".mx-name-dataGrid21 [role=row]");
+=======
+        const rows = await page.locator(".mx-name-dataGrid21 [role=row]");
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         for (let i = 0; i < rows.length; i++) {
             await expect(rows[i]).toHaveText(expected[i]);
         }
 
+<<<<<<< HEAD
         const pagingStatus = page.locator(".mx-name-dataGrid21").getByText("to 10 of 27").nth(1);
+=======
+        const pagingStatus = await page.getByText("to 10 of 27").nth(1);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         await expect(pagingStatus).toHaveText("1 to 10 of 27");
     });
 
@@ -100,12 +117,20 @@ test.describe("with Default value", () => {
             "MitchellCyan"
         ];
 
+<<<<<<< HEAD
         const rows = page.locator(".mx-name-dataGrid22 [role=row]");
+=======
+        const rows = await page.locator(".mx-name-dataGrid22 [role=row]");
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         for (let i = 0; i < rows.length; i++) {
             await expect(rows[i]).toHaveText(expected[i]);
         }
 
+<<<<<<< HEAD
         const pagingStatus = page.locator(".mx-name-dataGrid22").getByText("to 5 of 5").nth(1);
+=======
+        const pagingStatus = await page.getByText("to 5 of 5").nth(1);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         await expect(pagingStatus).toHaveText("1 to 5 of 5");
     });
 
@@ -124,12 +149,20 @@ test.describe("with Default value", () => {
             "OpheliaYes"
         ];
 
+<<<<<<< HEAD
         const rows = page.locator(".mx-name-dataGrid23 [role=row]");
+=======
+        const rows = await page.locator(".mx-name-dataGrid23 [role=row]");
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         for (let i = 0; i < rows.length; i++) {
             await expect(rows[i]).toHaveText(expected[i]);
         }
 
+<<<<<<< HEAD
         const pagingStatus = page.locator(".mx-name-dataGrid23").getByText("to 10 of 27").nth(1);
+=======
+        const pagingStatus = await page.getByText("to 10 of 27").nth(1);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         await expect(pagingStatus).toHaveText("1 to 10 of 27");
     });
 
@@ -143,12 +176,20 @@ test.describe("with Default value", () => {
             "MitchellCyan"
         ];
 
+<<<<<<< HEAD
         const rows = page.locator(".mx-name-dataGrid24 [role=row]");
+=======
+        const rows = await page.locator(".mx-name-dataGrid24 [role=row]");
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         for (let i = 0; i < rows.length; i++) {
             await expect(rows[i]).toHaveText(expected[i]);
         }
 
+<<<<<<< HEAD
         const pagingStatus = page.locator(".mx-name-dataGrid24").getByText("to 5 of 5").nth(1);
+=======
+        const pagingStatus = await page.getByText("to 5 of 5").nth(1);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         await expect(pagingStatus).toHaveText("1 to 5 of 5");
     });
 
@@ -167,12 +208,20 @@ test.describe("with Default value", () => {
             "HesterRed"
         ];
 
+<<<<<<< HEAD
         const rows = page.locator(".mx-name-dataGrid25 [role=row]");
+=======
+        const rows = await page.locator(".mx-name-dataGrid25 [role=row]");
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         for (let i = 0; i < rows.length; i++) {
             await expect(rows[i]).toHaveText(expected[i]);
         }
 
+<<<<<<< HEAD
         const pagingStatus = page.locator(".mx-name-dataGrid25").getByText("to 10 of 19").nth(1);
+=======
+        const pagingStatus = await page.getByText("to 10 of 19").nth(1);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         await expect(pagingStatus).toHaveText("1 to 10 of 19");
     });
 });
@@ -184,6 +233,19 @@ test.describe("a11y testing:", () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page })
             .withTags(["wcag21aa"])
+<<<<<<< HEAD
+=======
+            .disableRules([
+                "aria-required-children",
+                "label",
+                "aria-roles",
+                "button-name",
+                "duplicate-id-active",
+                "duplicate-id",
+                "aria-allowed-attr",
+                "image-alt"
+            ])
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             .exclude(".mx-name-navigationTree3")
             .analyze();
 

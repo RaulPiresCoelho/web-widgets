@@ -1,9 +1,18 @@
 import { createElement } from "react";
+<<<<<<< HEAD
 import { ChartWidget } from "@mendix/shared-charts/main";
 import { EditableValueBuilder, ListAttributeValueBuilder, list } from "@mendix/widget-plugin-test-utils";
 import { mount, ReactWrapper } from "enzyme";
 import { HeatMap } from "../HeatMap";
 import Big from "big.js";
+=======
+import { ChartWidget } from "@mendix/shared-charts/common";
+import { EditableValueBuilder, ListAttributeValueBuilder, ListValueBuilder } from "@mendix/widget-plugin-test-utils";
+import { mount, ReactWrapper } from "enzyme";
+import { HeatMap } from "../HeatMap";
+import Big from "big.js";
+import { ObjectItem } from "mendix";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { HeatMapContainerProps } from "../../typings/HeatMapProps";
 
 jest.mock("react-plotly.js", () => jest.fn(() => null));
@@ -23,7 +32,11 @@ describe("The HeatMap widget", () => {
                 customLayout=""
                 customConfigurations=""
                 customSeriesOptions=""
+<<<<<<< HEAD
                 seriesDataSource={list(2)}
+=======
+                seriesDataSource={ListValueBuilder().simple()}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 seriesValueAttribute={new ListAttributeValueBuilder<Big>().build()}
                 enableThemeConfig={false}
                 scaleColors={[]}
@@ -49,7 +62,11 @@ describe("The HeatMap widget", () => {
     it("visualizes a heatmap chart properly even if there is no data", () => {
         expect(() =>
             renderHeatMap({
+<<<<<<< HEAD
                 seriesDataSource: list(0),
+=======
+                seriesDataSource: ListValueBuilder().withItems([]),
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 showValues: true
             })
         ).not.toThrow();
@@ -172,7 +189,13 @@ const numberOfItems = numberOfHorizontalItems * numberOfVerticalItems;
 const allItems = new Array(numberOfItems).fill(null);
 
 function setupBasicAttributes(): Partial<HeatMapContainerProps> {
+<<<<<<< HEAD
     const seriesDataSource = list(numberOfItems);
+=======
+    const seriesDataSource = ListValueBuilder().withItems(
+        allItems.map((_value, index) => ({ id: index.toString() } as ObjectItem))
+    );
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
     const seriesValueAttribute = new ListAttributeValueBuilder<Big>().build();
     seriesValueAttribute.get = allItems.reduce<jest.Mock>(

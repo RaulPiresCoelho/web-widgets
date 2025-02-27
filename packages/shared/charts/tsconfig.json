@@ -1,5 +1,14 @@
 {
+<<<<<<< HEAD
     "extends": "./tsconfig.build.json",
     "exclude": [],
     "references": [{ "path": "./rollup/tsconfig.json" }]
+=======
+    "extends": "@mendix/tsconfig-web-widgets/esm-library-with-jsx",
+    "include": ["./src/**/*"],
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./src"
+    }
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 }

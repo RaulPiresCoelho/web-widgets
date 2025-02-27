@@ -13,6 +13,7 @@ exports[`Number Filter with single instance with multiple attributes renders cor
         class="filter-selector-content"
       >
         <button
+<<<<<<< HEAD
           aria-activedescendant=""
           aria-controls="downshift-:r7:-menu"
           aria-expanded="false"
@@ -32,6 +33,15 @@ exports[`Number Filter with single instance with multiple attributes renders cor
           role="listbox"
           style="position: fixed; left: 0px; top: 0px; transform: translate(0px, 0px);"
         />
+=======
+          aria-controls="NumberFilter1-filter-selectors"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="btn btn-default filter-selector-button button-icon equal"
+        >
+           
+        </button>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
       </div>
     </div>
     <input
@@ -48,7 +58,11 @@ exports[`Number Filter with single instance with no context renders error messag
   <div
     class="alert alert-danger"
   >
+<<<<<<< HEAD
     The filter widget must be placed inside the column or header of the Data grid 2.0 or inside header of the Gallery widget.
+=======
+    The Number filter widget must be placed inside the header of the Data grid 2.0 or Gallery widget.
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   </div>
 </DocumentFragment>
 `;
@@ -66,6 +80,7 @@ exports[`Number Filter with single instance with single attribute renders correc
         class="filter-selector-content"
       >
         <button
+<<<<<<< HEAD
           aria-activedescendant=""
           aria-controls="downshift-:r0:-menu"
           aria-expanded="false"
@@ -85,6 +100,15 @@ exports[`Number Filter with single instance with single attribute renders correc
           role="listbox"
           style="position: fixed; left: 0px; top: 0px; transform: translate(0px, 0px);"
         />
+=======
+          aria-controls="NumberFilter1-filter-selectors"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="btn btn-default filter-selector-button button-icon equal"
+        >
+           
+        </button>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
       </div>
     </div>
     <input
@@ -101,7 +125,11 @@ exports[`Number Filter with single instance with wrong attribute's type renders 
   <div
     class="alert alert-danger"
   >
+<<<<<<< HEAD
     Unable to get filter store. Check parent widget configuration.
+=======
+    The attribute type being used for Number filter is not 'Autonumber, Decimal, Integer or Long'
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   </div>
 </DocumentFragment>
 `;
@@ -111,7 +139,11 @@ exports[`Number Filter with single instance with wrong multiple attributes' type
   <div
     class="alert alert-danger"
   >
+<<<<<<< HEAD
     Unable to get filter store. Check parent widget configuration.
+=======
+    The Number filter widget can't be used with the filters options you have selected. It requires a "Autonumber, Decimal, Integer or Long" attribute to be selected.
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   </div>
 </DocumentFragment>
 `;

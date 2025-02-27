@@ -12,7 +12,11 @@
                     <caption>Enable advanced options</caption>
                     <description />
                 </property>
+<<<<<<< HEAD
                 <property key="menuTrigger" type="widgets" required="true">
+=======
+                <property key="menuTrigger" type="widgets" required="false">
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     <caption>The area to open or close the menu.</caption>
                     <description>Responsible for toggling the Pop-up menu.</description>
                 </property>
@@ -109,6 +113,7 @@
                         <enumerationValue key="bottom">Bottom</enumerationValue>
                     </enumerationValues>
                 </property>
+<<<<<<< HEAD
                 <property key="clippingStrategy" type="enumeration" defaultValue="absolute">
                     <caption>Clipping strategy</caption>
                     <description>'Absolute' positions the floating element relative to its nearest positioned ancestor, while 'Fixed' breaks it out of any clipping ancestor.</description>
@@ -117,6 +122,8 @@
                         <enumerationValue key="fixed">Fixed</enumerationValue>
                     </enumerationValues>
                 </property>
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             </propertyGroup>
             <propertyGroup caption="Development">
                 <property key="menuToggle" type="boolean" defaultValue="false">

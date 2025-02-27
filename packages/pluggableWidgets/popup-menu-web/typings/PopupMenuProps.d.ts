@@ -30,8 +30,11 @@ export type HoverCloseOnEnum = "onClickOutside" | "onHoverLeave";
 
 export type PositionEnum = "left" | "right" | "top" | "bottom";
 
+<<<<<<< HEAD
 export type ClippingStrategyEnum = "absolute" | "fixed";
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 export interface BasicItemsPreviewType {
     itemType: ItemTypeEnum;
     caption: string;
@@ -58,7 +61,10 @@ export interface PopupMenuContainerProps {
     trigger: TriggerEnum;
     hoverCloseOn: HoverCloseOnEnum;
     position: PositionEnum;
+<<<<<<< HEAD
     clippingStrategy: ClippingStrategyEnum;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     menuToggle: boolean;
 }
 
@@ -71,7 +77,10 @@ export interface PopupMenuPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     advancedMode: boolean;
     menuTrigger: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
     basicItems: BasicItemsPreviewType[];
@@ -79,6 +88,9 @@ export interface PopupMenuPreviewProps {
     trigger: TriggerEnum;
     hoverCloseOn: HoverCloseOnEnum;
     position: PositionEnum;
+<<<<<<< HEAD
     clippingStrategy: ClippingStrategyEnum;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     menuToggle: boolean;
 }

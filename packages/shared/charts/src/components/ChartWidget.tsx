@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import { Dimensions, getDimensions } from "@mendix/widget-plugin-platform/utils/get-dimensions";
 import classNames from "classnames";
 import { createElement, Fragment, ReactElement, useMemo } from "react";
 import { useDispatchResizeObserver } from "../hooks/useResizeObserver";
+=======
+import { createElement, ReactElement, useMemo, Fragment } from "react";
+import classNames from "classnames";
+import { Dimensions, getDimensions } from "@mendix/widget-plugin-platform/utils/get-dimensions";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import {
     ChartTypeEnum,
     CustomLayoutProps,
@@ -61,8 +67,11 @@ export const ChartWidget = ({
         [seriesOptions, themeFolderConfigs.series]
     );
 
+<<<<<<< HEAD
     const ref = useDispatchResizeObserver<HTMLDivElement>();
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     // Waiting for datasource.
     if (data.length === 0) {
         return <Fragment />;
@@ -72,7 +81,10 @@ export const ChartWidget = ({
         <div
             className={classNames("widget-chart", className)}
             style={getDimensions({ widthUnit, width, heightUnit, height })}
+<<<<<<< HEAD
             ref={ref}
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         >
             <Chart
                 key={data.length}

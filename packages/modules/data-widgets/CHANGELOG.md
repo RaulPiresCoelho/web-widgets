@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [2.29.1] DataWidgets - 2025-01-24
 
 ### [2.29.1] Datagrid
@@ -356,6 +357,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   The “Filter groups” is a new way of configuring header filters of the widget. This way of configuring filters has three main advantages over previous “Grid wide filtering”: 1. More than 4 filters are allowed in the header at the same time. 2. No restriction on filter type. The header can have one, two or more filters of the same data type. 3. Dropdown filters can use associations.
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ## [2.21.4] DataWidgets - 2024-08-20
 
 ### [1.9.2] Gallery

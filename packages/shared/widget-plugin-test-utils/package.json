@@ -11,8 +11,12 @@
   "type": "module",
   "main": "./dist/main.js",
   "exports": {
+<<<<<<< HEAD
     ".": "./dist/main.js",
     "./__mocks__/*": "./__mocks__/*"
+=======
+    ".": "./dist/main.js"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   },
   "typesVersions": {
     "*": {
@@ -22,16 +26,25 @@
     }
   },
   "scripts": {
+<<<<<<< HEAD
     "prepare": "pnpm build",
     "lint": "eslint --ext .ts,.tsx ./src",
     "format": "prettier --write .",
     "build": "tsc -p tsconfig.build.json",
     "dev": "tsc -p tsconfig.build.json --watch",
     "test": "jest"
+=======
+    "prepare": "tsc",
+    "lint": "eslint --ext .ts,.tsx ./src",
+    "format": "prettier --write .",
+    "dev": "tsc --watch",
+    "compile": "tsc"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   },
   "devDependencies": {
     "@mendix/eslint-config-web-widgets": "workspace:*",
     "@mendix/prettier-config-web-widgets": "workspace:*",
+<<<<<<< HEAD
     "@mendix/tsconfig-web-widgets": "workspace:*",
     "@swc/core": "^1.7.26",
     "@swc/jest": "^0.2.36",
@@ -39,5 +52,8 @@
   },
   "dependencies": {
     "mendix": "^10.16.49747"
+=======
+    "@mendix/tsconfig-web-widgets": "workspace:*"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   }
 }

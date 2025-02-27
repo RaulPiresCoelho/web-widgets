@@ -85,7 +85,10 @@ export function check(values: GalleryPreviewProps): Problem[] {
                 'Change "On click trigger" to "Double click" or set "Selection" to "None".'
         });
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     return errors;
 }
 

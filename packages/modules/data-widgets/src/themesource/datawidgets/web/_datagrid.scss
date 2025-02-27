@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 @import "export-alert";
 @import "export-progress";
 @import "pseudo-modal";
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 $dg-background-color: #fff;
 $dg-icon-color: #606671;
 $dg-icon-size: 14px;
@@ -20,7 +23,10 @@ $dg-grid-border-color: #ced0d3;
 $dg-brand-primary: #264ae5;
 $dg-brand-light: #e6eaff;
 $dg-grid-selected-row-background: $dg-brand-light;
+<<<<<<< HEAD
 $dg-skeleton-background: linear-gradient(90deg, rgba(194, 194, 194, 0.2) 0%, #d2d2d2 100%);
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
 .table {
     position: relative;
@@ -404,13 +410,17 @@ $dg-skeleton-background: linear-gradient(90deg, rgba(194, 194, 194, 0.2) 0%, #d2
 }
 
 .widget-datagrid {
+<<<<<<< HEAD
     position: relative;
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     &.widget-datagrid-selection-method-click {
         .tr.tr-selected .td {
             background-color: $dg-grid-selected-row-background;
         }
     }
+<<<<<<< HEAD
 
     .th.widget-datagrid-col-select,
     .td.widget-datagrid-col-select {
@@ -526,4 +536,14 @@ $dg-skeleton-background: linear-gradient(90deg, rgba(194, 194, 194, 0.2) 0%, #d2
     to {
         transform: rotate(1turn);
     }
+=======
+}
+
+.widget-datagrid-col-select input:focus-visible {
+    outline-offset: 0;
+}
+
+.widget-datagrid-content {
+    overflow-y: auto;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 }

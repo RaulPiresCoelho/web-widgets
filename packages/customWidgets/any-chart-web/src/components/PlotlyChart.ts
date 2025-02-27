@@ -112,6 +112,11 @@ class PlotlyChart extends Component<PlotlyChartProps, {}> {
             const layoutOptions = deepMerge.all([layout, getDimensionsFromNode(rootNode)]);
             const plotlyConfig = window.dojo && window.dojo.locale ? { ...config, locale: window.dojo.locale } : config;
 
+<<<<<<< HEAD
+=======
+            console.debug("newPlot", this.chartNode, data, layoutOptions, plotlyConfig);
+
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             plotly.newPlot(this.chartNode, data as Data[], layoutOptions, plotlyConfig).then(myPlot => {
                 if (onClick) {
                     myPlot.on("plotly_click", onClick as any);

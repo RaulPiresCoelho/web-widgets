@@ -24,7 +24,10 @@ async function main(): Promise<void> {
     const draft = await createDraft({
         appName: marketplace.appName,
         appNumber: marketplace.appNumber,
+<<<<<<< HEAD
         reactReady: marketplace.reactReady,
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         version,
         studioProVersion: marketplace.minimumMXVersion,
         artifactUrl

@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [3.0.4] AnyChart_BuildingBlocks - 2024-10-21
 
 ### [3.0.4] AnyChart
@@ -18,6 +19,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   We updated plotly to version 2.35.2
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ## [3.0.3] AnyChart_BuildingBlocks - 2023-04-05
 
 ### Changed

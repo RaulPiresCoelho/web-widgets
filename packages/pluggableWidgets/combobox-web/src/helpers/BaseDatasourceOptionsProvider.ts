@@ -41,10 +41,13 @@ export class BaseDatasourceOptionsProvider extends BaseOptionsProvider<ObjectIte
         return this.loading;
     }
 
+<<<<<<< HEAD
     get datasourceFilter(): ListValue["filter"] | undefined {
         return this.ds?.filter;
     }
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     getAll(): string[] {
         if (this.lazyLoading && this.attributeId) {
             if (this.searchTerm === "") {
@@ -82,6 +85,7 @@ export class BaseDatasourceOptionsProvider extends BaseOptionsProvider<ObjectIte
         return (value?.id as string) ?? null;
     }
 
+<<<<<<< HEAD
     // used for initial load of selected value in case options are lazy loaded
     loadSelectedValue(attributeValue: string): void {
         if (this.lazyLoading && this.ds && this.attributeId) {
@@ -91,6 +95,8 @@ export class BaseDatasourceOptionsProvider extends BaseOptionsProvider<ObjectIte
         }
     }
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     _updateProps(props: BaseProps): void {
         this.attributeId = props.attributeId;
         this.ds = props.ds;

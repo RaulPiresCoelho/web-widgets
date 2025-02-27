@@ -1,5 +1,9 @@
 import { useRef } from "react";
+<<<<<<< HEAD
 import Big from "big.js";
+=======
+import { Big } from "big.js";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { EditableValue, DynamicValue } from "mendix";
 
 export function useNumber(prop: Big | EditableValue<Big> | DynamicValue<Big> | undefined): Result {

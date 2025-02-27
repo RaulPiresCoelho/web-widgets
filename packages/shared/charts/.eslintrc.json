@@ -1,7 +1,11 @@
 {
     "root": true,
+<<<<<<< HEAD
     "extends": ["@mendix/eslint-config-web-widgets/widget-ts"],
     "parserOptions": {
         "project": ["./tsconfig.json", "./rollup/tsconfig.json"]
     }
+=======
+    "extends": ["@mendix/eslint-config-web-widgets/widget-ts"]
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 }

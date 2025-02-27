@@ -2,7 +2,11 @@ import { ValueStatus } from "mendix";
 import { useEffect, useMemo, useState } from "react";
 import { ensure } from "@mendix/pluggable-widgets-tools";
 import { HeatMapContainerProps } from "../../typings/HeatMapProps";
+<<<<<<< HEAD
 import { ChartWidgetProps, compareAttrValuesAsc } from "@mendix/shared-charts/main";
+=======
+import { ChartWidgetProps, compareAttrValuesAsc } from "@mendix/shared-charts/common";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { executeAction } from "@mendix/widget-plugin-platform/framework/execute-action";
 import Big from "big.js";
 

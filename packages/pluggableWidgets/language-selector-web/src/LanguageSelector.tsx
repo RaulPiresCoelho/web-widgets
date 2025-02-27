@@ -53,8 +53,12 @@ export default function LanguageSelector(props: LanguageSelectorContainerProps):
             languageList={languageList}
             onSelect={selectLanguage}
             trigger={props.trigger}
+<<<<<<< HEAD
             tabIndex={props.tabIndex ?? 0}
             screenReaderLabelCaption={props.screenReaderLabelCaption?.value}
+=======
+            preview={false}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         />
     );
 }

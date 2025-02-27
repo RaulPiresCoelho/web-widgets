@@ -2,12 +2,21 @@ import { createElement, ReactElement } from "react";
 
 import { ComboboxContainerProps } from "../typings/ComboboxProps";
 
+<<<<<<< HEAD
 import { MultiSelection } from "./components/MultiSelection/MultiSelection";
 import { Placeholder } from "./components/Placeholder";
 import { SingleSelection } from "./components/SingleSelection/SingleSelection";
 import { SelectionBaseProps } from "./helpers/types";
 import { useActionEvents } from "./hooks/useActionEvents";
 import { useGetSelector } from "./hooks/useGetSelector";
+=======
+import { SelectionBaseProps } from "./helpers/types";
+import { useActionEvents } from "./hooks/useActionEvents";
+import { useGetSelector } from "./hooks/useGetSelector";
+import { Placeholder } from "./components/Placeholder";
+import { MultiSelection } from "./components/MultiSelection/MultiSelection";
+import { SingleSelection } from "./components/SingleSelection/SingleSelection";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
 import "./ui/Combobox.scss";
 

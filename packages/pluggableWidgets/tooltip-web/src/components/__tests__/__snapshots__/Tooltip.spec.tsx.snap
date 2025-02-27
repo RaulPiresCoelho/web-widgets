@@ -18,15 +18,25 @@ exports[`Tooltip render DOM structure 1`] = `
     </div>
     <div
       class="widget-tooltip-content"
+<<<<<<< HEAD
       data-floating-ui-focusable=""
       id=":r0:"
       role="tooltip"
       style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
+=======
+      id=":r0:"
+      role="tooltip"
+      style="position: absolute; left: 0px; top: 0px; transform: translate(8px, 0px);"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
       tabindex="-1"
     >
       Tooltip text
       <div
         class="widget-tooltip-arrow-left"
+<<<<<<< HEAD
+=======
+        style="top: 0px;"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
       />
     </div>
   </div>

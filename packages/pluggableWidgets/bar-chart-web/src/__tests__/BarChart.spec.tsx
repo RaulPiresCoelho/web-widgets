@@ -1,7 +1,20 @@
+<<<<<<< HEAD
 import { ChartWidget } from "@mendix/shared-charts/main";
 import { EditableValueBuilder, ListAttributeValueBuilder, listExp, list } from "@mendix/widget-plugin-test-utils";
 import Big from "big.js";
 import { mount, ReactWrapper } from "enzyme";
+=======
+import { ChartWidget } from "@mendix/shared-charts/common";
+import {
+    dynamicValue,
+    EditableValueBuilder,
+    ListAttributeValueBuilder,
+    ListValueBuilder
+} from "@mendix/widget-plugin-test-utils";
+import Big from "big.js";
+import { mount, ReactWrapper } from "enzyme";
+import { ListExpressionValue } from "mendix";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { createElement } from "react";
 import { SeriesType } from "../../typings/BarChartProps";
 import { BarChart } from "../BarChart";
@@ -39,7 +52,11 @@ describe("The BarChart widget", () => {
     });
 
     it("sets the bar color on the data series based on the barColor value", () => {
+<<<<<<< HEAD
         const barChart = renderBarChart([{ staticBarColor: listExp(() => "red") }, { staticBarColor: undefined }]);
+=======
+        const barChart = renderBarChart([{ staticBarColor: exp("red") }, { staticBarColor: undefined }]);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         const data = barChart.find(ChartWidget).prop("data");
         expect(data).toHaveLength(2);
         expect(data[0]).toHaveProperty("marker.color", "red");
@@ -85,8 +102,19 @@ function setupBasicSeries(overwriteConfig: Partial<SeriesType>): SeriesType {
         customSeriesOptions: overwriteConfig.customSeriesOptions ?? "",
         aggregationType: overwriteConfig.aggregationType ?? "avg",
         staticBarColor: overwriteConfig.staticBarColor ?? undefined,
+<<<<<<< HEAD
         staticDataSource: list(2),
+=======
+        staticDataSource: ListValueBuilder().simple(),
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         staticXAttribute: xAttribute,
         staticYAttribute: yAttribute
     };
 }
+<<<<<<< HEAD
+=======
+
+function exp(value: string): ListExpressionValue<string> {
+    return { get: () => dynamicValue(value) } as unknown as ListExpressionValue<string>;
+}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)

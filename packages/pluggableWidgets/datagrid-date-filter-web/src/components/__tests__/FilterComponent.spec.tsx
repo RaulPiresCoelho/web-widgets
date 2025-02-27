@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { render } from "@testing-library/react";
 import { createElement } from "react";
 import ReactDOM from "react-dom";
@@ -11,6 +12,27 @@ const commonProps: FilterComponentProps = {
     onFilterChange: jest.fn(),
     expanded: false,
     tabIndex: 0
+=======
+import { render } from "enzyme";
+import { createElement } from "react";
+import { FilterComponent, FilterComponentProps } from "../FilterComponent";
+import ReactDOM from "react-dom";
+
+const commonProps: FilterComponentProps = {
+    name: "DateFilter",
+    adjustable: true,
+    filterAPIClient: null,
+    syncChannel: null,
+    class: "",
+    tabIndex: 0,
+    defaultFilter: "equal",
+    initValues: {
+        type: "equal",
+        value: null,
+        startDate: null,
+        endDate: null
+    }
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 };
 
 describe("Filter component", () => {
@@ -25,13 +47,21 @@ describe("Filter component", () => {
     it("renders correctly", () => {
         const component = render(<FilterComponent {...commonProps} />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders correctly when not adjustable by user", () => {
         const component = render(<FilterComponent {...commonProps} adjustable={false} />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders correctly with aria labels", () => {
@@ -43,6 +73,10 @@ describe("Filter component", () => {
             />
         );
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 });

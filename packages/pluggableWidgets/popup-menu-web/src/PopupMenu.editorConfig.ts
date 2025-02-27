@@ -29,7 +29,11 @@ export function getProperties(
         hidePropertyIn(defaultProperties, values, "customItems");
 
         values.basicItems.forEach((item: BasicItemsPreviewType, index: number) => {
+<<<<<<< HEAD
             const changeStyleDescription = (value: string): void =>
+=======
+            const changeStyleDescription = (value: string) =>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 changePropertyIn(
                     defaultProperties,
                     values,

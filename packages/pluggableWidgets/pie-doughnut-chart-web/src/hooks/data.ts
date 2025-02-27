@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { ensure } from "@mendix/pluggable-widgets-tools";
 import { ChartWidgetProps, compareAttrValuesAsc } from "@mendix/shared-charts/main";
 import { executeAction } from "@mendix/widget-plugin-platform/framework/execute-action";
@@ -5,6 +6,15 @@ import Big from "big.js";
 import { ObjectItem, ValueStatus } from "mendix";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { PieChartContainerProps } from "../../typings/PieChartProps";
+=======
+import { ValueStatus } from "mendix";
+import { useEffect, useMemo, useState } from "react";
+import { ensure } from "@mendix/pluggable-widgets-tools";
+import Big from "big.js";
+import { PieChartContainerProps } from "../../typings/PieChartProps";
+import { ChartWidgetProps, compareAttrValuesAsc } from "@mendix/shared-charts/common";
+import { executeAction } from "@mendix/widget-plugin-platform/framework/execute-action";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
 type PieChartDataSeriesHooks = Pick<
     PieChartContainerProps,
@@ -18,7 +28,10 @@ type PieChartDataSeriesHooks = Pick<
     | "seriesSortOrder"
     | "seriesValueAttribute"
     | "tooltipHoverText"
+<<<<<<< HEAD
     | "seriesItemSelection"
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 >;
 
 type LocalPieChartData = {
@@ -39,8 +52,12 @@ export const usePieChartDataSeries = ({
     seriesSortOrder,
     seriesValueAttribute,
     onClickAction,
+<<<<<<< HEAD
     tooltipHoverText,
     seriesItemSelection
+=======
+    tooltipHoverText
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 }: PieChartDataSeriesHooks): ChartWidgetProps["data"] => {
     const [pieChartData, setPieChartData] = useState<LocalPieChartData[]>([]);
 
@@ -73,6 +90,7 @@ export const usePieChartDataSeries = ({
         tooltipHoverText
     ]);
 
+<<<<<<< HEAD
     const onClick = useCallback(
         (item: ObjectItem) => {
             executeAction(onClickAction?.get(item));
@@ -82,6 +100,9 @@ export const usePieChartDataSeries = ({
         },
         [onClickAction, seriesItemSelection]
     );
+=======
+    const onClick = useMemo(() => (onClickAction ? () => executeAction(onClickAction) : undefined), [onClickAction]);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
     return useMemo<ChartWidgetProps["data"]>(
         () => [
@@ -97,6 +118,7 @@ export const usePieChartDataSeries = ({
                 hoverinfo: pieChartData.some(({ itemHoverText }) => itemHoverText !== undefined && itemHoverText !== "")
                     ? "text"
                     : "none",
+<<<<<<< HEAD
                 dataSourceItems: sortDatasourceItems(
                     seriesDataSource.items ?? [],
                     seriesSortOrder,
@@ -134,3 +156,12 @@ function sortDatasourceItems(
 
     return sortedItems;
 }
+=======
+                dataSourceItems: [],
+                onClick
+            }
+        ],
+        [customSeriesOptions, holeRadius, pieChartData, onClick]
+    );
+};
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)

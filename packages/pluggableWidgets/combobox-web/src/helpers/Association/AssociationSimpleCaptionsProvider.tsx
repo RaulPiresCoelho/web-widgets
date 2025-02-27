@@ -13,7 +13,11 @@ interface Props {
 
 export class AssociationSimpleCaptionsProvider implements CaptionsProvider {
     private unavailableCaption = "<...>";
+<<<<<<< HEAD
     formatter?: ListExpressionValue<string> | ListAttributeValue<string>;
+=======
+    private formatter?: ListExpressionValue<string> | ListAttributeValue<string>;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     protected customContent?: ListWidgetValue;
     protected customContentType: OptionsSourceAssociationCustomContentTypeEnum = "no";
     emptyCaption = "";

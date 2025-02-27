@@ -101,6 +101,7 @@ export default class SignatureContainer extends Component<SignatureContainerProp
 
     private saveDocument(callback: () => void): void {
         if (this.base64Uri && this.state.hasSignature && this.props.mxObject) {
+<<<<<<< HEAD
             const error = function (callback: any): void {
                 return mx.ui.error("Error saving signature: " + callback.message);
             };
@@ -146,6 +147,16 @@ export default class SignatureContainer extends Component<SignatureContainerProp
                     error => mx.ui.error("Error saving signature: " + error.message)
                 );
             }
+=======
+            mx.data.saveDocument(
+                this.props.mxObject.getGuid(),
+                this.generateFileName(this.props.mxObject),
+                {},
+                Utils.convertUrlToBlob(this.base64Uri),
+                callback,
+                error => mx.ui.error("Error saving signature: " + error.message)
+            );
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         } else {
             callback();
         }

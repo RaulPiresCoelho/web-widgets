@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 $ls-brand-primary: #264ae5;
 $ls-white: #ffffff;
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 .navbar-brand {
     .widget-language-selector {
         .current-language-text,
         .language-arrow {
+<<<<<<< HEAD
             color: var(--bg-color-secondary, $ls-white);
+=======
+            color: white;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             .arrow-image {
                 filter: invert(1);
             }
@@ -18,11 +25,14 @@ $ls-white: #ffffff;
         display: flex;
         align-items: center;
     }
+<<<<<<< HEAD
     :focus {
         border-radius: 2px;
         outline: 2px solid var(--brand-primary, $ls-brand-primary);
         outline-offset: 4px;
     }
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     .language-arrow {
         display: inline-flex;
         transition: transform 0.2s ease-in-out 50ms;
@@ -42,13 +52,18 @@ $ls-white: #ffffff;
         font-size: 14px;
     }
     .popupmenu-menu {
+<<<<<<< HEAD
         background: var(--bg-color-secondary, $ls-white);
         display: flex;
         padding: 4px;
+=======
+        background: #f8f8f8;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         .popupmenu-basic-item {
             &.active {
                 font-weight: 600;
             }
+<<<<<<< HEAD
             &.hover,
             &.highlighted {
                 background: #f5f6f6;
@@ -57,6 +72,10 @@ $ls-white: #ffffff;
                 border-radius: 8px;
                 outline: 2px solid var(--brand-primary, $ls-brand-primary);
                 outline-offset: 0;
+=======
+            &:hover {
+                background: #ffffff;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             }
         }
     }

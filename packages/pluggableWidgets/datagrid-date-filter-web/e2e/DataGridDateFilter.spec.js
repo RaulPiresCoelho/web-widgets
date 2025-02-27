@@ -45,8 +45,12 @@ test.describe("datagrid-date-filter-web", () => {
         const filterSelector = page.locator(".filter-selector");
         await filterSelector.click();
         const filterSelectorOptions = page.locator(".filter-selectors li");
+<<<<<<< HEAD
         await filterSelectorOptions.first().click({ delay: 1 });
         await expect(page.locator(".filter-selector-button")).toHaveAccessibleName("Between");
+=======
+        await filterSelectorOptions.first().click();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         const monthSelect = page.locator(".react-datepicker__month-select");
         await monthSelect.selectOption("October");
         const yearSelect = page.locator(".react-datepicker__year-select");
@@ -94,6 +98,19 @@ test.describe("datagrid-date-filter-web", () => {
 
             const accessibilityScanResults = await new AxeBuilder({ page })
                 .withTags(["wcag21aa"])
+<<<<<<< HEAD
+=======
+                .disableRules([
+                    "aria-required-children",
+                    "label",
+                    "aria-roles",
+                    "button-name",
+                    "duplicate-id-active",
+                    "duplicate-id",
+                    "aria-allowed-attr",
+                    "image-alt"
+                ])
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 .exclude(".mx-name-navigationTree3")
                 .analyze();
 

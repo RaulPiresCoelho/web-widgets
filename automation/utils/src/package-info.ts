@@ -25,7 +25,10 @@ export interface PackageJsonFileContent {
         minimumMXVersion: string;
         appName?: string;
         appNumber?: number;
+<<<<<<< HEAD
         reactReady?: boolean;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     };
 
     testProject?: {
@@ -60,8 +63,12 @@ export const MxPackageSchema = z.object({
 export const MarketplaceSchema = z.object({
     minimumMXVersion: versionSchema,
     appName: appNameSchema,
+<<<<<<< HEAD
     appNumber: appNumberSchema.or(z.literal(-1)),
     reactReady: z.boolean().optional().default(false)
+=======
+    appNumber: appNumberSchema.or(z.literal(-1))
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 });
 
 export const TestProjectSchema = z.object({

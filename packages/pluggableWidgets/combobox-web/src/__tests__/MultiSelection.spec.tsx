@@ -1,4 +1,5 @@
 import {
+<<<<<<< HEAD
     dynamic,
     EditableValueBuilder,
     ListAttributeValueBuilder,
@@ -6,11 +7,23 @@ import {
     listExp,
     obj,
     list
+=======
+    dynamicValue,
+    EditableValueBuilder,
+    ListAttributeValueBuilder,
+    ListValueBuilder,
+    ReferenceSetValueBuilder,
+    listExp
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 } from "@mendix/widget-plugin-test-utils";
 import "./__mocks__/intersectionObserverMock";
 import "@testing-library/jest-dom";
 import { fireEvent, render, RenderResult, waitFor } from "@testing-library/react";
+<<<<<<< HEAD
 import { ListValue } from "mendix";
+=======
+import { ObjectItem, DynamicValue, ListValue } from "mendix";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { createElement } from "react";
 import { ComboboxContainerProps, OptionsSourceAssociationCaptionTypeEnum } from "../../typings/ComboboxProps";
 import Combobox from "../Combobox";
@@ -27,16 +40,32 @@ describe("Combo box (Association)", () => {
             id: "comboBox1",
             source: "context",
             optionsSourceType: "association",
+<<<<<<< HEAD
             attributeAssociation: new ReferenceSetValueBuilder().withValue([obj("111")]).build(),
             attributeEnumeration: new EditableValueBuilder<string>().build(),
             attributeBoolean: new EditableValueBuilder<boolean>().build(),
             optionsSourceAssociationDataSource: list([obj("111"), obj("222"), obj("333"), obj("444")]),
+=======
+            attributeAssociation: new ReferenceSetValueBuilder().withValue([{ id: "111" }] as ObjectItem[]).build(),
+            attributeEnumeration: new EditableValueBuilder<string>().build(),
+            attributeBoolean: new EditableValueBuilder<boolean>().build(),
+            optionsSourceAssociationDataSource: ListValueBuilder().withItems([
+                { id: "111" },
+                { id: "222" },
+                { id: "333" },
+                { id: "444" }
+            ] as ObjectItem[]),
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             optionsSourceAssociationCaptionType: "expression",
             optionsSourceAssociationCaptionAttribute: new ListAttributeValueBuilder<string>().build(),
             optionsSourceAssociationCaptionExpression: listExp(() => "$currentObject/CountryName"),
             optionsSourceAssociationCustomContentType: "no",
             optionsSourceAssociationCustomContent: undefined,
+<<<<<<< HEAD
             emptyOptionText: dynamic("Select an option 111"),
+=======
+            emptyOptionText: dynamicValue("Select an option 111"),
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             ariaRequired: true,
             clearable: true,
             filterType: "contains",
@@ -44,6 +73,7 @@ describe("Combo box (Association)", () => {
             readOnlyStyle: "bordered",
             lazyLoading: false,
             loadingType: "spinner",
+<<<<<<< HEAD
             noOptionsText: dynamic("no options found"),
             clearButtonAriaLabel: dynamic("Clear selection"),
             removeValueAriaLabel: dynamic("Remove value"),
@@ -56,11 +86,27 @@ describe("Combo box (Association)", () => {
             showFooter: false,
             databaseAttributeString: new EditableValueBuilder<string | Big>().build(),
             optionsSourceDatabaseCaptionType: "attribute",
+=======
+            noOptionsText: dynamicValue("no options found"),
+            clearButtonAriaLabel: dynamicValue("Clear selection"),
+            removeValueAriaLabel: dynamicValue("Remove value"),
+            selectAllButton: true, // Causes +1 option to be added to the menu
+            selectAllButtonCaption: dynamicValue("Select All"),
+            selectionMethod: "checkbox",
+            a11ySelectedValue: dynamicValue("Selected value:"),
+            a11yOptionsAvailable: dynamicValue("Options available:"),
+            a11yInstructions: dynamicValue("a11yInstructions"),
+            showFooter: false,
+            databaseAttributeString: new EditableValueBuilder<string | Big>().build(),
+            optionsSourceDatabaseCaptionType: "attribute",
+            optionsSourceDatabaseDefaultValue: dynamicValue("empty value"),
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             optionsSourceDatabaseCustomContentType: "yes",
             staticDataSourceCustomContentType: "no",
             staticAttribute: new EditableValueBuilder<string>().build(),
             optionsSourceStaticDataSource: [
                 {
+<<<<<<< HEAD
                     staticDataSourceValue: dynamic("value1"),
                     staticDataSourceCustomContent: undefined,
                     staticDataSourceCaption: dynamic("caption1")
@@ -69,11 +115,30 @@ describe("Combo box (Association)", () => {
                     staticDataSourceValue: dynamic("value2"),
                     staticDataSourceCustomContent: undefined,
                     staticDataSourceCaption: dynamic("caption2")
+=======
+                    staticDataSourceValue: dynamicValue("value1"),
+                    staticDataSourceCustomContent: undefined,
+                    staticDataSourceCaption: dynamicValue("caption1")
+                },
+                {
+                    staticDataSourceValue: dynamicValue("value2"),
+                    staticDataSourceCustomContent: undefined,
+                    staticDataSourceCaption: dynamicValue("caption2")
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 }
             ]
         };
         if (defaultProps.optionsSourceAssociationCaptionType === "expression") {
+<<<<<<< HEAD
             defaultProps.optionsSourceAssociationCaptionExpression!.get = i => dynamic(`${i.id}`);
+=======
+            defaultProps.optionsSourceAssociationCaptionExpression!.get = i => {
+                return {
+                    value: `${i.id}`,
+                    status: "available"
+                } as DynamicValue<string>;
+            };
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         }
     });
 
@@ -117,10 +182,17 @@ describe("Combo box (Association)", () => {
         waitFor(() => {
             expect(component.queryAllByRole("option")).toHaveLength(4);
         });
+<<<<<<< HEAD
         const option1 = await component.findByText("obj_222");
         fireEvent.click(option1);
         expect(defaultProps.attributeAssociation?.setValue).toHaveBeenCalled();
         expect(defaultProps.attributeAssociation?.value).toEqual([{ id: "obj_111" }, { id: "obj_222" }]);
+=======
+        const option1 = await component.findByText("222");
+        fireEvent.click(option1);
+        expect(defaultProps.attributeAssociation?.setValue).toHaveBeenCalled();
+        expect(defaultProps.attributeAssociation?.value).toEqual([{ id: "111" }, { id: "222" }]);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
     it("removes selected item", async () => {
         const component = render(<Combobox {...defaultProps} />);
@@ -129,10 +201,17 @@ describe("Combo box (Association)", () => {
         await waitFor(() => {
             expect(component.queryAllByRole("option")).toHaveLength(4);
         });
+<<<<<<< HEAD
         const option1 = await component.findByText("obj_222");
         fireEvent.click(option1);
         expect(defaultProps.attributeAssociation?.setValue).toHaveBeenCalled();
         expect(defaultProps.attributeAssociation?.value).toEqual([{ id: "obj_111" }, { id: "obj_222" }]);
+=======
+        const option1 = await component.findByText("222");
+        fireEvent.click(option1);
+        expect(defaultProps.attributeAssociation?.setValue).toHaveBeenCalled();
+        expect(defaultProps.attributeAssociation?.value).toEqual([{ id: "111" }, { id: "222" }]);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
         const clearButton = await component.container.getElementsByClassName("widget-combobox-clear-button")[0];
         fireEvent.click(clearButton);

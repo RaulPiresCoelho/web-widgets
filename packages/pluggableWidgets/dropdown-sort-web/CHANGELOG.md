@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [1.2.1] - 2024-09-23
 
 ### Changed
@@ -18,6 +19,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   Reworked and improved integration with gallery.
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ## [1.1.2] - 2023-10-13
 
 ### Fixed

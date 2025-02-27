@@ -22,7 +22,11 @@ export const Tooltip = (props: TooltipProps): ReactElement => {
     const { trigger, htmlMessage, textMessage, openOn, position, preview, renderMethod } = props;
     const [showTooltip, setShowTooltip] = useState(preview ?? false);
     const [arrowElement, setArrowElement] = useState<HTMLDivElement | null>(null);
+<<<<<<< HEAD
     const { arrowStyles, blurFocusEvents, floatingStyles, getFloatingProps, getReferenceProps, refs, staticSide } =
+=======
+    const { refs, floatingStyles, staticSide, arrowStyles, getReferenceProps, getFloatingProps, blurFocusEvents } =
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         useFloatingUI({
             position,
             showTooltip,
@@ -36,9 +40,14 @@ export const Tooltip = (props: TooltipProps): ReactElement => {
             <div
                 className="widget-tooltip-trigger"
                 ref={refs?.setReference}
+<<<<<<< HEAD
                 {...(preview
                     ? undefined
                     : getReferenceProps?.({ ...(openOn === "hoverFocus" && !preview ? blurFocusEvents : undefined) }))}
+=======
+                {...(preview ? undefined : getReferenceProps?.())}
+                {...(openOn === "hoverFocus" && !preview ? blurFocusEvents : undefined)}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             >
                 {trigger}
             </div>

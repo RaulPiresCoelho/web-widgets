@@ -4,7 +4,11 @@
  * @author Mendix Widgets Framework Team
  */
 import { CSSProperties } from "react";
+<<<<<<< HEAD
 import { DynamicValue, ListValue, ListExpressionValue } from "mendix";
+=======
+import { ListValue, ListExpressionValue } from "mendix";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
 export type PositionEnum = "left" | "right" | "top" | "bottom";
 
@@ -20,7 +24,10 @@ export interface LanguageSelectorContainerProps {
     position: PositionEnum;
     trigger: TriggerEnum;
     hideForSingle: boolean;
+<<<<<<< HEAD
     screenReaderLabelCaption?: DynamicValue<string>;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 }
 
 export interface LanguageSelectorPreviewProps {
@@ -32,11 +39,17 @@ export interface LanguageSelectorPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     languageOptions: {} | { caption: string } | { type: string } | null;
     languageCaption: string;
     position: PositionEnum;
     trigger: TriggerEnum;
     hideForSingle: boolean;
+<<<<<<< HEAD
     screenReaderLabelCaption: string;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 }

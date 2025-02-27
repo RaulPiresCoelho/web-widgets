@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [2.9.3] - 2024-11-13
 
 ### Fixed
@@ -46,6 +47,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   Group key -- a new setting to associate the filter with the group (see "Filter groups" in docs for more information).
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ## [2.7.1] - 2024-07-10
 
 ### Fixed

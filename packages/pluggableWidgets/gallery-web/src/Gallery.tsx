@@ -1,13 +1,36 @@
+<<<<<<< HEAD
 import { observer } from "mobx-react-lite";
 import { useOnResetFiltersEvent } from "@mendix/widget-plugin-external-events/hooks";
 import { useClickActionHelper } from "@mendix/widget-plugin-grid/helpers/ClickActionHelper";
 import { useFocusTargetController } from "@mendix/widget-plugin-grid/keyboard-navigation/useFocusTargetController";
 import { getColumnAndRowBasedOnIndex, useSelectionHelper } from "@mendix/widget-plugin-grid/selection";
 import { ReactElement, ReactNode, createElement, useCallback } from "react";
+=======
+import {
+    FilterType,
+    readInitFilterValues,
+    useFilterContext,
+    useMultipleFiltering
+} from "@mendix/widget-plugin-filtering";
+import { useFocusTargetController } from "@mendix/widget-plugin-grid/keyboard-navigation/useFocusTargetController";
+import {
+    getGlobalSelectionContext,
+    getColumnAndRowBasedOnIndex,
+    useCreateSelectionContextValue,
+    useSelectionHelper
+} from "@mendix/widget-plugin-grid/selection";
+import { generateUUID } from "@mendix/widget-plugin-platform/framework/generate-uuid";
+import { useOnResetFiltersEvent } from "@mendix/widget-plugin-external-events/hooks";
+import { SortFunction, SortInstruction, useSortContext } from "@mendix/widget-plugin-sorting";
+import { FilterCondition } from "mendix/filters";
+import { and } from "mendix/filters/builders";
+import { ReactElement, ReactNode, createElement, useCallback, useEffect, useMemo, useRef, useState } from "react";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { GalleryContainerProps } from "../typings/GalleryProps";
 import { Gallery as GalleryComponent } from "./components/Gallery";
 import { useItemEventsController } from "./features/item-interaction/ItemEventsController";
 import { GridPositionsProps, useGridPositions } from "./features/useGridPositions";
+<<<<<<< HEAD
 import { useItemHelper } from "./helpers/ItemHelper";
 import { useItemSelectHelper } from "./helpers/useItemSelectHelper";
 import { useRootGalleryStore } from "./helpers/useRootGalleryStore";
@@ -19,10 +42,91 @@ interface RootAPI {
 }
 
 function Container(props: GalleryContainerProps & RootAPI): ReactElement {
+=======
+import { useClickActionHelper } from "@mendix/widget-plugin-grid/helpers/ClickActionHelper";
+import { useItemHelper } from "./helpers/ItemHelper";
+import { useItemSelectHelper } from "./helpers/useItemSelectHelper";
+
+export function Gallery(props: GalleryContainerProps): ReactElement {
+    const viewStateFilters = useRef<FilterCondition | undefined>(undefined);
+    const viewStateSort = useRef<SortInstruction[] | undefined>(undefined);
+    const [filtered, setFiltered] = useState(false);
+    const [sorted, setSorted] = useState(false);
+    const customFiltersState = useMultipleFiltering();
+    const [sortState, setSortState] = useState<SortFunction>();
+    const { FilterContext } = useFilterContext();
+    const { SortContext } = useSortContext();
+    const SelectionContext = getGlobalSelectionContext();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     const isInfiniteLoad = props.pagination === "virtualScrolling";
     const currentPage = isInfiniteLoad
         ? props.datasource.limit / props.pageSize
         : props.datasource.offset / props.pageSize;
+<<<<<<< HEAD
+=======
+
+    useEffect(() => {
+        props.datasource.requestTotalCount(!isInfiniteLoad);
+        if (props.datasource.limit === Number.POSITIVE_INFINITY) {
+            props.datasource.setLimit(props.pageSize);
+        }
+    }, [props.datasource, props.pageSize, isInfiniteLoad]);
+
+    useEffect(() => {
+        if (props.datasource.filter && !filtered && !viewStateFilters.current) {
+            viewStateFilters.current = props.datasource.filter;
+        }
+        if (props.datasource.sortOrder && !sorted && !viewStateSort.current) {
+            viewStateSort.current = props.datasource.sortOrder;
+        }
+    }, [props.datasource, filtered, sorted]);
+
+    const filterList = useMemo(
+        () => props.filterList.reduce((filters, { filter }) => ({ ...filters, [filter.id]: filter }), {}),
+        [props.filterList]
+    );
+
+    const sortList = useMemo(
+        () =>
+            props.sortList.map(({ attribute, caption }) => ({
+                attribute,
+                caption: caption.value ?? ""
+            })),
+        [props.sortList]
+    );
+
+    const initialFilters = useMemo(
+        () =>
+            props.filterList.reduce(
+                (filters, { filter }) => ({
+                    ...filters,
+                    [filter.id]: readInitFilterValues(filter, viewStateFilters.current)
+                }),
+                {}
+            ),
+        [props.filterList, viewStateFilters.current]
+    );
+
+    const filters = Object.keys(customFiltersState)
+        .map((key: FilterType) => customFiltersState[key][0]?.getFilterCondition())
+        .filter((filter): filter is FilterCondition => filter !== undefined);
+
+    if (filters.length > 0) {
+        props.datasource.setFilter(filters.length > 1 ? and(...filters) : filters[0]);
+    } else if (filtered) {
+        props.datasource.setFilter(undefined);
+    } else {
+        props.datasource.setFilter(viewStateFilters.current);
+    }
+
+    if (sortState && "getSortCondition" in sortState) {
+        const sortCondition = sortState.getSortCondition();
+        props.datasource.setSortOrder(sortCondition ? [sortCondition] : undefined);
+    } else {
+        props.datasource.setSortOrder(undefined);
+    }
+
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     const setPage = useCallback(
         (computePage: (prevPage: number) => number) => {
             const newPage = computePage(currentPage);
@@ -65,6 +169,11 @@ function Container(props: GalleryContainerProps & RootAPI): ReactElement {
         props.itemSelectionMode
     );
 
+<<<<<<< HEAD
+=======
+    const selectionContextValue = useCreateSelectionContextValue(selection);
+
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     const showHeader = props.filterList.length > 0 || props.sortList.length > 0 || selection?.type === "Multi";
     const itemHelper = useItemHelper({
         classValue: props.itemClass,
@@ -72,7 +181,12 @@ function Container(props: GalleryContainerProps & RootAPI): ReactElement {
         clickValue: props.onClick
     });
 
+<<<<<<< HEAD
     useOnResetFiltersEvent(props.rootStore.staticInfo.name, props.rootStore.staticInfo.filtersChannelName);
+=======
+    const filtersChannel = useMemo(() => `gallery/${generateUUID()}`, []);
+    useOnResetFiltersEvent(props.name, filtersChannel);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
     return (
         <GalleryComponent
@@ -84,6 +198,7 @@ function Container(props: GalleryContainerProps & RootAPI): ReactElement {
                 [props.emptyPlaceholder, props.showEmptyPlaceholder]
             )}
             emptyMessageTitle={props.emptyMessageTitle?.value}
+<<<<<<< HEAD
             header={
                 showHeader && (
                     <HeaderContainer
@@ -95,6 +210,54 @@ function Container(props: GalleryContainerProps & RootAPI): ReactElement {
                     </HeaderContainer>
                 )
             }
+=======
+            header={useMemo(
+                () =>
+                    showHeader ? (
+                        <FilterContext.Provider
+                            value={{
+                                filterDispatcher: prev => {
+                                    if (prev.filterType) {
+                                        const [, filterDispatcher] = customFiltersState[prev.filterType];
+                                        filterDispatcher(prev);
+                                        setFiltered(true);
+                                    }
+                                    return prev;
+                                },
+                                eventsChannelName: filtersChannel,
+                                multipleAttributes: filterList,
+                                multipleInitialFilters: initialFilters
+                            }}
+                        >
+                            <SortContext.Provider
+                                value={{
+                                    sortDispatcher: prev => {
+                                        setSorted(true);
+                                        setSortState(prev);
+                                        return prev;
+                                    },
+                                    attributes: sortList,
+                                    initialSort: viewStateSort.current
+                                }}
+                            >
+                                <SelectionContext.Provider value={selectionContextValue}>
+                                    {props.filtersPlaceholder}
+                                </SelectionContext.Provider>
+                            </SortContext.Provider>
+                        </FilterContext.Provider>
+                    ) : null,
+                [
+                    FilterContext,
+                    SortContext,
+                    customFiltersState,
+                    filterList,
+                    initialFilters,
+                    showHeader,
+                    props.filtersPlaceholder,
+                    sortList
+                ]
+            )}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             headerTitle={props.filterSectionTitle?.value}
             ariaLabelListBox={props.ariaLabelListBox?.value}
             showHeader={showHeader}
@@ -118,6 +281,7 @@ function Container(props: GalleryContainerProps & RootAPI): ReactElement {
         />
     );
 }
+<<<<<<< HEAD
 
 // eslint-disable-next-line prefer-arrow-callback
 const Widget = observer(function RootStoreProvider(props: GalleryContainerProps) {
@@ -129,3 +293,5 @@ const Widget = observer(function RootStoreProvider(props: GalleryContainerProps)
 export function Gallery(props: GalleryContainerProps): ReactElement {
     return <Widget {...props} />;
 }
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)

@@ -6,6 +6,7 @@ exports[`Language switcher renders the structure with empty language list 1`] = 
     class="widget-language-selector popupmenu"
   >
     <div
+<<<<<<< HEAD
       aria-activedescendant=""
       aria-autocomplete="none"
       aria-controls=":r0:"
@@ -16,6 +17,9 @@ exports[`Language switcher renders the structure with empty language list 1`] = 
       data-floating-ui-inert=""
       role="combobox"
       tabindex="0"
+=======
+      class="popupmenu-trigger popupmenu-trigger-alignment"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     >
       <span
         class="current-language-text"
@@ -25,11 +29,16 @@ exports[`Language switcher renders the structure with empty language list 1`] = 
         class="language-arrow"
       >
         <div
+<<<<<<< HEAD
           class="arrow-image arrow-up"
+=======
+          class="arrow-image arrow-down"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         />
       </span>
     </div>
     <div
+<<<<<<< HEAD
       aria-activedescendant=""
       aria-orientation="vertical"
       class="popupmenu-menu"
@@ -38,6 +47,9 @@ exports[`Language switcher renders the structure with empty language list 1`] = 
       role="listbox"
       style="position: fixed; left: 0px; top: 0px; outline: 0; overflow-y: auto; transform: translate(0px, 0px);"
       tabindex="0"
+=======
+      class="popupmenu-menu popupmenu-position-left"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     />
   </div>
 </DocumentFragment>
@@ -49,6 +61,7 @@ exports[`Language switcher renders the structure with language list and selected
     class="widget-language-selector popupmenu"
   >
     <div
+<<<<<<< HEAD
       aria-activedescendant=""
       aria-autocomplete="none"
       aria-controls=":r2:"
@@ -59,6 +72,9 @@ exports[`Language switcher renders the structure with language list and selected
       data-floating-ui-inert=""
       role="combobox"
       tabindex="0"
+=======
+      class="popupmenu-trigger popupmenu-trigger-alignment"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     >
       <span
         class="current-language-text"
@@ -70,11 +86,16 @@ exports[`Language switcher renders the structure with language list and selected
         class="language-arrow"
       >
         <div
+<<<<<<< HEAD
           class="arrow-image arrow-up"
+=======
+          class="arrow-image arrow-down"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         />
       </span>
     </div>
     <div
+<<<<<<< HEAD
       aria-activedescendant=""
       aria-orientation="vertical"
       class="popupmenu-menu"
@@ -88,6 +109,12 @@ exports[`Language switcher renders the structure with language list and selected
         class="popupmenu-basic-item active highlighted"
         role="option"
         tabindex="0"
+=======
+      class="popupmenu-menu popupmenu-position-left"
+    >
+      <div
+        class="popupmenu-basic-item active"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
       >
         En us
       </div>

@@ -59,7 +59,10 @@ export function Gallery<T extends ObjectItem>(props: GalleryProps<T>): ReactElem
                 page={props.page}
                 pageSize={props.pageSize}
                 previousPage={() => props.setPage && props.setPage(prev => prev - 1)}
+<<<<<<< HEAD
                 pagination={props.paging ? "buttons" : "virtualScrolling"}
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             />
         </div>
     ) : null;

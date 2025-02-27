@@ -1,4 +1,8 @@
 import {
+<<<<<<< HEAD
+=======
+    ActionValue,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     DynamicValue,
     EditableValue,
     ListAttributeValue,
@@ -16,7 +20,11 @@ import {
 import Big from "big.js";
 
 type ExtractionReturnValue = {
+<<<<<<< HEAD
     targetAttribute?: EditableValue<string | Big>;
+=======
+    attr?: EditableValue<string | Big>;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     captionProvider?: ListAttributeValue<string> | ListExpressionValue<string>;
     captionType: OptionsSourceDatabaseCaptionTypeEnum;
     clearable: boolean;
@@ -24,6 +32,7 @@ type ExtractionReturnValue = {
     customContentType: OptionsSourceAssociationCustomContentTypeEnum;
     ds: ListValue;
     emptyOption?: DynamicValue<string>;
+<<<<<<< HEAD
     filterType: FilterTypeEnum;
     lazyLoading: boolean;
     loadingType: LoadingTypeEnum;
@@ -33,6 +42,20 @@ type ExtractionReturnValue = {
 export function extractDatabaseProps(props: ComboboxContainerProps): ExtractionReturnValue {
     const targetAttribute = props.databaseAttributeString;
     const filterType = props.filterType;
+=======
+    emptyValue?: DynamicValue<string | Big>;
+    filterType: FilterTypeEnum;
+    lazyLoading: boolean;
+    loadingType: LoadingTypeEnum;
+    onChangeEvent?: ActionValue;
+    valueAttribute: ListAttributeValue<string | Big>;
+};
+
+export function extractDatabaseProps(props: ComboboxContainerProps): ExtractionReturnValue {
+    const attr = props.databaseAttributeString;
+    const filterType = props.filterType;
+    const onChangeEvent = props.onChangeEvent;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
     const ds = props.optionsSourceDatabaseDataSource;
     if (!ds) {
@@ -42,6 +65,7 @@ export function extractDatabaseProps(props: ComboboxContainerProps): ExtractionR
     const captionAttribute = props.optionsSourceDatabaseCaptionAttribute;
     const captionExpression = props.optionsSourceDatabaseCaptionExpression;
     const emptyOption = props.emptyOptionText;
+<<<<<<< HEAD
     const clearable = props.clearable;
     const customContent = props.optionsSourceDatabaseCustomContent;
     const customContentType = props.optionsSourceDatabaseCustomContentType;
@@ -73,6 +97,31 @@ export function extractDatabaseProps(props: ComboboxContainerProps): ExtractionR
 
     return {
         targetAttribute,
+=======
+    const emptyValue = props.optionsSourceDatabaseDefaultValue;
+    const clearable = props.clearable;
+    const customContent = props.optionsSourceAssociationCustomContent;
+    const customContentType = props.optionsSourceAssociationCustomContentType;
+    const valueAttribute = props.optionsSourceDatabaseValueAttribute;
+    const lazyLoading = (props.lazyLoading && props.optionsSourceDatabaseCaptionType !== "expression") ?? false;
+    const loadingType = props.loadingType;
+
+    if (attr) {
+        if (attr.value instanceof Big && valueAttribute?.type !== "Integer" && valueAttribute?.type !== "Enum") {
+            throw new Error(`Atrribute is type of Integer while Value has type ${valueAttribute?.type}`);
+        }
+        if (typeof attr.value === "string" && valueAttribute?.type !== "String" && valueAttribute?.type !== "Enum") {
+            throw new Error(`Atrribute is type of String while Value has type ${valueAttribute?.type}`);
+        }
+    }
+
+    if (!valueAttribute) {
+        throw new Error("'valueExpression' is not defined");
+    }
+
+    return {
+        attr,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         captionProvider: captionType === "attribute" ? captionAttribute : captionExpression,
         captionType,
         clearable,
@@ -80,9 +129,18 @@ export function extractDatabaseProps(props: ComboboxContainerProps): ExtractionR
         customContentType,
         ds,
         emptyOption,
+<<<<<<< HEAD
         filterType,
         lazyLoading,
         loadingType,
         valueSourceAttribute
+=======
+        emptyValue,
+        filterType,
+        lazyLoading,
+        loadingType,
+        onChangeEvent,
+        valueAttribute
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     };
 }

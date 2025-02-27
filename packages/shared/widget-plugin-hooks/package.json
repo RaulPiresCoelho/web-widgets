@@ -36,8 +36,13 @@
     "@mendix/prettier-config-web-widgets": "workspace:*",
     "@mendix/tsconfig-web-widgets": "workspace:*",
     "@mendix/widget-plugin-platform": "workspace:*",
+<<<<<<< HEAD
     "@swc/core": "^1.7.26",
     "@swc/jest": "^0.2.36",
+=======
+    "@swc/core": "^1.3.37",
+    "@swc/jest": "^0.2.24",
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     "classnames": "^2.3.2",
     "jest-environment-jsdom": "^29.4.1"
   }

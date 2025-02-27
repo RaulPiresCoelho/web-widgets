@@ -17,6 +17,19 @@
             </propertyGroup>
             <propertyGroup caption="General">
                 <systemProperty key="Label" />
+<<<<<<< HEAD
+=======
+                <property key="menubarMode" type="enumeration" defaultValue="hide">
+                    <caption>Menu bar</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="hide">Hidden</enumerationValue>
+                        <enumerationValue key="basic">Basic</enumerationValue>
+                        <enumerationValue key="full">Full</enumerationValue>
+                        <enumerationValue key="custom">Custom</enumerationValue>
+                    </enumerationValues>
+                </property>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 <property key="enableStatusBar" type="boolean" defaultValue="true">
                     <caption>Enable status bar</caption>
                     <description />
@@ -33,6 +46,7 @@
                         <enumerationValue key="custom">Custom</enumerationValue>
                     </enumerationValues>
                 </property>
+<<<<<<< HEAD
                 <property key="toolbarLocation" type="enumeration" defaultValue="top" required="true">
                     <caption>Location</caption>
                     <description />
@@ -41,6 +55,38 @@
                         <enumerationValue key="top">Top</enumerationValue>
                         <enumerationValue key="bottom">Bottom</enumerationValue>
                         <enumerationValue key="hide">Hide</enumerationValue>
+=======
+                <property key="toolbarMode" type="enumeration" defaultValue="sliding">
+                    <caption>Mode</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="sliding">Sliding</enumerationValue>
+                        <enumerationValue key="floating">Floating</enumerationValue>
+                        <enumerationValue key="scrolling">Scrolling</enumerationValue>
+                        <enumerationValue key="wrap">Wrap</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="toolbarLocation" type="enumeration" defaultValue="auto">
+                    <caption>Location</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="auto">Auto</enumerationValue>
+                        <enumerationValue key="top">Top</enumerationValue>
+                        <enumerationValue key="bottom">Bottom</enumerationValue>
+                        <enumerationValue key="inline">Inline</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="quickbars" type="boolean" defaultValue="false">
+                    <caption>Enable quick toolbar</caption>
+                    <description />
+                </property>
+                <property key="contextmenutype" type="enumeration" defaultValue="native">
+                    <caption>Context menu</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="native">Native</enumerationValue>
+                        <enumerationValue key="richtext">Rich Text</enumerationValue>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     </enumerationValues>
                 </property>
             </propertyGroup>
@@ -64,10 +110,17 @@
             <propertyGroup caption="Dimensions">
                 <property key="widthUnit" type="enumeration" defaultValue="percentage">
                     <caption>Width unit</caption>
+<<<<<<< HEAD
                     <description />
                     <enumerationValues>
                         <enumerationValue key="pixels">Pixels</enumerationValue>
                         <enumerationValue key="percentage">Percentage</enumerationValue>
+=======
+                    <description>Percentage: portion of parent size. Pixels: absolute amount of pixels.</description>
+                    <enumerationValues>
+                        <enumerationValue key="percentage">Percentage</enumerationValue>
+                        <enumerationValue key="pixels">Pixels</enumerationValue>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     </enumerationValues>
                 </property>
                 <property key="width" type="integer" defaultValue="100">
@@ -78,16 +131,23 @@
                     <caption>Height unit</caption>
                     <description />
                     <enumerationValues>
+<<<<<<< HEAD
                         <enumerationValue key="percentageOfWidth">Auto</enumerationValue>
                         <enumerationValue key="pixels">Pixels</enumerationValue>
                         <enumerationValue key="percentageOfParent">Percentage</enumerationValue>
                         <enumerationValue key="percentageOfView">Viewport</enumerationValue>
+=======
+                        <enumerationValue key="percentageOfWidth">Percentage of width</enumerationValue>
+                        <enumerationValue key="pixels">Pixels</enumerationValue>
+                        <enumerationValue key="percentageOfParent">Percentage of parent</enumerationValue>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     </enumerationValues>
                 </property>
                 <property key="height" type="integer" defaultValue="250">
                     <caption>Height</caption>
                     <description />
                 </property>
+<<<<<<< HEAD
                 <property key="minHeightUnit" type="enumeration" defaultValue="pixels">
                     <caption>Minimum Height unit</caption>
                     <description />
@@ -123,6 +183,19 @@
                         <enumerationValue key="auto">Auto</enumerationValue>
                         <enumerationValue key="scroll">Scroll</enumerationValue>
                         <enumerationValue key="hidden">Hidden</enumerationValue>
+=======
+                <property key="minHeight" type="integer" defaultValue="250">
+                    <caption>Minimum height</caption>
+                    <description>Editor's minimum height. The number value is in pixels.</description>
+                </property>
+                <property key="resize" type="enumeration" defaultValue="false">
+                    <caption>Editor resize</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="false">No</enumerationValue>
+                        <enumerationValue key="true">Vertical</enumerationValue>
+                        <enumerationValue key="both">Both</enumerationValue>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     </enumerationValues>
                 </property>
             </propertyGroup>
@@ -141,14 +214,23 @@
                     <caption>On leave</caption>
                     <description />
                 </property>
+<<<<<<< HEAD
                 <property key="onLoad" type="action" required="false">
                     <caption>On load</caption>
+=======
+                <property key="onKeyPress" type="action" required="false">
+                    <caption>On key press</caption>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     <description />
                 </property>
             </propertyGroup>
             <propertyGroup caption="On change behavior">
                 <property key="onChangeType" type="enumeration" defaultValue="onLeave">
+<<<<<<< HEAD
                     <caption>On change type</caption>
+=======
+                    <caption>Editor resize</caption>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     <description />
                     <enumerationValues>
                         <enumerationValue key="onLeave">When user leaves input field</enumerationValue>
@@ -159,12 +241,41 @@
         </propertyGroup>
         <propertyGroup caption="Advanced">
             <propertyGroup caption="Advanced">
+<<<<<<< HEAD
+=======
+                <property key="extended_valid_elements" type="textTemplate" required="false">
+                    <caption>Additional valid elements</caption>
+                    <description>Additional sanitization rules to allow certain tag, sample: script[src|async]</description>
+                </property>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 <property key="spellCheck" type="boolean" defaultValue="false">
                     <caption>Enable spell checking</caption>
                     <description />
                 </property>
+<<<<<<< HEAD
             </propertyGroup>
         </propertyGroup>
+=======
+                <property key="highlight_on_focus" type="boolean" defaultValue="false">
+                    <caption>Highlight on focus</caption>
+                    <description />
+                </property>
+                <property key="content_css" type="textTemplate" required="false">
+                    <caption>Additional stylesheet</caption>
+                    <description>Additional stylesheet to be included in the rich text content</description>
+                </property>
+                <property key="sandboxIframes" type="boolean" defaultValue="true">
+                    <caption>Sandbox iframes</caption>
+                    <description>When enabled, all embedded media using iframes elements will be given the sandbox="" attribute, applying all restrictions.</description>
+                </property>
+                <property key="useRelativeUrl" type="boolean" defaultValue="true">
+                    <caption>Use relative URL Link</caption>
+                    <description>When enabled, same domain URL links will be converted into relative URL.</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         <propertyGroup caption="Custom toolbar">
             <propertyGroup caption="Custom toolbar">
                 <property key="toolbarConfig" type="enumeration" defaultValue="basic">
@@ -175,6 +286,7 @@
                         <enumerationValue key="advanced">Advanced</enumerationValue>
                     </enumerationValues>
                 </property>
+<<<<<<< HEAD
                 <property key="history" type="boolean" defaultValue="true">
                     <caption>Edit History</caption>
                     <description />
@@ -185,12 +297,65 @@
                 </property>
                 <property key="fontScript" type="boolean" defaultValue="true">
                     <caption>Font script</caption>
+=======
+                <property key="basicstyle" type="boolean" defaultValue="true">
+                    <caption>Basic style</caption>
+                    <description />
+                </property>
+                <property key="extendedstyle" type="boolean" defaultValue="true">
+                    <caption>Extended style</caption>
+                    <description />
+                </property>
+                <property key="textalign" type="boolean" defaultValue="true">
+                    <caption>Text alignment</caption>
+                    <description />
+                </property>
+                <property key="clipboard" type="boolean" defaultValue="true">
+                    <caption>Clipboard</caption>
+                    <description />
+                </property>
+                <property key="fontstyle" type="boolean" defaultValue="true">
+                    <caption>Font style</caption>
+                    <description />
+                </property>
+                <property key="paragraph" type="boolean" defaultValue="true">
+                    <caption>Paragraph</caption>
+                    <description />
+                </property>
+                <property key="document" type="boolean" defaultValue="true">
+                    <caption>Document</caption>
+                    <description />
+                </property>
+                <property key="history" type="boolean" defaultValue="true">
+                    <caption>History</caption>
+                    <description />
+                </property>
+                <property key="accordion" type="boolean" defaultValue="true">
+                    <caption>Accordion</caption>
+                    <description />
+                </property>
+                <property key="code" type="boolean" defaultValue="true">
+                    <caption>Code</caption>
+                    <description />
+                </property>
+                <property key="anchor" type="boolean" defaultValue="true">
+                    <caption>Anchor</caption>
+                    <description />
+                </property>
+                <property key="direction" type="boolean" defaultValue="true">
+                    <caption>Text direction</caption>
+                    <description />
+                </property>
+                <property key="link" type="boolean" defaultValue="true">
+                    <caption>Link</caption>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     <description />
                 </property>
                 <property key="list" type="boolean" defaultValue="true">
                     <caption>List</caption>
                     <description />
                 </property>
+<<<<<<< HEAD
                 <property key="indent" type="boolean" defaultValue="true">
                     <caption>Indentation</caption>
                     <description />
@@ -213,6 +378,30 @@
                 </property>
                 <property key="header" type="boolean" defaultValue="true">
                     <caption>Content type</caption>
+=======
+                <property key="preview" type="boolean" defaultValue="true">
+                    <caption>Preview</caption>
+                    <description />
+                </property>
+                <property key="table" type="boolean" defaultValue="true">
+                    <caption>Table</caption>
+                    <description />
+                </property>
+                <property key="visualaid" type="boolean" defaultValue="true">
+                    <caption>Visual aid</caption>
+                    <description />
+                </property>
+                <property key="media" type="boolean" defaultValue="true">
+                    <caption>Media</caption>
+                    <description />
+                </property>
+                <property key="util" type="boolean" defaultValue="true">
+                    <caption>Utility</caption>
+                    <description />
+                </property>
+                <property key="emoticon" type="boolean" defaultValue="true">
+                    <caption>Emoticon</caption>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     <description />
                 </property>
                 <property key="remove" type="boolean" defaultValue="true">
@@ -229,6 +418,7 @@
                             <description>Button Type</description>
                             <enumerationValues>
                                 <enumerationValue key="separator">separator</enumerationValue>
+<<<<<<< HEAD
                                 <enumerationValue key="undo">Undo</enumerationValue>
                                 <enumerationValue key="redo">Redo</enumerationValue>
                                 <enumerationValue key="bold">Bold</enumerationValue>
@@ -259,6 +449,133 @@
                                 <enumerationValue key="background">Background</enumerationValue>
                                 <enumerationValue key="header">Header</enumerationValue>
                                 <enumerationValue key="clean">Clean</enumerationValue>
+=======
+                                <enumerationValue key="aligncenter">aligncenter</enumerationValue>
+                                <enumerationValue key="alignjustify">alignjustify</enumerationValue>
+                                <enumerationValue key="alignleft">alignleft</enumerationValue>
+                                <enumerationValue key="alignnone">alignnone</enumerationValue>
+                                <enumerationValue key="alignright">alignright</enumerationValue>
+                                <enumerationValue key="blockquote">blockquote</enumerationValue>
+                                <enumerationValue key="backcolor">backcolor</enumerationValue>
+                                <enumerationValue key="blocks">blocks</enumerationValue>
+                                <enumerationValue key="bold">bold</enumerationValue>
+                                <enumerationValue key="copy">copy</enumerationValue>
+                                <enumerationValue key="cut">cut</enumerationValue>
+                                <enumerationValue key="fontfamily">fontfamily</enumerationValue>
+                                <enumerationValue key="fontsize">fontsize</enumerationValue>
+                                <enumerationValue key="forecolor">forecolor</enumerationValue>
+                                <enumerationValue key="hr">hr</enumerationValue>
+                                <enumerationValue key="indent">indent</enumerationValue>
+                                <enumerationValue key="italic">italic</enumerationValue>
+                                <enumerationValue key="lineheight">lineheight</enumerationValue>
+                                <enumerationValue key="newdocument">newdocument</enumerationValue>
+                                <enumerationValue key="outdent">outdent</enumerationValue>
+                                <enumerationValue key="paste">paste</enumerationValue>
+                                <enumerationValue key="pastetext">pastetext</enumerationValue>
+                                <enumerationValue key="print">print</enumerationValue>
+                                <enumerationValue key="redo">redo</enumerationValue>
+                                <enumerationValue key="remove">remove</enumerationValue>
+                                <enumerationValue key="removeformat">removeformat</enumerationValue>
+                                <enumerationValue key="selectall">selectall</enumerationValue>
+                                <enumerationValue key="strikethrough">strikethrough</enumerationValue>
+                                <enumerationValue key="subscript">subscript</enumerationValue>
+                                <enumerationValue key="superscript">superscript</enumerationValue>
+                                <enumerationValue key="underline">underline</enumerationValue>
+                                <enumerationValue key="undo">undo</enumerationValue>
+                                <enumerationValue key="visualaid">visualaid</enumerationValue>
+                                <enumerationValue key="accordion">accordion</enumerationValue>
+                                <enumerationValue key="code">code</enumerationValue>
+                                <enumerationValue key="anchor">anchor</enumerationValue>
+                                <enumerationValue key="charmap">charmap</enumerationValue>
+                                <enumerationValue key="codesample">codesample</enumerationValue>
+                                <enumerationValue key="ltr">ltr</enumerationValue>
+                                <enumerationValue key="rtl">rtl</enumerationValue>
+                                <enumerationValue key="emoticons">emoticons</enumerationValue>
+                                <enumerationValue key="fullscreen">fullscreen</enumerationValue>
+                                <enumerationValue key="help">help</enumerationValue>
+                                <enumerationValue key="image">image</enumerationValue>
+                                <enumerationValue key="insertdatetime">insertdatetime</enumerationValue>
+                                <enumerationValue key="link">link</enumerationValue>
+                                <enumerationValue key="openlink">openlink</enumerationValue>
+                                <enumerationValue key="unlink">unlink</enumerationValue>
+                                <enumerationValue key="bullist">bullist</enumerationValue>
+                                <enumerationValue key="numlist">numlist</enumerationValue>
+                                <enumerationValue key="media">media</enumerationValue>
+                                <enumerationValue key="pagebreak">pagebreak</enumerationValue>
+                                <enumerationValue key="preview">preview</enumerationValue>
+                                <enumerationValue key="searchreplace">searchreplace</enumerationValue>
+                                <enumerationValue key="table">table</enumerationValue>
+                                <enumerationValue key="tabledelete">tabledelete</enumerationValue>
+                                <enumerationValue key="tableinsertdialog">tableinsertdialog</enumerationValue>
+                                <enumerationValue key="visualblocks">visualblocks</enumerationValue>
+                                <enumerationValue key="visualchars">visualchars</enumerationValue>
+                                <enumerationValue key="wordcount">wordcount</enumerationValue>
+                            </enumerationValues>
+                        </property>
+                    </properties>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+        <propertyGroup caption="Custom menubar">
+            <propertyGroup caption="Custom menubar">
+                <property key="menubarConfig" type="enumeration" defaultValue="basic">
+                    <caption>Toolbar group</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="basic">Basic</enumerationValue>
+                        <enumerationValue key="advanced">Advanced</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="fileMenubar" type="boolean" defaultValue="true">
+                    <caption>File</caption>
+                    <description />
+                </property>
+                <property key="editMenubar" type="boolean" defaultValue="true">
+                    <caption>Edit</caption>
+                    <description />
+                </property>
+                <property key="insertMenubar" type="boolean" defaultValue="true">
+                    <caption>Insert</caption>
+                    <description />
+                </property>
+                <property key="viewMenubar" type="boolean" defaultValue="true">
+                    <caption>View</caption>
+                    <description />
+                </property>
+                <property key="formatMenubar" type="boolean" defaultValue="true">
+                    <caption>Format</caption>
+                    <description />
+                </property>
+                <property key="tableMenubar" type="boolean" defaultValue="true">
+                    <caption>Table</caption>
+                    <description />
+                </property>
+                <property key="toolsMenubar" type="boolean" defaultValue="true">
+                    <caption>Tools</caption>
+                    <description />
+                </property>
+                <property key="helpMenubar" type="boolean" defaultValue="true">
+                    <caption>Help</caption>
+                    <description />
+                </property>
+                <property key="advancedMenubarConfig" type="object" isList="true" required="false">
+                    <caption>Advanced groups</caption>
+                    <description />
+                    <properties>
+                        <property key="menubarItemType" type="enumeration" required="true" defaultValue="file">
+                            <caption>Button</caption>
+                            <category>Item</category>
+                            <description>Button Type</description>
+                            <enumerationValues>
+                                <enumerationValue key="file">File</enumerationValue>
+                                <enumerationValue key="edit">Edit</enumerationValue>
+                                <enumerationValue key="insert">Insert</enumerationValue>
+                                <enumerationValue key="view">View</enumerationValue>
+                                <enumerationValue key="format">Format</enumerationValue>
+                                <enumerationValue key="table">Table</enumerationValue>
+                                <enumerationValue key="tools">Tools</enumerationValue>
+                                <enumerationValue key="help">Help</enumerationValue>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                             </enumerationValues>
                         </property>
                     </properties>

@@ -6,8 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [3.2.2] - 2024-08-28
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ### Changed
 
 -   Changed action required to false to avoid unnecessary warnings in the Studio Pro.

@@ -1,8 +1,15 @@
 import type { EditableValue } from "mendix";
 import type { Big } from "big.js";
 import { Status } from "../constants.js";
+<<<<<<< HEAD
 import { Writable } from "./type-utils.js";
 
+=======
+
+type Writable<T> = {
+    -readonly [K in keyof T]: T[K];
+};
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 /* eslint-disable no-unused-vars */
 export enum FormatterType {
     Number = "number",
@@ -28,8 +35,12 @@ export class EditableValueBuilder<T extends string | boolean | Date | Big> {
         setValidator: jest.fn(),
         setValue: jest.fn((value: T) => this.withValue(value)),
         setTextValue: jest.fn(),
+<<<<<<< HEAD
         setFormatter: jest.fn(),
         isList: false
+=======
+        setFormatter: jest.fn()
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     };
 
     withValue(value?: T): EditableValueBuilder<T> {

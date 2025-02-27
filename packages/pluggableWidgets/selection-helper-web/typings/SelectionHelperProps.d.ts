@@ -29,7 +29,10 @@ export interface SelectionHelperPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     renderStyle: RenderStyleEnum;
     checkboxCaption: string;
     customAllSelected: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };

@@ -48,7 +48,10 @@ export interface TimelinePreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     data: {} | { caption: string } | { type: string } | null;
     title: string;
     description: string;

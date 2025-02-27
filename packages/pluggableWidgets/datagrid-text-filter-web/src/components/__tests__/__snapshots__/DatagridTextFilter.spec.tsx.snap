@@ -13,6 +13,7 @@ exports[`Text Filter with single instance with multiple attributes renders corre
         class="filter-selector-content"
       >
         <button
+<<<<<<< HEAD
           aria-activedescendant=""
           aria-controls="downshift-:r8:-menu"
           aria-expanded="false"
@@ -32,6 +33,15 @@ exports[`Text Filter with single instance with multiple attributes renders corre
           role="listbox"
           style="position: fixed; left: 0px; top: 0px; transform: translate(0px, 0px);"
         />
+=======
+          aria-controls="TextFilter1-filter-selectors"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="btn btn-default filter-selector-button button-icon equal"
+        >
+           
+        </button>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
       </div>
     </div>
     <input
@@ -48,7 +58,11 @@ exports[`Text Filter with single instance with no context renders error message 
   <div
     class="alert alert-danger"
   >
+<<<<<<< HEAD
     The filter widget must be placed inside the column or header of the Data grid 2.0 or inside header of the Gallery widget.
+=======
+    The Text filter widget must be placed inside the header of the Data grid 2.0 or Gallery widget.
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   </div>
 </DocumentFragment>
 `;
@@ -66,6 +80,7 @@ exports[`Text Filter with single instance with single attribute renders correctl
         class="filter-selector-content"
       >
         <button
+<<<<<<< HEAD
           aria-activedescendant=""
           aria-controls="downshift-:r5:-menu"
           aria-expanded="false"
@@ -85,6 +100,15 @@ exports[`Text Filter with single instance with single attribute renders correctl
           role="listbox"
           style="position: fixed; left: 0px; top: 0px; transform: translate(0px, 0px);"
         />
+=======
+          aria-controls="TextFilter1-filter-selectors"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="btn btn-default filter-selector-button button-icon equal"
+        >
+           
+        </button>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
       </div>
     </div>
     <input
@@ -101,7 +125,11 @@ exports[`Text Filter with single instance with wrong attribute's type renders er
   <div
     class="alert alert-danger"
   >
+<<<<<<< HEAD
     Unable to get filter store. Check parent widget configuration.
+=======
+    The attribute type being used for Text filter is not 'Hashed string or String'
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   </div>
 </DocumentFragment>
 `;
@@ -111,7 +139,11 @@ exports[`Text Filter with single instance with wrong multiple attributes' types 
   <div
     class="alert alert-danger"
   >
+<<<<<<< HEAD
     Unable to get filter store. Check parent widget configuration.
+=======
+    The Text filter widget can't be used with the filters options you have selected. It requires a "Hashed string or String" attribute to be selected.
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   </div>
 </DocumentFragment>
 `;

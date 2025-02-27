@@ -50,7 +50,11 @@
                     <caption>Selectable objects</caption>
                     <description />
                 </property>
+<<<<<<< HEAD
                 <property key="optionsSourceDatabaseItemSelection" type="selection" dataSource="optionsSourceDatabaseDataSource" onChange="onChangeDatabaseEvent">
+=======
+                <property key="optionsSourceDatabaseItemSelection" type="selection" dataSource="optionsSourceDatabaseDataSource">
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     <caption>Selection type</caption>
                     <description />
                     <selectionTypes>
@@ -59,6 +63,48 @@
                     </selectionTypes>
                 </property>
             </propertyGroup>
+<<<<<<< HEAD
+=======
+            <propertyGroup caption="Attribute">
+                <property key="optionsSourceDatabaseValueAttribute" type="attribute" dataSource="optionsSourceDatabaseDataSource">
+                    <caption>Value</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="String" />
+                        <attributeType name="Integer" />
+                        <attributeType name="Enum" />
+                    </attributeTypes>
+                </property>
+                <property key="databaseAttributeString" type="attribute" setLabel="true" required="false">
+                    <caption>Attribute</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="String" />
+                        <attributeType name="Integer" />
+                        <attributeType name="Enum" />
+                    </attributeTypes>
+                </property>
+                <property key="optionsSourceDatabaseDefaultValue" type="expression" required="false">
+                    <caption>Default value</caption>
+                    <description />
+                    <returnType assignableTo="databaseAttributeString" />
+                </property>
+                <!-- END DATABASE / STRING -->
+                <!-- ASSOCIATION -->
+                <property key="attributeAssociation" type="association" selectableObjects="optionsSourceAssociationDataSource" required="true" setLabel="true">
+                    <caption>Entity</caption>
+                    <description />
+                    <associationTypes>
+                        <associationType name="Reference" />
+                        <associationType name="ReferenceSet" />
+                    </associationTypes>
+                </property>
+                <property key="optionsSourceAssociationDataSource" type="datasource" isList="true" required="false">
+                    <caption>Selectable objects</caption>
+                    <description />
+                </property>
+            </propertyGroup>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             <propertyGroup caption="Caption">
                 <!-- CAPTIONS -->
                 <property key="optionsSourceAssociationCaptionType" type="enumeration" defaultValue="attribute">
@@ -103,6 +149,7 @@
                 </property>
                 <!-- END CAPTIONS -->
             </propertyGroup>
+<<<<<<< HEAD
             <propertyGroup caption="Store value">
                 <property key="optionsSourceDatabaseValueAttribute" type="attribute" dataSource="optionsSourceDatabaseDataSource">
                     <caption>Value</caption>
@@ -141,6 +188,8 @@
                     <description />
                 </property>
             </propertyGroup>
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             <!-- END OPTIONS SOURCE -->
             <!-- STATIC-->
             <propertyGroup caption="Values">
@@ -151,10 +200,17 @@
                         <attributeType name="String" />
                         <attributeType name="Enum" />
                         <attributeType name="Integer" />
+<<<<<<< HEAD
                         <attributeType name="Long" />
                         <attributeType name="Boolean" />
                         <attributeType name="DateTime" />
                         <attributeType name="Decimal" />
+=======
+                        <attributeType name="Boolean" />
+                        <attributeType name="DateTime" />
+                        <attributeType name="Decimal" />
+                        <attributeType name="Long" />
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     </attributeTypes>
                 </property>
                 <property key="optionsSourceStaticDataSource" type="object" isList="true" required="true">
@@ -313,10 +369,13 @@
                 <caption>On change action</caption>
                 <description />
             </property>
+<<<<<<< HEAD
             <property key="onChangeDatabaseEvent" type="action" required="false">
                 <caption>On change action</caption>
                 <description />
             </property>
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             <property key="onEnterEvent" type="action" required="false">
                 <caption>On enter action</caption>
                 <description />

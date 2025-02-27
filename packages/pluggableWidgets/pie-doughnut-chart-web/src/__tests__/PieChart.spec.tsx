@@ -1,4 +1,5 @@
 import { createElement } from "react";
+<<<<<<< HEAD
 import { ChartWidget } from "@mendix/shared-charts/main";
 import {
     list,
@@ -6,6 +7,15 @@ import {
     dynamic,
     EditableValueBuilder,
     ListAttributeValueBuilder
+=======
+import { ChartWidget } from "@mendix/shared-charts/common";
+import {
+    buildListExpression,
+    dynamicValue,
+    EditableValueBuilder,
+    ListAttributeValueBuilder,
+    ListValueBuilder
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 } from "@mendix/widget-plugin-test-utils";
 import { mount, ReactWrapper } from "enzyme";
 import { PieChart } from "../PieChart";
@@ -31,8 +41,13 @@ describe("The PieChart widget", () => {
                 customConfigurations=""
                 customSeriesOptions=""
                 seriesSortOrder="asc"
+<<<<<<< HEAD
                 seriesDataSource={list(2)}
                 seriesName={listExp(() => "name")}
+=======
+                seriesDataSource={ListValueBuilder().simple()}
+                seriesName={buildListExpression("name")}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 seriesValueAttribute={new ListAttributeValueBuilder<Big>().build()}
                 enableThemeConfig={false}
                 showPlaygroundSlot={false}
@@ -82,10 +97,13 @@ describe("The PieChart widget", () => {
             seriesSortAttribute.get = jest
                 .fn()
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(20)).build())
+<<<<<<< HEAD
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(15)).build())
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(20)).build())
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(15)).build())
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(20)).build())
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(15)).build());
 
             const pieChart = renderPieChart({ seriesSortAttribute });
@@ -101,10 +119,13 @@ describe("The PieChart widget", () => {
             seriesSortAttribute.get = jest
                 .fn()
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(20)).build())
+<<<<<<< HEAD
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(15)).build())
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(20)).build())
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(15)).build())
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(20)).build())
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(15)).build());
 
             const pieChart = renderPieChart({ seriesSortAttribute, seriesSortOrder: "desc" });
@@ -118,6 +139,7 @@ describe("The PieChart widget", () => {
 });
 
 function setupBasicAttributes(): Partial<PieChartContainerProps> {
+<<<<<<< HEAD
     const seriesName = listExp(() => "name");
     seriesName.get = jest
         .fn()
@@ -125,6 +147,15 @@ function setupBasicAttributes(): Partial<PieChartContainerProps> {
         .mockReturnValueOnce(dynamic("second series"));
 
     const seriesDataSource = list(2);
+=======
+    const seriesName = buildListExpression("name");
+    seriesName.get = jest
+        .fn()
+        .mockReturnValueOnce(dynamicValue("first series"))
+        .mockReturnValueOnce(dynamicValue("second series"));
+
+    const seriesDataSource = ListValueBuilder().simple();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
     const seriesValueAttribute = new ListAttributeValueBuilder<Big>().build();
     seriesValueAttribute.get = jest
@@ -132,6 +163,7 @@ function setupBasicAttributes(): Partial<PieChartContainerProps> {
         .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(1)).build())
         .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(2)).build());
 
+<<<<<<< HEAD
     const seriesColorAttribute = listExp(() => "name");
     seriesColorAttribute.get = jest.fn().mockReturnValueOnce(dynamic("red")).mockReturnValueOnce(dynamic("blue"));
 
@@ -144,12 +176,23 @@ function setupBasicAttributes(): Partial<PieChartContainerProps> {
         .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(20)).build())
         .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(15)).build())
         .mockReturnValueOnce(new EditableValueBuilder<Big>().withValue(new Big(20)).build());
+=======
+    const seriesColorAttribute = buildListExpression("color");
+    seriesColorAttribute.get = jest
+        .fn()
+        .mockReturnValueOnce(dynamicValue("red"))
+        .mockReturnValueOnce(dynamicValue("blue"));
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
     return {
         seriesColorAttribute,
         seriesDataSource,
         seriesName,
+<<<<<<< HEAD
         seriesValueAttribute,
         seriesSortAttribute
+=======
+        seriesValueAttribute
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     };
 }

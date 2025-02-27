@@ -59,10 +59,13 @@
                     </propertyGroup>
                 </properties>
             </property>
+<<<<<<< HEAD
             <property key="sendUserID" type="boolean" required="true" defaultValue="false">
                 <caption>Share user ID</caption>
                 <description>Expose the authenticated User ID to uniquely identify individual users in Google Analytics.</description>
             </property>
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             <!-- / Common config options -->
 
             <!-- Advanced config options -->

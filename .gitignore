@@ -25,4 +25,7 @@ mendixProject
 
 tests
 .turbo
+<<<<<<< HEAD
 automation/run-e2e/ctrf/*.json
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)

@@ -70,6 +70,19 @@ test.describe("datagrid-text-filter-web", () => {
 
             const accessibilityScanResults = await new AxeBuilder({ page })
                 .withTags(["wcag21aa"])
+<<<<<<< HEAD
+=======
+                .disableRules([
+                    "aria-required-children",
+                    "label",
+                    "aria-roles",
+                    "button-name",
+                    "duplicate-id-active",
+                    "duplicate-id",
+                    "aria-allowed-attr",
+                    "image-alt"
+                ])
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 .exclude(".mx-name-navigationTree3")
                 .analyze();
 

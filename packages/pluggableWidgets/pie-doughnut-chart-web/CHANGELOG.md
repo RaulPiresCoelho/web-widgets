@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [5.2.0] - 2025-01-21
 
 ### Fixed
@@ -36,6 +37,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   We fixed an issue where Pie chart on click event was not working properly, not executing the on click action.
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ## [3.1.2] - 2023-11-21
 
 ### Fixed

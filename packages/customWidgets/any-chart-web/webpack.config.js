@@ -13,7 +13,11 @@ const widgetConfig = {
         filename: "com/mendix/widget/custom/[name]/[name].js",
         chunkFilename: `com/mendix/widget/custom/AnyChart/chunk[chunkhash].js`,
         libraryTarget: "umd",
+<<<<<<< HEAD
         publicPath: "widgets/"
+=======
+        publicPath: "/widgets/"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     },
     resolve: {
         extensions: [".ts", ".js"],

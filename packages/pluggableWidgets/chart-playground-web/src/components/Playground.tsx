@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { PlaygroundData, usePlaygroundContext } from "@mendix/shared-charts/main";
+=======
+import { PlaygroundData, usePlaygroundContext } from "@mendix/shared-charts/common";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { Alert } from "@mendix/widget-plugin-component-kit/Alert";
 import { createElement } from "react";
 import { useComposedEditorController } from "../helpers/useComposedEditorController";

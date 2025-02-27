@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { generateUUID } from "@mendix/widget-plugin-platform/framework/generate-uuid";
 import { FilterCondition } from "mendix/filters";
 import { and } from "mendix/filters/builders";
@@ -9,12 +10,22 @@ import { ColumnGroupStore } from "./ColumnGroupStore";
 import { GridPersonalizationStore } from "./GridPersonalizationStore";
 import { HeaderFiltersStore } from "@mendix/widget-plugin-filtering/stores/HeaderFiltersStore";
 import { compactArray, fromCompactArray, isAnd } from "@mendix/widget-plugin-filtering/condition-utils";
+=======
+import { ColumnGroupStore } from "./ColumnGroupStore";
+import { DatagridContainerProps } from "../../../typings/DatagridProps";
+import { HeaderFiltersStore } from "./HeaderFiltersStore";
+import { FilterCondition } from "mendix/filters";
+import { SortInstruction } from "../../typings/sorting";
+import { GridPersonalizationStore } from "./GridPersonalizationStore";
+import { ProgressStore } from "../../features/data-export/ProgressStore";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
 export class RootGridStore {
     columnsStore: ColumnGroupStore;
     headerFiltersStore: HeaderFiltersStore;
     settingsStore: GridPersonalizationStore;
     progressStore: ProgressStore;
+<<<<<<< HEAD
     staticInfo: StaticInfo;
 
     constructor(props: DatagridContainerProps) {
@@ -53,6 +64,17 @@ export class RootGridStore {
         return this.headerFiltersStore.setup();
     }
 
+=======
+
+    constructor(props: DatagridContainerProps) {
+        this.setInitParams(props);
+        this.columnsStore = new ColumnGroupStore(props);
+        this.headerFiltersStore = new HeaderFiltersStore(props);
+        this.settingsStore = new GridPersonalizationStore(props, this.columnsStore);
+        this.progressStore = new ProgressStore();
+    }
+
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     dispose(): void {
         this.settingsStore.dispose();
     }
@@ -66,6 +88,7 @@ export class RootGridStore {
         props.datasource.setLimit(props.pageSize);
     }
 
+<<<<<<< HEAD
     // Mirror operation from "condition";
     private getDsViewState({
         datasource
@@ -84,6 +107,8 @@ export class RootGridStore {
         return [fromCompactArray(columns), fromCompactArray(header)];
     }
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     updateProps(props: DatagridContainerProps): void {
         if (this.progressStore.exporting) {
             return;
@@ -91,4 +116,25 @@ export class RootGridStore {
         this.columnsStore.updateProps(props);
         this.settingsStore.updateProps(props);
     }
+<<<<<<< HEAD
+=======
+
+    get isLoaded(): boolean {
+        return this.columnsStore.loaded;
+    }
+
+    get filterConditions(): FilterCondition[] | undefined {
+        if (!this.headerFiltersStore.isDirty) {
+            return undefined;
+        }
+
+        return this.columnsStore.filterConditions
+            .filter((filter): filter is FilterCondition => filter !== undefined)
+            .concat(this.headerFiltersStore.filterConditions);
+    }
+
+    get sortInstructions(): SortInstruction[] | undefined {
+        return this.columnsStore.sortInstructions;
+    }
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 }

@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [4.0.1] - 2024-12-13
 
 ### Breaking changes
@@ -32,6 +33,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   We fixed popup menu getting cut off due to overflow in parent widget.
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ## [3.6.0] - 2024-08-20
 
 ### Added

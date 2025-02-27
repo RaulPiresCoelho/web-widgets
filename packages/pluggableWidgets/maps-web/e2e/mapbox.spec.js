@@ -15,7 +15,11 @@ test.describe("Mapbox Maps", () => {
         test("compares with a screenshot baseline and checks if basemap is correct", async ({ page }) => {
             const mapElement = await page.locator(".widget-maps");
             await expect(mapElement).toBeVisible();
+<<<<<<< HEAD
             await expect(mapElement).toHaveScreenshot("mapboxMaps.png", { maxDiffPixels: 4000 });
+=======
+            await expect(mapElement).toHaveScreenshot("mapboxMaps.png", { maxDiffPixels: 1000 });
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         });
     });
 

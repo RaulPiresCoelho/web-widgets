@@ -28,6 +28,7 @@ jobs:
 
     steps:
       - name: Checkout
+<<<<<<< HEAD
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
@@ -35,6 +36,15 @@ jobs:
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d # v3.0.0
       - name: Setup node
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+=======
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        with:
+          fetch-depth: 0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598 # v3.0.0
+      - name: Setup node
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         with:
           node-version-file: ".nvmrc"
           cache: "pnpm"
@@ -58,7 +68,11 @@ jobs:
           sudo find ${{ github.workspace }}/packages/* -type d -exec chmod 755 {} \;
           sudo find ${{ github.workspace }}/packages/* -type f -exec chmod 644 {} \;
       - name: "Archive test screenshot diff results"
+<<<<<<< HEAD
         uses: actions/upload-artifact@ff15f0306b3f739f7b6fd43fb5d26cd321bd4de5 # v3.2.1
+=======
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         if: failure()
         with:
           name: test-screenshot-results

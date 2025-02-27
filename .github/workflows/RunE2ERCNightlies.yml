@@ -12,13 +12,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+<<<<<<< HEAD
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+=======
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         with:
           fetch-depth: 0
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d # v3.0.0
       - name: Setup node
+<<<<<<< HEAD
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+=======
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         with:
           node-version-file: ".nvmrc"
           cache: "pnpm"
@@ -27,7 +35,11 @@ jobs:
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps chromium
       - name: Setup AWS credentials
+<<<<<<< HEAD
         uses: aws-actions/configure-aws-credentials@97834a484a5ab3c40fa9e2eb40fcf8041105a573
+=======
+        uses: aws-actions/configure-aws-credentials@fff2104678c2113fcefb9ae8294dc7ccb803e27c
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         with:
           role-to-assume: ${{ env.AWS_IAM_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
@@ -51,7 +63,11 @@ jobs:
           sudo find ${{ github.workspace }}/packages/* -type d -exec chmod 755 {} \;
           sudo find ${{ github.workspace }}/packages/* -type f -exec chmod 644 {} \;
       - name: "Archive test screenshot diff results"
+<<<<<<< HEAD
         uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+=======
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         if: failure()
         with:
           name: test-screenshot-results-1

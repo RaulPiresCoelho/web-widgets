@@ -4,7 +4,11 @@ import {
     getPlotChartDataTransforms,
     traceEqual,
     usePlotChartDataSeries
+<<<<<<< HEAD
 } from "@mendix/shared-charts/main";
+=======
+} from "@mendix/shared-charts/common";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import "@mendix/shared-charts/ui/Chart.scss";
 import { defaultEqual, flatEqual } from "@mendix/widget-plugin-platform/utils/flatEqual";
 import Big from "big.js";

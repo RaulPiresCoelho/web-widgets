@@ -28,7 +28,11 @@ import {
     smallerThanIconDark,
     startsWithIcon,
     startsWithIconDark
+<<<<<<< HEAD
 } from "@mendix/widget-plugin-filtering/preview/editor-preview-icons";
+=======
+} from "@mendix/widget-plugin-filter-selector/editor-preview-icons";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { hidePropertiesIn, hidePropertyIn, Properties } from "@mendix/pluggable-widgets-tools";
 
 import { DatagridTextFilterPreviewProps, DefaultFilterEnum } from "../typings/DatagridTextFilterProps";

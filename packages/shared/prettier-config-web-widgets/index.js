@@ -20,6 +20,15 @@ module.exports = {
             }
         },
         {
+<<<<<<< HEAD
+=======
+            files: "package.json",
+            options: {
+                tabWidth: 2
+            }
+        },
+        {
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             files: "package-lock.json",
             options: {
                 tabWidth: 4,
@@ -41,7 +50,11 @@ module.exports = {
         {
             files: ["*.yaml", "*.yml"],
             options: {
+<<<<<<< HEAD
                 tabWidth: 4,
+=======
+                tabWidth: 2,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 // Disable line wrapping in .yml files
                 printWidth: 99999
             }

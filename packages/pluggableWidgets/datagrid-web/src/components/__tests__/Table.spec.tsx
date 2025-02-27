@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "@testing-library/jest-dom";
 import { ClickActionHelper } from "@mendix/widget-plugin-grid/helpers/ClickActionHelper";
 import { MultiSelectionStatus, useSelectionHelper } from "@mendix/widget-plugin-grid/selection";
@@ -12,11 +13,31 @@ import {
     useCheckboxEventsController
 } from "../../features/row-interaction/CheckboxEventsController";
 import { SelectActionHelper, useSelectActionHelper } from "../../helpers/SelectActionHelper";
+=======
+import { MultiSelectionStatus, useSelectionHelper } from "@mendix/widget-plugin-grid/selection";
+import { SelectionMultiValueBuilder, list, listWidget, objectItems } from "@mendix/widget-plugin-test-utils";
+import "@testing-library/jest-dom";
+import * as testingLibrary from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { render } from "enzyme";
+import { ListValue, ObjectItem, SelectionMultiValue } from "mendix";
+import { ReactElement, createElement } from "react";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { GridColumn } from "../../typings/GridColumn";
 import { column, mockGridColumn, mockWidgetProps } from "../../utils/test-utils";
 import { Widget, WidgetProps } from "../Widget";
 import { ItemSelectionMethodEnum } from "typings/DatagridProps";
+<<<<<<< HEAD
 
+=======
+import { SelectActionHelper, useSelectActionHelper } from "../../helpers/SelectActionHelper";
+import {
+    CheckboxEventsController,
+    useCheckboxEventsController
+} from "../../features/row-interaction/CheckboxEventsController";
+import { CellEventsController, useCellEventsController } from "../../features/row-interaction/CellEventsController";
+import { ClickActionHelper } from "@mendix/widget-plugin-grid/helpers/ClickActionHelper";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 // you can also pass the mock implementation
 // to jest.fn as an argument
 window.IntersectionObserver = jest.fn(() => ({
@@ -33,43 +54,71 @@ describe("Table", () => {
     it("renders the structure correctly", () => {
         const component = render(<Widget {...mockWidgetProps()} />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with sorting", () => {
         const component = render(<Widget {...mockWidgetProps()} columnsSortable />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with resizing", () => {
         const component = render(<Widget {...mockWidgetProps()} columnsResizable />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with dragging", () => {
         const component = render(<Widget {...mockWidgetProps()} columnsDraggable />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with filtering", () => {
         const component = render(<Widget {...mockWidgetProps()} columnsFilterable />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with hiding", () => {
         const component = render(<Widget {...mockWidgetProps()} columnsHidable />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with paging", () => {
         const component = render(<Widget {...mockWidgetProps()} paging />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with custom filtering", () => {
@@ -80,7 +129,11 @@ describe("Table", () => {
         props.availableColumns = columns;
         const component = render(<Widget {...props} />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with empty placeholder", () => {
@@ -88,7 +141,11 @@ describe("Table", () => {
             <Widget {...mockWidgetProps()} emptyPlaceholderRenderer={renderWrapper => renderWrapper(<div />)} />
         );
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with column alignments", () => {
@@ -105,13 +162,21 @@ describe("Table", () => {
 
         const component = render(<Widget {...props} />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with dynamic row class", () => {
         const component = render(<Widget {...mockWidgetProps()} rowClass={() => "myclass"} />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly for preview when no header is provided", () => {
@@ -123,7 +188,11 @@ describe("Table", () => {
 
         const component = render(<Widget {...props} />);
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with header wrapper", () => {
@@ -138,7 +207,11 @@ describe("Table", () => {
             />
         );
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
+=======
+        expect(component).toMatchSnapshot();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     it("renders the structure correctly with header filters and a11y", () => {
@@ -154,16 +227,28 @@ describe("Table", () => {
             />
         );
 
+<<<<<<< HEAD
         expect(component.asFragment()).toMatchSnapshot();
     });
 
     describe("with selection method checkbox", () => {
+=======
+        expect(component).toMatchSnapshot();
+    });
+
+    describe("with selection method checkbox", () => {
+        const { render, screen } = testingLibrary;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         let props: ReturnType<typeof mockWidgetProps>;
 
         beforeEach(() => {
             props = mockWidgetProps();
             props.selectActionHelper = new SelectActionHelper("Single", undefined, "checkbox", false, 5, "clear");
+<<<<<<< HEAD
             props.gridInteractive = true;
+=======
+            props.rowClickable = true;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             props.paging = true;
             props.data = objectItems(3);
         });
@@ -253,6 +338,10 @@ describe("Table", () => {
     });
 
     it("not render header checkbox when showCheckboxColumn is false", () => {
+<<<<<<< HEAD
+=======
+        const { render, screen, queryByRole } = testingLibrary;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         const props = mockWidgetProps();
         props.data = objectItems(5);
         props.paging = true;
@@ -265,6 +354,10 @@ describe("Table", () => {
 
     describe("with multi selection helper", () => {
         it("render header checkbox if helper is given and checkbox state depends on the helper status", () => {
+<<<<<<< HEAD
+=======
+            const { render, screen, queryByRole, cleanup } = testingLibrary;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             const props = mockWidgetProps();
             props.data = objectItems(5);
             props.paging = true;
@@ -287,6 +380,10 @@ describe("Table", () => {
         });
 
         it("not render header checkbox if method is rowClick", () => {
+<<<<<<< HEAD
+=======
+            const { render, screen, queryByRole } = testingLibrary;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             const props = mockWidgetProps();
             props.selectActionHelper = new SelectActionHelper("Multi", undefined, "rowClick", false, 5, "clear");
 
@@ -297,6 +394,10 @@ describe("Table", () => {
         });
 
         it("call onSelectAll when header checkbox is clicked", async () => {
+<<<<<<< HEAD
+=======
+            const { render, screen } = testingLibrary;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             const props = mockWidgetProps();
             props.selectActionHelper = new SelectActionHelper("Multi", undefined, "checkbox", true, 5, "clear");
             props.selectActionHelper.onSelectAll = jest.fn();
@@ -307,20 +408,35 @@ describe("Table", () => {
             const checkbox = screen.getAllByRole("checkbox")[0];
 
             await userEvent.click(checkbox);
+<<<<<<< HEAD
             expect(props.selectActionHelper.onSelectAll).toHaveBeenCalledTimes(1);
 
             await userEvent.click(checkbox);
             expect(props.selectActionHelper.onSelectAll).toHaveBeenCalledTimes(2);
+=======
+            expect(props.selectActionHelper.onSelectAll).toBeCalledTimes(1);
+
+            await userEvent.click(checkbox);
+            expect(props.selectActionHelper.onSelectAll).toBeCalledTimes(2);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         });
     });
 
     describe("with selection method rowClick", () => {
+<<<<<<< HEAD
+=======
+        const { render, screen, getAllByRole } = testingLibrary;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         let props: ReturnType<typeof mockWidgetProps>;
 
         beforeEach(() => {
             props = mockWidgetProps();
             props.selectActionHelper = new SelectActionHelper("Single", undefined, "rowClick", true, 5, "clear");
+<<<<<<< HEAD
             props.gridInteractive = true;
+=======
+            props.rowClickable = true;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             props.paging = true;
             props.data = objectItems(3);
         });
@@ -402,6 +518,10 @@ describe("Table", () => {
     });
 
     describe("when selecting is enabled, allow the user to select multiple rows", () => {
+<<<<<<< HEAD
+=======
+        const { render, screen, getByRole, getAllByRole } = testingLibrary;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         let items: ReturnType<typeof objectItems>;
         let props: ReturnType<typeof mockWidgetProps>;
         let selection: SelectionMultiValue;
@@ -410,9 +530,13 @@ describe("Table", () => {
         function WidgetWithSelectionHelper({
             selectionMethod,
             ...props
+<<<<<<< HEAD
         }: WidgetProps<GridColumn, ObjectItem> & {
             selectionMethod: ItemSelectionMethodEnum;
         }): ReactElement {
+=======
+        }: WidgetProps<GridColumn, ObjectItem> & { selectionMethod: ItemSelectionMethodEnum }): ReactElement {
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             const helper = useSelectionHelper(selection, ds, undefined);
             const selectHelper = useSelectActionHelper(
                 {
@@ -602,6 +726,10 @@ describe("Table", () => {
 
     describe("when has interactive element", () => {
         it("should not prevent default on keyboard input (space and Enter)", async () => {
+<<<<<<< HEAD
+=======
+            const { render, screen } = testingLibrary;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             const items = objectItems(3);
 
             const props = mockWidgetProps();

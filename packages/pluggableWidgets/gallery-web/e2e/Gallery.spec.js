@@ -93,7 +93,19 @@ test.describe("gallery-web", () => {
             const accessibilityScanResults = await new AxeBuilder({ page })
                 .include(".mx-name-gallery1")
                 .withTags(["wcag21aa"])
+<<<<<<< HEAD
                 .exclude(".mx-name-navigationTree3")
+=======
+                .disableRules([
+                    "aria-required-children",
+                    "label",
+                    "aria-roles",
+                    "button-name",
+                    "duplicate-id-active",
+                    "duplicate-id",
+                    "aria-allowed-attr"
+                ])
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 .analyze();
 
             expect(accessibilityScanResults.violations).toEqual([]);

@@ -9,13 +9,21 @@ interface Props {
     formattingAttributeOrExpression: ListExpressionValue<string> | ListAttributeValue<string> | undefined;
     customContent?: ListWidgetValue | undefined;
     customContentType: OptionsSourceAssociationCustomContentTypeEnum;
+<<<<<<< HEAD
     attribute: ListAttributeValue<string | Big> | undefined;
+=======
+    attribute: ListAttributeValue<string | Big>;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     caption?: string;
 }
 
 export class DatabaseCaptionsProvider implements CaptionsProvider {
     private unavailableCaption = "<...>";
+<<<<<<< HEAD
     formatter?: ListExpressionValue<string> | ListAttributeValue<string>;
+=======
+    private formatter?: ListExpressionValue<string> | ListAttributeValue<string>;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     protected customContent?: ListWidgetValue;
     protected customContentType: OptionsSourceAssociationCustomContentTypeEnum = "no";
     attribute?: ListAttributeValue<string | Big>;
@@ -56,7 +64,11 @@ export class DatabaseCaptionsProvider implements CaptionsProvider {
             return this.unavailableCaption;
         }
         const captionValue = this.formatter?.get(item);
+<<<<<<< HEAD
         if (!captionValue || captionValue.status === "unavailable") {
+=======
+        if (captionValue?.status === "unavailable") {
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             return this.unavailableCaption;
         }
 

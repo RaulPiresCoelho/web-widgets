@@ -93,7 +93,10 @@ export interface ColumnChartPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     series: SeriesPreviewType[];
     advancedOptions: boolean;
     showPlaygroundSlot: boolean;

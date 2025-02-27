@@ -1,6 +1,16 @@
 import { createElement } from "react";
+<<<<<<< HEAD
 import { ChartWidget } from "@mendix/shared-charts/main";
 import { dynamic, EditableValueBuilder, ListAttributeValueBuilder, list } from "@mendix/widget-plugin-test-utils";
+=======
+import { ChartWidget } from "@mendix/shared-charts/common";
+import {
+    dynamicValue,
+    EditableValueBuilder,
+    ListAttributeValueBuilder,
+    ListValueBuilder
+} from "@mendix/widget-plugin-test-utils";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import Big from "big.js";
 import { mount, ReactWrapper } from "enzyme";
 import { TimeSeries } from "../TimeSeries";
@@ -58,7 +68,11 @@ describe("The TimeSeries widget", () => {
     });
 
     it("sets the line color on the data series based on the lineColor value", () => {
+<<<<<<< HEAD
         const timeSeries = renderTimeSeries([{ lineColor: dynamic("red") }, { lineColor: undefined }]);
+=======
+        const timeSeries = renderTimeSeries([{ lineColor: dynamicValue("red") }, { lineColor: undefined }]);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         const data = timeSeries.find(ChartWidget).prop("data");
         expect(data).toHaveLength(2);
         expect(data[0]).toHaveProperty("line.color", "red");
@@ -66,7 +80,11 @@ describe("The TimeSeries widget", () => {
     });
 
     it("sets the marker color on the data series based on the markerColor value", () => {
+<<<<<<< HEAD
         const timeSeries = renderTimeSeries([{ markerColor: undefined }, { markerColor: dynamic("blue") }]);
+=======
+        const timeSeries = renderTimeSeries([{ markerColor: undefined }, { markerColor: dynamicValue("blue") }]);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         const data = timeSeries.find(ChartWidget).prop("data");
         expect(data).toHaveLength(2);
         expect(data[0]).toHaveProperty("marker.color", undefined);
@@ -94,7 +112,11 @@ describe("The TimeSeries widget", () => {
     });
 
     it("sets the area fill color on the data series based on fillColor", () => {
+<<<<<<< HEAD
         const timeSeries = renderTimeSeries([{ fillColor: dynamic("red") }]);
+=======
+        const timeSeries = renderTimeSeries([{ fillColor: dynamicValue("red") }]);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         const data = timeSeries.find(ChartWidget).prop("data");
         expect(data).toHaveLength(1);
         expect(data[0]).toHaveProperty("fillcolor", "red");
@@ -142,7 +164,11 @@ function setupBasicSeries(overwriteConfig: Partial<LinesType>): LinesType {
         lineColor: overwriteConfig.lineColor ?? undefined,
         markerColor: overwriteConfig.markerColor ?? undefined,
         fillColor: overwriteConfig.fillColor ?? undefined,
+<<<<<<< HEAD
         staticDataSource: list(2),
+=======
+        staticDataSource: ListValueBuilder().simple(),
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         staticXAttribute: xAttribute,
         staticYAttribute: yAttribute,
         enableFillArea: true

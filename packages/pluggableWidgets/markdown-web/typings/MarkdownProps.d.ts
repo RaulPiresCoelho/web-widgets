@@ -14,6 +14,9 @@ export interface MarkdownContainerProps {
 
 export interface MarkdownPreviewProps {
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     stringAttribute: string;
 }

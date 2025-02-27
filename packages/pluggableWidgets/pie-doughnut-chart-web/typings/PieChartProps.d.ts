@@ -4,7 +4,11 @@
  * @author Mendix Widgets Framework Team
  */
 import { ComponentType, CSSProperties, ReactNode } from "react";
+<<<<<<< HEAD
 import { ListValue, ListActionValue, ListAttributeValue, ListExpressionValue, SelectionSingleValue } from "mendix";
+=======
+import { ActionValue, ListValue, ListAttributeValue, ListExpressionValue } from "mendix";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { Big } from "big.js";
 
 export type SeriesSortOrderEnum = "asc" | "desc";
@@ -24,7 +28,10 @@ export interface PieChartContainerProps {
     seriesSortAttribute?: ListAttributeValue<string | boolean | Date | Big>;
     seriesSortOrder: SeriesSortOrderEnum;
     seriesColorAttribute?: ListExpressionValue<string>;
+<<<<<<< HEAD
     seriesItemSelection?: SelectionSingleValue;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     enableAdvancedOptions: boolean;
     showPlaygroundSlot: boolean;
     playground?: ReactNode;
@@ -35,7 +42,11 @@ export interface PieChartContainerProps {
     width: number;
     heightUnit: HeightUnitEnum;
     height: number;
+<<<<<<< HEAD
     onClickAction?: ListActionValue;
+=======
+    onClickAction?: ActionValue;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     enableThemeConfig: boolean;
     customLayout: string;
     customConfigurations: string;
@@ -51,14 +62,20 @@ export interface PieChartPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     seriesDataSource: {} | { caption: string } | { type: string } | null;
     seriesName: string;
     seriesValueAttribute: string;
     seriesSortAttribute: string;
     seriesSortOrder: SeriesSortOrderEnum;
     seriesColorAttribute: string;
+<<<<<<< HEAD
     seriesItemSelection: "None" | "Single";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     enableAdvancedOptions: boolean;
     showPlaygroundSlot: boolean;
     playground: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };

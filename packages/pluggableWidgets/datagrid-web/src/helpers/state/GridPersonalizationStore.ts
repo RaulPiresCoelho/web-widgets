@@ -1,5 +1,9 @@
 import { SortRule } from "../../typings/sorting";
+<<<<<<< HEAD
 import { action, computed, IReactionDisposer, makeObservable, reaction, comparer } from "mobx";
+=======
+import { action, computed, IReactionDisposer, makeObservable, reaction } from "mobx";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { DatagridContainerProps } from "../../../typings/DatagridProps";
 import { getHash } from "../../utils/columns-hash";
 import { ColumnGroupStore } from "./ColumnGroupStore";
@@ -10,6 +14,7 @@ import {
 import { PersonalizationStorage } from "../storage/PersonalizationStorage";
 import { AttributePersonalizationStorage } from "../storage/AttributePersonalizationStorage";
 import { LocalStoragePersonalizationStorage } from "../storage/LocalStoragePersonalizationStorage";
+<<<<<<< HEAD
 import { ColumnId } from "../../typings/GridColumn";
 import { FiltersSettingsMap } from "@mendix/widget-plugin-filtering/typings/settings";
 import { HeaderFiltersStore } from "@mendix/widget-plugin-filtering/stores/HeaderFiltersStore";
@@ -19,11 +24,18 @@ export class GridPersonalizationStore {
     private readonly gridColumnsHash: string;
     private readonly schemaVersion: GridPersonalizationStorageSettings["schemaVersion"] = 2;
     private readonly storeFilters: boolean;
+=======
+
+export class GridPersonalizationStore {
+    private readonly gridName: string;
+    private readonly gridColumnsHash: string;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
     private storage: PersonalizationStorage;
 
     private disposers: IReactionDisposer[] = [];
 
+<<<<<<< HEAD
     constructor(
         props: DatagridContainerProps,
         private columnsStore: ColumnGroupStore,
@@ -32,6 +44,11 @@ export class GridPersonalizationStore {
         this.gridName = props.name;
         this.gridColumnsHash = getHash(this.columnsStore._allColumns, this.gridName);
         this.storeFilters = props.storeFiltersInPersonalization;
+=======
+    constructor(props: DatagridContainerProps, private columnsStore: ColumnGroupStore) {
+        this.gridName = props.name;
+        this.gridColumnsHash = getHash(this.columnsStore._allColumns, this.gridName);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
         makeObservable<GridPersonalizationStore, "applySettings">(this, {
             settings: computed,
@@ -45,8 +62,31 @@ export class GridPersonalizationStore {
             this.storage = new AttributePersonalizationStorage(props);
         }
 
+<<<<<<< HEAD
         this.disposers.push(this.setupReadReaction());
         this.disposers.push(this.setupWriteReaction());
+=======
+        this.disposers.push(
+            reaction(
+                () => this.storage.settings,
+                settings => {
+                    if (settings !== undefined && JSON.stringify(settings) !== JSON.stringify(this.settings)) {
+                        this.applySettings(settings);
+                    }
+                },
+                { fireImmediately: true }
+            )
+        );
+
+        this.disposers.push(
+            reaction(
+                () => this.settings,
+                settings => {
+                    this.storage.updateSettings(settings);
+                }
+            )
+        );
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     }
 
     dispose(): void {
@@ -57,6 +97,7 @@ export class GridPersonalizationStore {
         this.storage.updateProps?.(props);
     }
 
+<<<<<<< HEAD
     private setupReadReaction(): IReactionDisposer {
         return reaction<GridPersonalizationStorageSettings | null, true>(
             () => {
@@ -143,6 +184,27 @@ export class GridPersonalizationStore {
 }
 
 function toColumnSettings(settings: GridPersonalizationStorageSettings): ColumnPersonalizationSettings[] {
+=======
+    private applySettings(settings: GridPersonalizationStorageSettings): void {
+        this.columnsStore.applySettings(fromStorageFormat(this.gridName, this.gridColumnsHash, settings));
+    }
+
+    get settings(): GridPersonalizationStorageSettings {
+        return toStorageFormat(this.gridName, this.gridColumnsHash, this.columnsStore.settings);
+    }
+}
+
+function fromStorageFormat(
+    gridName: string,
+    gridColumnsHash: string,
+    settings: GridPersonalizationStorageSettings
+): ColumnPersonalizationSettings[] {
+    if (settings.name !== gridName || settings.settingsHash !== gridColumnsHash) {
+        console.warn(
+            `Widget configuration for (${gridName})[hash:${gridColumnsHash}] doesn't match provided settings (${settings.name})[hash:${settings.settingsHash}]. Restoring those settings might result in errors.`
+        );
+    }
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     return settings.columns.map(c => {
         const sortIndex = settings.sortOrder.findIndex(s => s[0] === c.columnId);
 
@@ -154,7 +216,13 @@ function toColumnSettings(settings: GridPersonalizationStorageSettings): ColumnP
             orderWeight: settings.columnOrder.indexOf(c.columnId),
 
             sortWeight: sortIndex !== -1 ? sortIndex + 1 : undefined,
+<<<<<<< HEAD
             sortDir: sortIndex !== -1 ? settings.sortOrder[sortIndex]?.[1] : undefined
+=======
+            sortDir: sortIndex !== -1 ? settings.sortOrder[sortIndex]?.[1] : undefined,
+
+            filterSettings: undefined
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         };
     });
 }
@@ -162,9 +230,13 @@ function toColumnSettings(settings: GridPersonalizationStorageSettings): ColumnP
 function toStorageFormat(
     gridName: string,
     gridColumnsHash: string,
+<<<<<<< HEAD
     columnsSettings: ColumnPersonalizationSettings[],
     columnFilters: FiltersSettingsMap<ColumnId>,
     groupFilters: FiltersSettingsMap<string>
+=======
+    columnsSettings: ColumnPersonalizationSettings[]
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ): GridPersonalizationStorageSettings {
     const sortOrder = columnsSettings
         .filter(c => c.sortDir && c.sortWeight !== undefined)
@@ -175,7 +247,11 @@ function toStorageFormat(
 
     return {
         name: gridName,
+<<<<<<< HEAD
         schemaVersion: 2,
+=======
+        schemaVersion: 1,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         settingsHash: gridColumnsHash,
         columns: columnsSettings.map(c => ({
             columnId: c.columnId,
@@ -183,14 +259,18 @@ function toStorageFormat(
             hidden: c.hidden,
             filterSettings: undefined
         })),
+<<<<<<< HEAD
 
         columnFilters: Array.from(columnFilters),
         groupFilters: Array.from(groupFilters),
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         sortOrder,
         columnOrder
     };
 }
+<<<<<<< HEAD
 
 class InvalidSettingsError extends Error {
     constructor() {
@@ -204,3 +284,5 @@ class UndefinedSettingsError extends Error {
         this.name = "UndefinedSettingsError";
     }
 }
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { createElement, ReactElement, useEffect, useState } from "react";
+=======
+import { createElement, ReactElement } from "react";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { ObjectItem, ValueStatus } from "mendix";
 import { TreeNodeContainerProps } from "../typings/TreeNodeProps";
 import { TreeNode as TreeNodeComponent, TreeNodeItem } from "./components/TreeNode";
@@ -13,6 +17,7 @@ function mapDataSourceItemToTreeNodeItem(item: ObjectItem, props: TreeNodeContai
 }
 
 export function TreeNode(props: TreeNodeContainerProps): ReactElement {
+<<<<<<< HEAD
     const { datasource } = props;
 
     const [treeNodeItems, setTreeNodeItems] = useState<TreeNodeItem[] | null>([]);
@@ -28,6 +33,14 @@ export function TreeNode(props: TreeNodeContainerProps): ReactElement {
             }
         }
     }, [datasource.status, datasource.items]);
+=======
+    // TODO: Handle async states more gracefully?
+    const items =
+        props.datasource.status === ValueStatus.Available
+            ? props.datasource.items?.map(item => mapDataSourceItemToTreeNodeItem(item, props)) ?? []
+            : null;
+
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     const expandedIcon = props.expandedIcon?.status === ValueStatus.Available ? props.expandedIcon.value : undefined;
     const collapsedIcon = props.collapsedIcon?.status === ValueStatus.Available ? props.collapsedIcon.value : undefined;
 
@@ -35,7 +48,11 @@ export function TreeNode(props: TreeNodeContainerProps): ReactElement {
         <TreeNodeComponent
             class={props.class}
             style={props.style}
+<<<<<<< HEAD
             items={treeNodeItems}
+=======
+            items={items}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             isUserDefinedLeafNode={!props.hasChildren}
             startExpanded={props.startExpanded}
             showCustomIcon={Boolean(props.expandedIcon) || Boolean(props.collapsedIcon)}

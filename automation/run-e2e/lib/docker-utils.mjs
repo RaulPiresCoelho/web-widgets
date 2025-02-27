@@ -6,9 +6,16 @@ import c from "ansi-colors";
 import sh from "shelljs";
 
 const { cat } = sh;
+<<<<<<< HEAD
 
 export function getFullImageName(name, mendixVersion) {
     return `${name}:${mendixVersion}`;
+=======
+const REGISTRY = "ghcr.io/mendix/web-widgets";
+
+export function getFullImageName(name, mendixVersion) {
+    return `${REGISTRY}/${name}:${mendixVersion}`;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 }
 
 export async function buildImage(name, mendixVersion) {

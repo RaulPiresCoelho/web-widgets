@@ -1,5 +1,8 @@
 import { test, expect } from "@playwright/test";
+<<<<<<< HEAD
 import AxeBuilder from "@axe-core/playwright";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
 test.afterEach("Cleanup session", async ({ page }) => {
     // Because the test isolation that will open a new session for every test executed, and that exceeds Mendix's license limit of 5 sessions, so we need to force logout after each test.
@@ -57,6 +60,7 @@ test.describe("capabilities: collapse", () => {
 });
 
 test.describe("a11y testing:", () => {
+<<<<<<< HEAD
     test("checks accessibility violations", async ({ page }) => {
         await page.goto("/");
         await page.waitForLoadState("networkidle");
@@ -69,5 +73,13 @@ test.describe("a11y testing:", () => {
             .analyze();
 
         expect(accessibilityScanResults.violations).toEqual([]);
+=======
+    test.skip("checks accessibility violations", async ({ page }) => {
+        await page.installAccessibilityService();
+        await page.locator(".mx-name-treeNode1").scrollIntoViewIfNeeded();
+        const snapshot = await page.accessibility.snapshot();
+
+        expect(snapshot.violations).toEqual([]);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 });

@@ -9,9 +9,13 @@ describe("consistency check", () => {
                 itemSelectionMethod: "rowClick",
                 onClick: {},
                 onClickTrigger: "single",
+<<<<<<< HEAD
                 columns: [],
                 groupList: [],
                 groupAttrs: []
+=======
+                columns: []
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             };
 
             expect(check(props as unknown as DatagridPreviewProps)).toMatchSnapshot();
@@ -23,9 +27,13 @@ describe("consistency check", () => {
                 itemSelectionMethod: "rowClick",
                 onClick: {},
                 onClickTrigger: "single",
+<<<<<<< HEAD
                 columns: [],
                 groupList: [],
                 groupAttrs: []
+=======
+                columns: []
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             };
 
             expect(check(props as unknown as DatagridPreviewProps)).toMatchSnapshot();
@@ -39,9 +47,13 @@ describe("consistency check", () => {
                 itemSelectionMethod: "checkbox",
                 onClick: {},
                 onClickTrigger: "single",
+<<<<<<< HEAD
                 columns: [],
                 groupList: [],
                 groupAttrs: []
+=======
+                columns: []
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             };
 
             expect(check(props as unknown as DatagridPreviewProps)).toEqual([]);
@@ -53,9 +65,13 @@ describe("consistency check", () => {
                 itemSelectionMethod: "checkbox",
                 onClick: {},
                 onClickTrigger: "single",
+<<<<<<< HEAD
                 columns: [],
                 groupList: [],
                 groupAttrs: []
+=======
+                columns: []
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             };
 
             expect(check(props as unknown as DatagridPreviewProps)).toEqual([]);
@@ -67,9 +83,13 @@ describe("consistency check", () => {
                 itemSelectionMethod: "checkbox",
                 onClick: {},
                 onClickTrigger: "double",
+<<<<<<< HEAD
                 columns: [],
                 groupList: [],
                 groupAttrs: []
+=======
+                columns: []
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             };
 
             expect(check(props as unknown as DatagridPreviewProps)).toEqual([]);

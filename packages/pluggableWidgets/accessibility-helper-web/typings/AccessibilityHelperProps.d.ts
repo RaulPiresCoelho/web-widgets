@@ -43,7 +43,10 @@ export interface AccessibilityHelperPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     targetSelector: string;
     content: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
     attributesList: AttributesListPreviewType[];

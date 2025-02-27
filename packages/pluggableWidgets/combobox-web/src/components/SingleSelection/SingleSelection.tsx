@@ -1,5 +1,9 @@
 import classNames from "classnames";
+<<<<<<< HEAD
 import { Fragment, ReactElement, createElement, useMemo, useRef } from "react";
+=======
+import { Fragment, ReactElement, createElement, useRef } from "react";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { ClearButton } from "../../assets/icons";
 import { SelectionBaseProps, SingleSelector } from "../../helpers/types";
 import { useDownshiftSingleSelectProps } from "../../hooks/useDownshiftSingleSelectProps";
@@ -37,6 +41,7 @@ export function SingleSelection({
             if (selector.options.loadMore) {
                 selector.options.loadMore();
             }
+<<<<<<< HEAD
         },
         datasourceFilter: selector.options.datasourceFilter,
         readOnly: selector.readOnly
@@ -54,6 +59,11 @@ export function SingleSelection({
         ]
     );
 
+=======
+        }
+    });
+
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     return (
         <Fragment>
             <ComboboxWrapper
@@ -86,10 +96,17 @@ export function SingleSelection({
                         placeholder=" "
                     />
                     <InputPlaceholder
+<<<<<<< HEAD
                         isEmpty={!selector.currentId || !selector.caption.render(selectedItem, "label")}
                         type={selector.customContentType === "yes" ? "custom" : "text"}
                     >
                         {selectedItemCaption}
+=======
+                        isEmpty={!selector.currentId}
+                        type={selector.customContentType === "yes" ? "custom" : "text"}
+                    >
+                        {selector.caption.render(selectedItem, "label")}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                     </InputPlaceholder>
                 </div>
                 {((!selector.readOnly && selector.clearable && selector.currentId !== null) ||

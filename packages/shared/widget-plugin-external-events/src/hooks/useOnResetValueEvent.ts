@@ -16,3 +16,11 @@ export function useOnResetValueEvent({ widgetName, parentChannelName, listener }
     useListenChannelEvents(widgetName, $events.reset.value, cb);
     useListenChannelEvents(parentChannelName, $events.reset.value, cb);
 }
+<<<<<<< HEAD
+=======
+
+export function useOnSetValueEvent({ widgetName, listener }: Params): void {
+    const { current: cb } = useRef(listener);
+    useListenChannelEvents(widgetName, $events.set.value, cb);
+}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)

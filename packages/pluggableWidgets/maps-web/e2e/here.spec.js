@@ -12,7 +12,11 @@ test.describe("Here Maps", () => {
             await page.waitForLoadState("networkidle");
             const mapElement = await page.locator(".widget-maps");
             await expect(mapElement).toBeVisible();
+<<<<<<< HEAD
             await expect(mapElement).toHaveScreenshot("hereMaps.png", { maxDiffPixels: 4000 });
+=======
+            await expect(mapElement).toHaveScreenshot("hereMaps.png", { maxDiffPixels: 1000 });
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         });
     });
 

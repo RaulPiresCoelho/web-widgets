@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [5.1.2] Charts - 2025-01-21
 
 ### [5.2.0] PieChart
@@ -146,6 +147,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   We fixed an issue where Pie chart on click event was not working properly, not executing the on click action.
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ## [5.0.1] Charts - 2024-07-02
 
 ### Changed

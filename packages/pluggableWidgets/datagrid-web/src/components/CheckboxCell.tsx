@@ -15,10 +15,16 @@ export function CheckboxCell({ item, rowIndex, lastRow, ...rest }: CheckboxCellP
         columnIndex: 0,
         rowIndex
     });
+<<<<<<< HEAD
 
     const { selectActionHelper, checkboxEventsController, selectRowLabel, gridInteractive } = useWidgetProps();
     return (
         <CellElement {...rest} clickable={gridInteractive} className="widget-datagrid-col-select" tabIndex={-1}>
+=======
+    const { selectActionHelper, checkboxEventsController, selectRowLabel, rowClickable } = useWidgetProps();
+    return (
+        <CellElement {...rest} clickable={rowClickable} className="widget-datagrid-col-select" tabIndex={-1}>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             <input
                 checked={selectActionHelper.isSelected(item)}
                 type="checkbox"

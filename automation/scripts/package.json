@@ -6,7 +6,11 @@
   "copyright": "© Mendix Technology BV 2023. All rights reserved.",
   "type": "module",
   "engines": {
+<<<<<<< HEAD
     "node": ">=18.20.4"
+=======
+    "node": ">=18.20.2"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   },
   "repository": {
     "type": "git",

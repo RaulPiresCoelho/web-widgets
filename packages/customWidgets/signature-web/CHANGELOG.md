@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [1.0.7] - 2025-01-15
 
 ### Changed
@@ -15,3 +16,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 
 -   We fixed an issue where the widget was failing to save signatures on Hybrid apps.
+=======
+-   We updated the light and dark icons and tiles for the widget.
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)

@@ -44,6 +44,7 @@
                 </property>
             </propertyGroup>
         </propertyGroup>
+<<<<<<< HEAD
         <propertyGroup caption="Accessibility">
             <propertyGroup caption="Accessibility">
                 <property key="screenReaderLabelCaption" type="textTemplate" required="false">
@@ -52,5 +53,7 @@
                 </property>
             </propertyGroup>
         </propertyGroup>
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     </properties>
 </widget>

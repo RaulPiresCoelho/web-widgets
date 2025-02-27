@@ -50,7 +50,10 @@ export interface SliderContainerProps {
 
 export interface SliderPreviewProps {
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     valueAttribute: string;
     advanced: boolean;
     minValueType: MinValueTypeEnum;

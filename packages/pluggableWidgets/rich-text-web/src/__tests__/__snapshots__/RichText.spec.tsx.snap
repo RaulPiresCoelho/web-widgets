@@ -3,6 +3,7 @@
 exports[`Rich Text renders richtext widget 1`] = `
 <div>
   <div
+<<<<<<< HEAD
     class="widget-rich-text form-control flex-column"
     spellcheck="true"
     style="width: 100%;"
@@ -92,6 +93,15 @@ exports[`Rich Text renders richtext widget 1`] = `
       0
        word
     </div>
+=======
+    class="widget-rich-text widget-rich-text-min-height"
+    id="RichText1"
+    style="width: 100%; min-height: 75px;"
+  >
+    <div
+      class="mx-progress"
+    />
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   </div>
 </div>
 `;

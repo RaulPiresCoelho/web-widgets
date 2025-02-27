@@ -52,8 +52,12 @@ export function MultiSelection({
             if (selector.options.loadMore) {
                 selector.options.loadMore();
             }
+<<<<<<< HEAD
         },
         readOnly: selector.readOnly
+=======
+        }
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 
     return (

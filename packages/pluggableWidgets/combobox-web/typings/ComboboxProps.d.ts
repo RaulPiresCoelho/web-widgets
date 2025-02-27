@@ -53,16 +53,27 @@ export interface ComboboxContainerProps {
     attributeBoolean: EditableValue<boolean>;
     optionsSourceDatabaseDataSource?: ListValue;
     optionsSourceDatabaseItemSelection?: SelectionSingleValue | SelectionMultiValue;
+<<<<<<< HEAD
+=======
+    optionsSourceDatabaseValueAttribute?: ListAttributeValue<string | Big>;
+    databaseAttributeString?: EditableValue<string | Big>;
+    optionsSourceDatabaseDefaultValue?: DynamicValue<string | Big>;
+    attributeAssociation: ReferenceValue | ReferenceSetValue;
+    optionsSourceAssociationDataSource?: ListValue;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     optionsSourceAssociationCaptionType: OptionsSourceAssociationCaptionTypeEnum;
     optionsSourceDatabaseCaptionType: OptionsSourceDatabaseCaptionTypeEnum;
     optionsSourceAssociationCaptionAttribute?: ListAttributeValue<string>;
     optionsSourceDatabaseCaptionAttribute?: ListAttributeValue<string>;
     optionsSourceAssociationCaptionExpression?: ListExpressionValue<string>;
     optionsSourceDatabaseCaptionExpression?: ListExpressionValue<string>;
+<<<<<<< HEAD
     optionsSourceDatabaseValueAttribute?: ListAttributeValue<string | Big>;
     databaseAttributeString?: EditableValue<string | Big>;
     attributeAssociation: ReferenceValue | ReferenceSetValue;
     optionsSourceAssociationDataSource?: ListValue;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     staticAttribute: EditableValue<string | Big | boolean | Date>;
     optionsSourceStaticDataSource: OptionsSourceStaticDataSourceType[];
     emptyOptionText?: DynamicValue<string>;
@@ -96,23 +107,37 @@ export interface ComboboxContainerProps {
 
 export interface ComboboxPreviewProps {
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     source: SourceEnum;
     optionsSourceType: OptionsSourceTypeEnum;
     attributeEnumeration: string;
     attributeBoolean: string;
     optionsSourceDatabaseDataSource: {} | { caption: string } | { type: string } | null;
     optionsSourceDatabaseItemSelection: "Single" | "Multi" | "None";
+<<<<<<< HEAD
+=======
+    optionsSourceDatabaseValueAttribute: string;
+    databaseAttributeString: string;
+    optionsSourceDatabaseDefaultValue: string;
+    attributeAssociation: string;
+    optionsSourceAssociationDataSource: {} | { caption: string } | { type: string } | null;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     optionsSourceAssociationCaptionType: OptionsSourceAssociationCaptionTypeEnum;
     optionsSourceDatabaseCaptionType: OptionsSourceDatabaseCaptionTypeEnum;
     optionsSourceAssociationCaptionAttribute: string;
     optionsSourceDatabaseCaptionAttribute: string;
     optionsSourceAssociationCaptionExpression: string;
     optionsSourceDatabaseCaptionExpression: string;
+<<<<<<< HEAD
     optionsSourceDatabaseValueAttribute: string;
     databaseAttributeString: string;
     attributeAssociation: string;
     optionsSourceAssociationDataSource: {} | { caption: string } | { type: string } | null;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     staticAttribute: string;
     optionsSourceStaticDataSource: OptionsSourceStaticDataSourcePreviewType[];
     emptyOptionText: string;
@@ -132,7 +157,10 @@ export interface ComboboxPreviewProps {
     selectAllButtonCaption: string;
     readOnlyStyle: ReadOnlyStyleEnum;
     onChangeEvent: {} | null;
+<<<<<<< HEAD
     onChangeDatabaseEvent: {} | null;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     onEnterEvent: {} | null;
     onLeaveEvent: {} | null;
     ariaRequired: boolean;

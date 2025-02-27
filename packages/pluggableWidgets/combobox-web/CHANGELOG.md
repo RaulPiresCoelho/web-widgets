@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [2.1.3] - 2024-12-11
 
 ### Fixed
@@ -48,6 +49,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   We fixed an issue where the combo box values would not refresh after toggling its read-only state.
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ## [2.0.1] - 2024-08-16
 
 ### Fixed

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { enableStaticRendering } from "mobx-react-lite";
 enableStaticRendering(true);
 
@@ -23,10 +24,28 @@ function Preview(props: DatagridNumberFilterPreviewProps): ReactElement {
             inputStores={inputStores}
             name="NumberFilter"
             onFilterChange={() => {}}
+=======
+import { createElement, ReactElement } from "react";
+import { DatagridNumberFilterPreviewProps } from "../typings/DatagridNumberFilterProps";
+import { FilterComponent } from "./components/FilterComponent";
+import { parseStyle } from "@mendix/widget-plugin-platform/preview/parse-style";
+
+export function preview(props: DatagridNumberFilterPreviewProps): ReactElement {
+    return (
+        <FilterComponent
+            adjustable={props.adjustable}
+            changeDelay={props.delay ?? 500}
+            className={props.className}
+            parentChannelName={null}
+            defaultFilter={props.defaultFilter}
+            name="NumberFilter"
+            onChange={() => {}}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             placeholder={props.placeholder}
             screenReaderButtonCaption={props.screenReaderButtonCaption}
             screenReaderInputCaption={props.screenReaderInputCaption}
             styles={parseStyle(props.style)}
+<<<<<<< HEAD
             type="text"
         />
     );
@@ -35,3 +54,9 @@ function Preview(props: DatagridNumberFilterPreviewProps): ReactElement {
 export function preview(props: DatagridNumberFilterPreviewProps): ReactElement {
     return <Preview {...props} />;
 }
+=======
+            value={undefined}
+        />
+    );
+}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)

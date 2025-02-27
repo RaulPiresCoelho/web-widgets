@@ -9,13 +9,23 @@
     "url": "https://github.com/mendix/web-widgets.git"
   },
   "type": "module",
+<<<<<<< HEAD
   "exports": {
     "./*": "./dist/*.js"
+=======
+  "main": "./dist/main.js",
+  "exports": {
+    ".": "./dist/main.js"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   },
   "typesVersions": {
     "*": {
       "*": [
+<<<<<<< HEAD
         "dist/*"
+=======
+        "./dist/main.d.ts"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
       ]
     }
   },
@@ -34,9 +44,12 @@
     "@mendix/eslint-config-web-widgets": "workspace:*",
     "@mendix/prettier-config-web-widgets": "workspace:*",
     "@mendix/tsconfig-web-widgets": "workspace:*"
+<<<<<<< HEAD
   },
   "dependencies": {
     "mobx": "6.12.3",
     "mobx-react-lite": "4.0.7"
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   }
 }

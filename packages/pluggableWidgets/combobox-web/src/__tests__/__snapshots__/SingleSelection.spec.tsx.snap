@@ -26,7 +26,11 @@ exports[`Combo box (Association) renders combobox widget 1`] = `
           placeholder=" "
           role="combobox"
           tabindex="0"
+<<<<<<< HEAD
           value="obj_111"
+=======
+          value="111"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         />
         <div
           class="widget-combobox-placeholder-text"
@@ -34,7 +38,11 @@ exports[`Combo box (Association) renders combobox widget 1`] = `
           <span
             class="widget-combobox-caption-text"
           >
+<<<<<<< HEAD
             obj_111
+=======
+            111
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
           </span>
         </div>
       </div>

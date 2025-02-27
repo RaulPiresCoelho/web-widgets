@@ -61,7 +61,11 @@ export class StaticSingleSelector implements SingleSelector {
             this.clearable = false;
             return;
         }
+<<<<<<< HEAD
         if (ds.length > 0 && ds[0].staticDataSourceValue.status === "available" && attr.value !== "") {
+=======
+        if (ds.length > 0 && ds[0].staticDataSourceValue.status === "available") {
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             const index = ds.findIndex(option => _valuesIsEqual(option.staticDataSourceValue.value, attr.value));
             if (index !== -1) {
                 this.currentId = index.toString();

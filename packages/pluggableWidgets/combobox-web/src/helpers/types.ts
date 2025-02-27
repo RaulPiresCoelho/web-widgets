@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import { ThreeStateCheckBoxEnum } from "@mendix/widget-plugin-component-kit/ThreeStateCheckBox";
 import { ListAttributeValue, ListExpressionValue, ListValue } from "mendix";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { ReactNode } from "react";
 import {
     ComboboxContainerProps,
@@ -10,6 +13,10 @@ import {
     SelectedItemsStyleEnum,
     SelectionMethodEnum
 } from "../../typings/ComboboxProps";
+<<<<<<< HEAD
+=======
+import { ThreeStateCheckBoxEnum } from "@mendix/widget-plugin-component-kit/ThreeStateCheckBox";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
 export type Status = "unavailable" | "loading" | "available";
 export type CaptionPlacement = "label" | "options";
@@ -21,7 +28,10 @@ export interface CaptionsProvider {
     get(value: string | null): string;
     render(value: (string | null) | (number | null), placement?: CaptionPlacement, htmlFor?: string): ReactNode;
     emptyCaption: string;
+<<<<<<< HEAD
     formatter?: ListExpressionValue<string> | ListAttributeValue<string>;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 }
 export interface ValuesProvider<T> {
     get(key: string | null): T | undefined;
@@ -34,7 +44,10 @@ export interface OptionsProvider<T = unknown, P = object> {
     sortOrder?: SortOrder;
 
     getAll(): string[];
+<<<<<<< HEAD
     datasourceFilter?: ListValue["filter"] | undefined;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
     // search related
     setSearchTerm(term: string): void;

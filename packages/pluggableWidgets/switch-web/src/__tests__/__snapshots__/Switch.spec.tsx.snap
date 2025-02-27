@@ -25,7 +25,10 @@ exports[`Switch with editable value renders the structure correctly 1`] = `
         "type": "datetime",
         "withConfig": [MockFunction],
       },
+<<<<<<< HEAD
       "isList": false,
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
       "readOnly": false,
       "setFormatter": [MockFunction],
       "setTextValue": [MockFunction],
@@ -99,7 +102,10 @@ exports[`Switch with readonly value renders the structure correctly 1`] = `
         "type": "datetime",
         "withConfig": [MockFunction],
       },
+<<<<<<< HEAD
       "isList": false,
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
       "readOnly": true,
       "setFormatter": [MockFunction],
       "setTextValue": [MockFunction],

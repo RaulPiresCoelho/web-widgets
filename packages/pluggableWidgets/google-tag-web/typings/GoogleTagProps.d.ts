@@ -36,7 +36,10 @@ export interface GoogleTagContainerProps {
     widgetMode: WidgetModeEnum;
     targetId?: DynamicValue<string>;
     parameters: ParametersType[];
+<<<<<<< HEAD
     sendUserID: boolean;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     command: CommandEnum;
     eventName: string;
     trackPageChanges: boolean;
@@ -54,7 +57,10 @@ export interface GoogleTagPreviewProps {
     widgetMode: WidgetModeEnum;
     targetId: string;
     parameters: ParametersPreviewType[];
+<<<<<<< HEAD
     sendUserID: boolean;
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     command: CommandEnum;
     eventName: string;
     trackPageChanges: boolean;

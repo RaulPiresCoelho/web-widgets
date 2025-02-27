@@ -19,10 +19,16 @@ const DATABASE_SOURCE_CONFIG: Array<keyof ComboboxPreviewProps> = [
     "optionsSourceDatabaseCustomContent",
     "optionsSourceDatabaseCustomContentType",
     "optionsSourceDatabaseDataSource",
+<<<<<<< HEAD
     "optionsSourceDatabaseValueAttribute",
     "optionsSourceDatabaseItemSelection",
     "databaseAttributeString",
     "onChangeDatabaseEvent"
+=======
+    "optionsSourceDatabaseDefaultValue",
+    "optionsSourceDatabaseValueAttribute",
+    "optionsSourceDatabaseItemSelection"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ];
 
 const ASSOCIATION_SOURCE_CONFIG: Array<keyof ComboboxPreviewProps> = [
@@ -31,13 +37,21 @@ const ASSOCIATION_SOURCE_CONFIG: Array<keyof ComboboxPreviewProps> = [
     "optionsSourceAssociationCaptionType",
     "optionsSourceAssociationCustomContent",
     "optionsSourceAssociationCustomContentType",
+<<<<<<< HEAD
     "optionsSourceAssociationDataSource",
     "attributeAssociation"
+=======
+    "optionsSourceAssociationDataSource"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ];
 
 export function getProperties(values: ComboboxPreviewProps, defaultProperties: Properties): Properties {
     if (values.source === "context") {
         hidePropertiesIn(defaultProperties, values, [
+<<<<<<< HEAD
+=======
+            "databaseAttributeString",
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             "staticAttribute",
             "staticDataSourceCustomContentType",
             "optionsSourceStaticDataSource",
@@ -45,6 +59,10 @@ export function getProperties(values: ComboboxPreviewProps, defaultProperties: P
         ]);
         if (["enumeration", "boolean"].includes(values.optionsSourceType)) {
             hidePropertiesIn(defaultProperties, values, [
+<<<<<<< HEAD
+=======
+                "attributeAssociation",
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 "selectedItemsStyle",
                 "selectionMethod",
                 "selectAllButton",
@@ -89,6 +107,10 @@ export function getProperties(values: ComboboxPreviewProps, defaultProperties: P
         }
     } else if (values.source === "database") {
         hidePropertiesIn(defaultProperties, values, [
+<<<<<<< HEAD
+=======
+            "attributeAssociation",
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             "attributeEnumeration",
             "attributeBoolean",
             "optionsSourceType",
@@ -99,7 +121,10 @@ export function getProperties(values: ComboboxPreviewProps, defaultProperties: P
             "selectionMethod",
             "selectAllButton",
             "selectAllButtonCaption",
+<<<<<<< HEAD
             "onChangeEvent",
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             ...ASSOCIATION_SOURCE_CONFIG
         ]);
         if (values.optionsSourceDatabaseDataSource === null) {
@@ -120,6 +145,7 @@ export function getProperties(values: ComboboxPreviewProps, defaultProperties: P
         }
         if (values.optionsSourceDatabaseItemSelection === "Multi") {
             hidePropertiesIn(defaultProperties, values, [
+<<<<<<< HEAD
                 "optionsSourceDatabaseValueAttribute",
                 "databaseAttributeString"
             ]);
@@ -129,6 +155,18 @@ export function getProperties(values: ComboboxPreviewProps, defaultProperties: P
         }
     } else if (values.source === "static") {
         hidePropertiesIn(defaultProperties, values, [
+=======
+                "databaseAttributeString",
+                "optionsSourceDatabaseDefaultValue"
+            ]);
+        }
+        if (values.databaseAttributeString.length === 0) {
+            hidePropertiesIn(defaultProperties, values, ["optionsSourceDatabaseDefaultValue"]);
+        }
+    } else if (values.source === "static") {
+        hidePropertiesIn(defaultProperties, values, [
+            "attributeAssociation",
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             "attributeEnumeration",
             "attributeBoolean",
             "optionsSourceType",
@@ -136,6 +174,10 @@ export function getProperties(values: ComboboxPreviewProps, defaultProperties: P
             "selectionMethod",
             "selectAllButton",
             "selectAllButtonCaption",
+<<<<<<< HEAD
+=======
+            "databaseAttributeString",
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             ...ASSOCIATION_SOURCE_CONFIG,
             ...DATABASE_SOURCE_CONFIG,
             ...LAZY_LOADING_CONFIG

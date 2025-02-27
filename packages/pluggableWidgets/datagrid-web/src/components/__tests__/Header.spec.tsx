@@ -1,8 +1,14 @@
 import { render, shallow } from "enzyme";
 import { createElement } from "react";
+<<<<<<< HEAD
 import { GridColumn } from "../../typings/GridColumn";
 import { ColumnResizer } from "../ColumnResizer";
 import { Header, HeaderProps } from "../Header";
+=======
+import { Header, HeaderProps } from "../Header";
+import { ColumnResizer } from "../ColumnResizer";
+import { GridColumn } from "../../typings/GridColumn";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
 describe("Header", () => {
     it("renders the structure correctly", () => {

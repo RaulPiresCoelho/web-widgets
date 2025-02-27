@@ -1,10 +1,16 @@
 import "@testing-library/jest-dom";
+<<<<<<< HEAD
 import { FilterAPIv2 } from "@mendix/widget-plugin-filtering/context";
 import { requirePlugin } from "@mendix/widget-plugin-external-events/plugin";
 import { HeaderFiltersStore, HeaderFiltersStoreProps } from "@mendix/widget-plugin-filtering/stores/HeaderFiltersStore";
 import {
     actionValue,
     dynamic,
+=======
+import { FilterContextValue } from "@mendix/widget-plugin-filtering";
+import {
+    actionValue,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     dynamicValue,
     EditableValueBuilder,
     ListAttributeValueBuilder
@@ -15,6 +21,7 @@ import { createContext, createElement } from "react";
 
 import DatagridNumberFilter from "../../DatagridNumberFilter";
 import { Big } from "big.js";
+<<<<<<< HEAD
 import { DatagridNumberFilterContainerProps } from "../../../typings/DatagridNumberFilterProps";
 import { resetIdCounter } from "downshift";
 
@@ -24,6 +31,10 @@ export interface StaticInfo {
 }
 
 const commonProps: DatagridNumberFilterContainerProps = {
+=======
+import { deletePlugin, requirePlugin } from "@mendix/widget-plugin-external-events/plugin";
+const commonProps = {
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     class: "filter-custom-class",
     tabIndex: 0,
     name: "filter-test",
@@ -33,6 +44,7 @@ const commonProps: DatagridNumberFilterContainerProps = {
     delay: 1000
 };
 
+<<<<<<< HEAD
 const headerFilterStoreInfo: StaticInfo = {
     name: commonProps.name,
     filtersChannelName: "datagrid1"
@@ -49,6 +61,10 @@ beforeEach(() => {
 
 afterEach(() => (console.warn as jest.Mock).mockRestore());
 
+=======
+jest.useFakeTimers();
+
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 describe("Number Filter", () => {
     describe("with single instance", () => {
         afterEach(() => {
@@ -56,6 +72,7 @@ describe("Number Filter", () => {
         });
 
         describe("with single attribute", () => {
+<<<<<<< HEAD
             beforeEach(() => {
                 const props: HeaderFiltersStoreProps = {
                     filterList: [
@@ -76,6 +93,13 @@ describe("Number Filter", () => {
                 (window as any)["com.mendix.widgets.web.filterable.filterContext.v2"] = createContext<FilterAPIv2>(
                     headerFilterStore.context
                 );
+=======
+            beforeAll(() => {
+                (window as any)["com.mendix.widgets.web.filterable.filterContext"] = createContext({
+                    filterDispatcher: jest.fn(),
+                    singleAttribute: new ListAttributeValueBuilder().withType("Long").withFilterable(true).build()
+                } as FilterContextValue);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             });
 
             it("renders correctly", () => {
@@ -90,6 +114,7 @@ describe("Number Filter", () => {
                 render(<DatagridNumberFilter {...commonProps} onChange={action} valueAttribute={attribute} />);
 
                 const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+<<<<<<< HEAD
                 await user.type(screen.getByRole("spinbutton"), "10");
 
                 act(() => {
@@ -126,6 +151,15 @@ describe("Number Filter", () => {
 
                 expect(input).toHaveValue(null);
                 expect(attribute.setValue).toHaveBeenLastCalledWith(undefined);
+=======
+
+                await user.type(screen.getByRole("spinbutton"), "10");
+
+                jest.runOnlyPendingTimers();
+
+                expect(action.execute).toBeCalledTimes(1);
+                expect(attribute.setValue).toBeCalledWith(new Big(10));
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             });
 
             describe("with defaultValue", () => {
@@ -133,14 +167,20 @@ describe("Number Filter", () => {
                     render(<DatagridNumberFilter {...commonProps} defaultValue={dynamicValue<Big>(new Big(100))} />);
                     expect(screen.getByRole("spinbutton")).toHaveValue(100);
                 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 it("do not sync value and defaultValue when defaultValue changes from undefined to number", () => {
                     const { rerender } = render(<DatagridNumberFilter {...commonProps} defaultValue={undefined} />);
                     expect(screen.getByRole("spinbutton")).toHaveValue(null);
                     rerender(<DatagridNumberFilter {...commonProps} defaultValue={dynamicValue<Big>(new Big(100))} />);
                     expect(screen.getByRole("spinbutton")).toHaveValue(null);
                 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
                 it("do not sync value and defaultValue when defaultValue changes from number to undefined", async () => {
                     const { rerender } = render(
                         <DatagridNumberFilter {...commonProps} defaultValue={dynamicValue<Big>(new Big(100))} />
@@ -151,6 +191,7 @@ describe("Number Filter", () => {
                         expect(screen.getByRole("spinbutton")).toHaveValue(100);
                     });
                 });
+<<<<<<< HEAD
 
                 it("clears value when external reset all event is triggered", async () => {
                     const attribute = new EditableValueBuilder<Big>().build();
@@ -186,10 +227,17 @@ describe("Number Filter", () => {
 
             afterAll(() => {
                 (window as any)["com.mendix.widgets.web.filterable.filterContext.v2"] = undefined;
+=======
+            });
+
+            afterAll(() => {
+                (window as any)["com.mendix.widgets.web.filterable.filterContext"] = undefined;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             });
         });
 
         describe("with multiple attributes", () => {
+<<<<<<< HEAD
             beforeEach(() => {
                 const props: HeaderFiltersStoreProps = {
                     filterList: [
@@ -226,6 +274,24 @@ describe("Number Filter", () => {
                 (window as any)["com.mendix.widgets.web.filterable.filterContext.v2"] = createContext<FilterAPIv2>(
                     headerFilterStore.context
                 );
+=======
+            beforeAll(() => {
+                (window as any)["com.mendix.widgets.web.filterable.filterContext"] = createContext({
+                    filterDispatcher: jest.fn(),
+                    multipleAttributes: {
+                        attribute1: new ListAttributeValueBuilder()
+                            .withId("attribute1")
+                            .withType("Long")
+                            .withFilterable(true)
+                            .build(),
+                        attribute2: new ListAttributeValueBuilder()
+                            .withId("attribute2")
+                            .withType("Decimal")
+                            .withFilterable(true)
+                            .build()
+                    }
+                } as FilterContextValue);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             });
 
             it("renders correctly", () => {
@@ -234,6 +300,7 @@ describe("Number Filter", () => {
                 expect(asFragment()).toMatchSnapshot();
             });
 
+<<<<<<< HEAD
             it("clears value when external reset all event is triggered without a default value", async () => {
                 const attribute = new EditableValueBuilder<Big>().build();
                 const { getByRole } = render(<DatagridNumberFilter {...commonProps} valueAttribute={attribute} />);
@@ -288,11 +355,16 @@ describe("Number Filter", () => {
 
             afterAll(() => {
                 (window as any)["com.mendix.widgets.web.filterable.filterContext.v2"] = undefined;
+=======
+            afterAll(() => {
+                (window as any)["com.mendix.widgets.web.filterable.filterContext"] = undefined;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             });
         });
 
         describe("with wrong attribute's type", () => {
             beforeAll(() => {
+<<<<<<< HEAD
                 const props: HeaderFiltersStoreProps = {
                     filterList: [
                         { filter: new ListAttributeValueBuilder().withType("Boolean").withFilterable(true).build() }
@@ -302,6 +374,12 @@ describe("Number Filter", () => {
                 (window as any)["com.mendix.widgets.web.filterable.filterContext.v2"] = createContext<FilterAPIv2>(
                     headerFilterStore.context
                 );
+=======
+                (window as any)["com.mendix.widgets.web.filterable.filterContext"] = createContext({
+                    filterDispatcher: jest.fn(),
+                    singleAttribute: new ListAttributeValueBuilder().withType("Boolean").withFilterable(true).build()
+                } as FilterContextValue);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             });
 
             it("renders error message", () => {
@@ -311,12 +389,17 @@ describe("Number Filter", () => {
             });
 
             afterAll(() => {
+<<<<<<< HEAD
                 (window as any)["com.mendix.widgets.web.filterable.filterContext.v2"] = undefined;
+=======
+                (window as any)["com.mendix.widgets.web.filterable.filterContext"] = undefined;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             });
         });
 
         describe("with wrong multiple attributes' types", () => {
             beforeAll(() => {
+<<<<<<< HEAD
                 const props: HeaderFiltersStoreProps = {
                     filterList: [
                         {
@@ -339,6 +422,23 @@ describe("Number Filter", () => {
                 (window as any)["com.mendix.widgets.web.filterable.filterContext.v2"] = createContext<FilterAPIv2>(
                     headerFilterStore.context
                 );
+=======
+                (window as any)["com.mendix.widgets.web.filterable.filterContext"] = createContext({
+                    filterDispatcher: jest.fn(),
+                    multipleAttributes: {
+                        attribute1: new ListAttributeValueBuilder()
+                            .withId("attribute1")
+                            .withType("String")
+                            .withFilterable(true)
+                            .build(),
+                        attribute2: new ListAttributeValueBuilder()
+                            .withId("attribute2")
+                            .withType("HashString")
+                            .withFilterable(true)
+                            .build()
+                    }
+                } as FilterContextValue);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             });
 
             it("renders error message", () => {
@@ -348,13 +448,21 @@ describe("Number Filter", () => {
             });
 
             afterAll(() => {
+<<<<<<< HEAD
                 (window as any)["com.mendix.widgets.web.filterable.filterContext.v2"] = undefined;
+=======
+                (window as any)["com.mendix.widgets.web.filterable.filterContext"] = undefined;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             });
         });
 
         describe("with no context", () => {
             beforeAll(() => {
+<<<<<<< HEAD
                 (window as any)["com.mendix.widgets.web.filterable.filterContext.v2"] = undefined;
+=======
+                (window as any)["com.mendix.widgets.web.filterable.filterContext"] = undefined;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             });
 
             it("renders error message", () => {
@@ -366,6 +474,7 @@ describe("Number Filter", () => {
     });
 
     describe("with multiple instances", () => {
+<<<<<<< HEAD
         beforeEach(() => {
             const props: HeaderFiltersStoreProps = {
                 filterList: [
@@ -387,6 +496,13 @@ describe("Number Filter", () => {
             (window as any)["com.mendix.widgets.web.filterable.filterContext.v2"] = createContext<FilterAPIv2>(
                 headerFilterStore.context
             );
+=======
+        beforeAll(() => {
+            (window as any)["com.mendix.widgets.web.filterable.filterContext"] = createContext({
+                filterDispatcher: jest.fn(),
+                singleAttribute: new ListAttributeValueBuilder().withType("Long").withFilterable(true).build()
+            } as FilterContextValue);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         });
 
         it("renders with a unique id", () => {
@@ -399,8 +515,74 @@ describe("Number Filter", () => {
         });
 
         afterAll(() => {
+<<<<<<< HEAD
             (window as any)["com.mendix.widgets.web.filterable.filterContext.v2"] = undefined;
             delete (global as any)["com.mendix.widgets.web.UUID"];
         });
     });
+=======
+            (window as any)["com.mendix.widgets.web.filterable.filterContext"] = undefined;
+            delete (global as any)["com.mendix.widgets.web.UUID"];
+        });
+    });
+
+    describe("events", () => {
+        let dispatch: jest.Mock;
+        let parentChannelName: string;
+        let ctx: FilterContextValue;
+        beforeEach(() => {
+            dispatch = jest.fn();
+            parentChannelName = Math.random().toString(36).slice(-10);
+            ctx = {
+                filterDispatcher: dispatch,
+                eventsChannelName: parentChannelName,
+                singleAttribute: new ListAttributeValueBuilder().withType("Long").withFilterable(true).build()
+            };
+            (window as any)["com.mendix.widgets.web.filterable.filterContext"] = createContext(ctx);
+            deletePlugin();
+        });
+
+        it("resets value on external event", async () => {
+            const plugin = requirePlugin();
+
+            expect(dispatch).toHaveBeenCalledTimes(0);
+
+            render(
+                <DatagridNumberFilter {...commonProps} defaultValue={dynamicValue<Big>(new Big(100))} name="widget_x" />
+            );
+
+            const input = screen.getByRole("spinbutton");
+            expect(dispatch).toHaveBeenCalledTimes(1);
+            expect(input).toHaveValue(100);
+
+            act(() => plugin.emit("widget_x", "reset.value"));
+
+            expect(dispatch).toHaveBeenCalledTimes(2);
+            const [{ getFilterCondition }] = dispatch.mock.lastCall;
+            expect(input).toHaveValue(null);
+            expect(getFilterCondition()).toEqual(undefined);
+        });
+
+        it("resets value on parent event", async () => {
+            const plugin = requirePlugin();
+
+            expect(dispatch).toHaveBeenCalledTimes(0);
+
+            render(
+                <DatagridNumberFilter {...commonProps} defaultValue={dynamicValue<Big>(new Big(100))} name="widget_x" />
+            );
+
+            const input = screen.getByRole("spinbutton");
+            expect(dispatch).toHaveBeenCalledTimes(1);
+            expect(input).toHaveValue(100);
+
+            act(() => plugin.emit(parentChannelName, "reset.value"));
+
+            expect(dispatch).toHaveBeenCalledTimes(2);
+            const [{ getFilterCondition }] = dispatch.mock.lastCall;
+            expect(input).toHaveValue(null);
+            expect(getFilterCondition()).toEqual(undefined);
+        });
+    });
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 });

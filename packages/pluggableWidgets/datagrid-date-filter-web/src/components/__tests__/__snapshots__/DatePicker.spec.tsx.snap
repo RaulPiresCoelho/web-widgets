@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Date picker component renders correctly 1`] = `
+<<<<<<< HEAD
 <DocumentFragment>
   <div
     class="date-filter-container"
@@ -10,6 +11,17 @@ exports[`Date picker component renders correctly 1`] = `
     class="sr-only"
     id="undefined-label"
   />
+=======
+[
+  <div
+    class="date-filter-container"
+    id="datepicker_0.123456789"
+  />,
+  <span
+    class="sr-only"
+    id="undefined-label"
+  />,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   <div
     class="react-datepicker-wrapper"
   >
@@ -23,7 +35,11 @@ exports[`Date picker component renders correctly 1`] = `
         value=""
       />
     </div>
+<<<<<<< HEAD
   </div>
+=======
+  </div>,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   <button
     aria-controls="datepicker_0.123456789"
     aria-expanded="false"
@@ -41,6 +57,7 @@ exports[`Date picker component renders correctly 1`] = `
         fill="currentColor"
       />
     </svg>
+<<<<<<< HEAD
   </button>
 </DocumentFragment>
 `;
@@ -55,6 +72,22 @@ exports[`Date picker component renders correctly when is not adjustable 1`] = `
     class="sr-only"
     id="undefined-label"
   />
+=======
+  </button>,
+]
+`;
+
+exports[`Date picker component renders correctly when is not adjustable 1`] = `
+[
+  <div
+    class="date-filter-container"
+    id="datepicker_0.123456789"
+  />,
+  <span
+    class="sr-only"
+    id="undefined-label"
+  />,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   <div
     class="react-datepicker-wrapper"
   >
@@ -68,7 +101,11 @@ exports[`Date picker component renders correctly when is not adjustable 1`] = `
         value=""
       />
     </div>
+<<<<<<< HEAD
   </div>
+=======
+  </div>,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   <button
     aria-controls="datepicker_0.123456789"
     aria-expanded="false"
@@ -86,6 +123,7 @@ exports[`Date picker component renders correctly when is not adjustable 1`] = `
         fill="currentColor"
       />
     </svg>
+<<<<<<< HEAD
   </button>
 </DocumentFragment>
 `;
@@ -96,12 +134,28 @@ exports[`Date picker component renders correctly with a11y properties 1`] = `
     class="date-filter-container"
     id="datepicker_0.123456789"
   />
+=======
+  </button>,
+]
+`;
+
+exports[`Date picker component renders correctly with a11y properties 1`] = `
+[
+  <div
+    class="date-filter-container"
+    id="datepicker_0.123456789"
+  />,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   <span
     class="sr-only"
     id="undefined-label"
   >
     my input
+<<<<<<< HEAD
   </span>
+=======
+  </span>,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   <div
     class="react-datepicker-wrapper"
   >
@@ -115,7 +169,11 @@ exports[`Date picker component renders correctly with a11y properties 1`] = `
         value=""
       />
     </div>
+<<<<<<< HEAD
   </div>
+=======
+  </div>,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   <button
     aria-controls="datepicker_0.123456789"
     aria-expanded="false"
@@ -133,6 +191,7 @@ exports[`Date picker component renders correctly with a11y properties 1`] = `
         fill="currentColor"
       />
     </svg>
+<<<<<<< HEAD
   </button>
 </DocumentFragment>
 `;
@@ -147,6 +206,22 @@ exports[`Date picker component renders correctly with different locale and date 
     class="sr-only"
     id="undefined-label"
   />
+=======
+  </button>,
+]
+`;
+
+exports[`Date picker component renders correctly with different locale and date format 1`] = `
+[
+  <div
+    class="date-filter-container"
+    id="datepicker_0.123456789"
+  />,
+  <span
+    class="sr-only"
+    id="undefined-label"
+  />,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   <div
     class="react-datepicker-wrapper"
   >
@@ -160,7 +235,11 @@ exports[`Date picker component renders correctly with different locale and date 
         value=""
       />
     </div>
+<<<<<<< HEAD
   </div>
+=======
+  </div>,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
   <button
     aria-controls="datepicker_0.123456789"
     aria-expanded="false"
@@ -178,6 +257,11 @@ exports[`Date picker component renders correctly with different locale and date 
         fill="currentColor"
       />
     </svg>
+<<<<<<< HEAD
   </button>
 </DocumentFragment>
+=======
+  </button>,
+]
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 `;

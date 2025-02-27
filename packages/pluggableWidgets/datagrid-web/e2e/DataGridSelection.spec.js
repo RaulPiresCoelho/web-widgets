@@ -62,6 +62,18 @@ test.describe("datagrid-web selection", async () => {
         await page.locator(".mx-name-dgMultiSelectionCheckbox").waitFor();
         const accessibilityScanResults = await new AxeBuilder({ page })
             .withTags(["wcag21aa"])
+<<<<<<< HEAD
+=======
+            .disableRules([
+                "aria-required-children",
+                "label",
+                "aria-roles",
+                "button-name",
+                "duplicate-id-active",
+                "duplicate-id",
+                "aria-allowed-attr"
+            ])
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             .include(".mx-name-dgMultiSelectionCheckbox")
             .exclude(".mx-name-navigationTree3")
             .analyze();

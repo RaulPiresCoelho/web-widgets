@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 import { ChartWidget, ChartWidgetProps } from "@mendix/shared-charts/main";
+=======
+import { ChartWidget, ChartWidgetProps } from "@mendix/shared-charts/common";
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import "@mendix/shared-charts/ui/Chart.scss";
 import classNames from "classnames";
 import { createElement, ReactElement } from "react";
 import { PieChartContainerProps } from "../typings/PieChartProps";
 import { usePieChartDataSeries } from "./hooks/data";
+<<<<<<< HEAD
 import "./ui/PieChart.scss";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
 const pieChartLayoutOptions: ChartWidgetProps["layoutOptions"] = {
     font: {
@@ -39,6 +46,7 @@ export function PieChart(props: PieChartContainerProps): ReactElement | null {
         seriesSortOrder: props.seriesSortOrder,
         seriesValueAttribute: props.seriesValueAttribute,
         onClickAction: props.onClickAction,
+<<<<<<< HEAD
         tooltipHoverText: props.tooltipHoverText,
         seriesItemSelection: props.seriesItemSelection
     });
@@ -49,6 +57,15 @@ export function PieChart(props: PieChartContainerProps): ReactElement | null {
         <ChartWidget
             type="PieChart"
             className={classNames("widget-pie-chart", { "widget-pie-chart-selectable": isPieClickable }, props.class)}
+=======
+        tooltipHoverText: props.tooltipHoverText
+    });
+
+    return (
+        <ChartWidget
+            type="PieChart"
+            className={classNames("widget-pie-chart", props.class)}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             data={pieChartData}
             width={props.width}
             widthUnit={props.widthUnit}

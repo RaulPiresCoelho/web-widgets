@@ -14,6 +14,7 @@ module.exports = defineConfig({
     /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 1 : 1,
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+<<<<<<< HEAD
     reporter: [
         ["list"],
         [
@@ -24,6 +25,9 @@ module.exports = defineConfig({
             }
         ]
     ],
+=======
+    reporter: "list",
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     /* webServer: [
         {
             command: "run-e2e playwright",
@@ -47,7 +51,11 @@ module.exports = defineConfig({
     projects: [
         {
             name: "chromium",
+<<<<<<< HEAD
             use: { ...devices["Desktop Chrome"], channel: "chromium" }
+=======
+            use: { ...devices["Desktop Chrome"] }
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         }
     ]
 });

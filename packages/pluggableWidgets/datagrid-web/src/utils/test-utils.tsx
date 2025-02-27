@@ -29,8 +29,12 @@ export const column = (header = "Test", patch?: (col: ColumnsType) => void): Col
         visible: dynamicValue(true),
         minWidth: "auto",
         minWidthLimit: 100,
+<<<<<<< HEAD
         allowEventPropagation: true,
         fetchOptionsLazy: true
+=======
+        allowEventPropagation: true
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     };
 
     if (patch) {
@@ -55,7 +59,10 @@ export function mockGridColumn(c: ColumnsType, index: number): GridColumn {
         isLastVisible(_column: ColumnStore): boolean {
             return false;
         },
+<<<<<<< HEAD
         isResizing: false,
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         sorting: {
             getDirection(_columnId: ColumnId): ["asc" | "desc", number] | undefined {
                 return undefined;
@@ -98,6 +105,7 @@ export function mockWidgetProps(): WidgetProps<GridColumn, ObjectItem> {
         visibleColumns: columns,
         availableColumns: columns,
         columnsSwap: jest.fn(),
+<<<<<<< HEAD
         setIsResizing: jest.fn(),
         selectionStatus: "unknown",
         setPage: jest.fn(),
@@ -109,6 +117,16 @@ export function mockWidgetProps(): WidgetProps<GridColumn, ObjectItem> {
         isLoading: false,
         loadingType: "spinner",
         columnsLoading: false,
+=======
+        columnsCreateSizeSnapshot: jest.fn(),
+        selectionStatus: "unknown",
+        setPage: jest.fn(),
+        processedRows: 0,
+        rowClickable: false,
+        selectActionHelper: mockSelectionProps(),
+        cellEventsController: { getProps: () => Object.create({}) },
+        checkboxEventsController: { getProps: () => Object.create({}) },
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         focusController: new FocusTargetController(
             new PositionController(),
             new VirtualGridLayout(1, columns.length, 10)

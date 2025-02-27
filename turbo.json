@@ -38,11 +38,14 @@
             "cache": false,
             "dependsOn": ["release", "release:module", "push-update", "verify"]
         },
+<<<<<<< HEAD
         "create-translation": {
             "cache": false,
             "outputs": [],
             "inputs": ["src/**/*.xml", "!src/**/package.xml"]
         },
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         "publish-marketplace": {
             "cache": false
         },

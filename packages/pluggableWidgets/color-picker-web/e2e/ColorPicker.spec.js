@@ -7,7 +7,11 @@ test.afterEach("Cleanup session", async ({ page }) => {
 
 test.describe("color-picker-web", () => {
     test.describe("render a picker of mode", () => {
+<<<<<<< HEAD
         test.slow("button", async ({ page, browserName }) => {
+=======
+        test("button", async ({ page, browserName }) => {
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             const isFirefox = browserName === "firefox";
 
             await page.goto("/p/modePage");

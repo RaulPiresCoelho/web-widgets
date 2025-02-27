@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 import { enableStaticRendering } from "mobx-react-lite";
 enableStaticRendering(true);
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { GUID, ObjectItem } from "mendix";
 import { createElement, ReactElement, ReactNode, useCallback } from "react";
 import { useFocusTargetController } from "@mendix/widget-plugin-grid/keyboard-navigation/useFocusTargetController";

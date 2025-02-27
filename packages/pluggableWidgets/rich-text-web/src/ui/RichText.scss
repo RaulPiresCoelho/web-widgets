@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @use "RichTextIcons";
 
 $rte-border-color-default: #ced0d3;
@@ -64,10 +65,34 @@ $rte-gray-ligher: #f8f8f8;
         background-color: transparent;
         .widget-rich-text-container {
             border: unset;
+=======
+$rte-brand-primary: #264ae5;
+.widget-rich-text {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    .tox-tinymce {
+        border-radius: 4px;
+        border-width: 1px;
+        flex-grow: 1;
+    }
+
+    .tox .tox-edit-area::before {
+        border-color: $rte-brand-primary;
+        border-radius: 1px;
+        border-width: 1px;
+    }
+
+    &.editor-bordered,
+    &.editor-text {
+        .tox-edit-area__iframe {
+            background-color: transparent;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         }
     }
 
     &.editor-text {
+<<<<<<< HEAD
         .widget-rich-text-toolbar {
             pointer-events: none;
             background-color: var(--gray-lighter, $rte-gray-ligher);
@@ -109,5 +134,25 @@ $rte-gray-ligher: #f8f8f8;
 
     .flexcontainer.flex-column {
         overflow: visible;
+=======
+        border: unset;
+
+        .tox-tinymce {
+            border: unset;
+        }
+    }
+
+    .mce-content-body {
+        width: 100%;
+        outline: 0;
+    }
+}
+
+.modal-dialog {
+    & ~ .tox-tinymce-inline {
+        &.tox-tinymce--toolbar-sticky-off {
+            z-index: 102;
+        }
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     }
 }

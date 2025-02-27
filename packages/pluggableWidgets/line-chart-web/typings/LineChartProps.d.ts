@@ -102,7 +102,10 @@ export interface LineChartPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+<<<<<<< HEAD
     renderMode?: "design" | "xray" | "structure";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     lines: LinesPreviewType[];
     enableAdvancedOptions: boolean;
     showPlaygroundSlot: boolean;

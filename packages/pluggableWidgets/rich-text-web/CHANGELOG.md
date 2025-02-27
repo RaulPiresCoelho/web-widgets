@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [4.2.0] - 2025-01-15
 
 ### Fixed
@@ -34,6 +35,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 -   The Rich Text widget has been updated to use Quill V2 due to a license change in TinyMCE. Unlike TinyMCE, Quill V2 does not require rendering a separate iframe, which simplifies styling and content security configurations. Users should review and adjust their widget configurations after updating.
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 ## [3.3.1] - 2024-08-28
 
 ### Changed

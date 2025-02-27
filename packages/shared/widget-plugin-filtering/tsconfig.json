@@ -3,7 +3,11 @@
     "include": ["./src/**/*"],
     "compilerOptions": {
         "outDir": "./dist",
+<<<<<<< HEAD
         "rootDir": "./src",
         "resolveJsonModule": true
+=======
+        "rootDir": "./src"
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     }
 }

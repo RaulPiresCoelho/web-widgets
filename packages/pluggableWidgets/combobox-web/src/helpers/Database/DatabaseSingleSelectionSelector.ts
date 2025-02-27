@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { EditableValue, ListAttributeValue, ObjectItem, SelectionSingleValue } from "mendix";
 import {
     ComboboxContainerProps,
@@ -28,27 +29,53 @@ export class DatabaseSingleSelectionSelector<T extends string | Big, R extends E
     protected _objectsMap: Map<string, ObjectItem> = new Map();
     protected lazyLoader: LazyLoadProvider = new LazyLoadProvider();
 
+=======
+import { EditableValue, SelectionSingleValue } from "mendix";
+import { ComboboxContainerProps } from "../../../typings/ComboboxProps";
+import { _valuesIsEqual } from "../utils";
+import { BaseDatabaseSingleSelector } from "./BaseDatabaseSingleSelector";
+import { DatabaseValuesProvider } from "./DatabaseValuesProvider";
+import { extractDatabaseProps } from "./utils";
+
+export class DatabaseSingleSelectionSelector<
+    T extends string | Big,
+    R extends EditableValue<T>
+> extends BaseDatabaseSingleSelector<T> {
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     validation?: string = undefined;
     values: DatabaseValuesProvider;
     protected _attr: R | undefined;
     private selection?: SelectionSingleValue;
 
     constructor() {
+<<<<<<< HEAD
         this.caption = new DatabaseCaptionsProvider(this._objectsMap);
         this.options = new DatabaseOptionsProvider(this.caption, this._objectsMap);
+=======
+        super();
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         this.values = new DatabaseValuesProvider(this._objectsMap);
     }
 
     updateProps(props: ComboboxContainerProps): void {
+<<<<<<< HEAD
         const {
             targetAttribute,
             captionProvider,
             captionType,
             clearable,
+=======
+        super.updateProps(props);
+
+        const {
+            attr,
+            captionProvider,
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             customContent,
             customContentType,
             ds,
             emptyOption,
+<<<<<<< HEAD
             filterType,
             lazyLoading,
             loadingType,
@@ -70,11 +97,24 @@ export class DatabaseSingleSelectionSelector<T extends string | Big, R extends E
             )
         );
 
+=======
+            emptyValue,
+            lazyLoading,
+            valueAttribute
+        } = extractDatabaseProps(props);
+
+        this.lazyLoader.setLimit(
+            this.lazyLoader.getLimit(ds.limit, attr?.readOnly ?? false, attr?.status ?? ds.status, lazyLoading)
+        );
+
+        this._attr = attr as R;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         this.caption.updateProps({
             emptyOptionText: emptyOption,
             formattingAttributeOrExpression: captionProvider,
             customContent,
             customContentType,
+<<<<<<< HEAD
             attribute: valueSourceAttribute,
             caption: targetAttribute?.displayValue
         });
@@ -88,6 +128,15 @@ export class DatabaseSingleSelectionSelector<T extends string | Big, R extends E
 
         this.values.updateProps({
             valueAttribute: valueSourceAttribute
+=======
+            attribute: valueAttribute,
+            caption: attr?.displayValue
+        });
+
+        this.values.updateProps({
+            valueAttribute,
+            emptyValue
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         });
 
         if (!ds || ds.status === "unavailable" || !emptyOption || emptyOption.status === "unavailable") {
@@ -96,6 +145,7 @@ export class DatabaseSingleSelectionSelector<T extends string | Big, R extends E
             this.clearable = false;
             return;
         }
+<<<<<<< HEAD
         if (targetAttribute?.status === "available") {
             if (targetAttribute.value && !this.currentId) {
                 const allOptions = this.options.getAll();
@@ -127,6 +177,37 @@ export class DatabaseSingleSelectionSelector<T extends string | Big, R extends E
             const objectId = this.options.getAll().find(option => {
                 return targetAttribute && _valuesIsEqual(targetAttribute?.value, this.values.get(option));
             });
+=======
+
+        if (attr?.status === "available") {
+            if (this.lastSetValue === null || !_valuesIsEqual(this.lastSetValue, attr.value)) {
+                if (ds.status === "available") {
+                    this.lastSetValue = this._attr.value;
+                    if (!_valuesIsEqual(this.values.getEmptyValue(), attr.value)) {
+                        const obj = this.options.getAll().find(option => {
+                            return _valuesIsEqual(attr.value, this.values.get(option));
+                        });
+                        if (obj) {
+                            this.currentId = obj;
+                        } else {
+                            this.currentId = null;
+                        }
+                    }
+                }
+            }
+        }
+
+        this.readOnly = attr?.readOnly ?? false;
+        this.status = attr?.status ?? ds.status;
+        this.validation = attr?.validation;
+        this.selection = props.optionsSourceDatabaseItemSelection as SelectionSingleValue;
+
+        if (this.selection.selection === undefined) {
+            const objectId = this.options.getAll().find(option => {
+                return _valuesIsEqual(attr?.value, this.values.get(option));
+            });
+
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             if (objectId) {
                 this.selection.setSelection(this.options._optionToValue(objectId));
             }
@@ -135,10 +216,18 @@ export class DatabaseSingleSelectionSelector<T extends string | Big, R extends E
 
     setValue(objectId: string | null): void {
         const value = this.values.get(objectId) as T;
+<<<<<<< HEAD
+=======
+        this.lastSetValue = value;
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         this._attr?.setValue(value);
         if (objectId !== (this.selection?.selection?.id ?? "")) {
             this.selection?.setSelection(this.options._optionToValue(objectId));
         }
+<<<<<<< HEAD
         this.currentId = objectId;
+=======
+        super.setValue(objectId);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     }
 }

@@ -37,7 +37,11 @@ export function check(values: TooltipPreviewProps): Problem[] {
 
 export function getPreview(values: TooltipPreviewProps, isDarkMode: boolean): StructurePreviewProps | null {
     const palette = structurePreviewPalette[isDarkMode ? "dark" : "light"];
+<<<<<<< HEAD
     const centerLayout = (props: TextProps | DropZoneProps): RowLayoutProps =>
+=======
+    const centerLayout = (props: TextProps | DropZoneProps) =>
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         ({
             type: "RowLayout",
             columnSize: "grow",

@@ -1,9 +1,12 @@
 /* Disable warning that hooks can be used only in components */
 /* eslint-disable react-hooks/rules-of-hooks */
 
+<<<<<<< HEAD
 import { enableStaticRendering } from "mobx-react-lite";
 enableStaticRendering(true);
 
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 import { parseStyle } from "@mendix/widget-plugin-platform/preview/parse-style";
 import { GUID, ObjectItem } from "mendix";
 import { Selectable } from "mendix/preview/Selectable";
@@ -51,8 +54,12 @@ const initColumns: ColumnsPreviewType[] = [
         minWidth: "auto",
         minWidthLimit: 100,
         allowEventPropagation: true,
+<<<<<<< HEAD
         exportValue: "",
         fetchOptionsLazy: true
+=======
+        exportValue: ""
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     }
 ];
 
@@ -95,7 +102,11 @@ export function preview(props: DatagridPreviewProps): ReactElement {
             visibleColumns={columns}
             availableColumns={[]}
             columnsSwap={noop}
+<<<<<<< HEAD
             setIsResizing={noop}
+=======
+            columnsCreateSizeSnapshot={noop}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             data={data}
             emptyPlaceholderRenderer={useCallback(
                 (renderWrapper: (children: ReactNode) => ReactElement) => (
@@ -132,21 +143,32 @@ export function preview(props: DatagridPreviewProps): ReactElement {
             pageSize={props.pageSize ?? numberOfItems}
             showPagingButtons={props.showPagingButtons}
             loadMoreButtonCaption={props.loadMoreButtonCaption}
+<<<<<<< HEAD
             paging={props.pagination === "buttons" || props.showNumberOfRows}
+=======
+            paging={props.pagination === "buttons"}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             pagingPosition={props.pagingPosition}
             preview
             processedRows={0}
             styles={parseStyle(props.style)}
             selectionStatus={"none"}
             id={gridId}
+<<<<<<< HEAD
             gridInteractive={!!(props.itemSelection !== "None" || props.onClick)}
+=======
+            rowClickable={!!(props.itemSelection !== "None" || props.onClick)}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             selectActionHelper={selectActionHelper}
             cellEventsController={eventsController}
             checkboxEventsController={eventsController}
             focusController={focusController}
+<<<<<<< HEAD
             isLoading={false}
             loadingType="spinner"
             columnsLoading={false}
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         />
     );
 }

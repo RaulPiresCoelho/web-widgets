@@ -1,5 +1,8 @@
 import { test, expect } from "@playwright/test";
+<<<<<<< HEAD
 import AxeBuilder from "@axe-core/playwright";
+=======
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
 
 test.afterEach("Cleanup session", async ({ page }) => {
     // Because the test isolation that will open a new session for every test executed, and that exceeds Mendix's license limit of 5 sessions, so we need to force logout after each test.
@@ -27,6 +30,7 @@ test.describe("language-selector-web", () => {
     test("checks if Chinese language is rendered as expected", async ({ page }) => {
         await page.click(".current-language-text", { force: true });
         await page.click("text=Chinese");
+<<<<<<< HEAD
         await expect(page.getByText("欢迎")).toBeVisible();
         await expect(page.getByText("欢迎")).toContainText("欢迎");
     });
@@ -49,5 +53,8 @@ test.describe("language-selector-web", () => {
             .analyze();
 
         expect(accessibilityScanResults.violations).toEqual([]);
+=======
+        await expect(page).toHaveScreenshot(`languageSelectorChinese.png`);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
     });
 });

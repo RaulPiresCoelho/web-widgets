@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 enum Code {
     EMISSINGSTORE = 2,
     ENOCONTEXT = 1,
@@ -34,3 +35,16 @@ export const EKEYMISSING: APIError = Object.freeze({
     code: Code.EKEYMISSING,
     message: "The key for filter is missing."
 });
+=======
+export class OutOfContextError extends Error {
+    constructor() {
+        super("Component is used out of context provider");
+    }
+}
+
+export class ValueIsMissingError extends Error {
+    constructor(m = "Value is missing in context") {
+        super(m);
+    }
+}
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)

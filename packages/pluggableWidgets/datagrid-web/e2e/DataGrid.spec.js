@@ -102,6 +102,7 @@ test.describe("capabilities: hiding", () => {
         await page.locator(".mx-name-datagrid5 .column-selector-button").click();
         await page.locator(".column-selectors > li").first().click();
         await expect(page.locator(".mx-name-datagrid5 .column-header").first()).toHaveText("Last Name");
+<<<<<<< HEAD
         const textArea = page.locator(".mx-name-textArea1 textarea");
         await expect(textArea).not.toBeEmpty();
         const textAreaValue = await textArea.inputValue();
@@ -120,6 +121,20 @@ test.describe("capabilities: hiding", () => {
             groupFilters: [],
             sortOrder: [],
             columnOrder: ["0", "1"]
+=======
+        const textArea = await page.locator(".mx-name-textArea1 textarea");
+        const textAreaValue = await textArea.inputValue();
+        expect(JSON.parse(textAreaValue)).toEqual({
+            schemaVersion: 1,
+            settingsHash: "1530160614",
+            name: "datagrid5",
+            sortOrder: [],
+            columnOrder: ["0", "1"],
+            columns: [
+                { columnId: "0", hidden: true },
+                { columnId: "1", hidden: false }
+            ]
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         });
     });
     test("hide column by default enabled", async ({ page }) => {
@@ -136,8 +151,12 @@ test.describe("capabilities: hiding", () => {
         await page.waitForLoadState("networkidle");
         await expect(page.locator(".mx-name-datagrid1 .column-header").first()).toBeVisible();
         await page.locator(".mx-name-datagrid1 .column-selector-button").click();
+<<<<<<< HEAD
         await expect(page.locator(".column-selectors input:checked")).toHaveCount(4);
         await page.locator(".column-selectors > li").nth(3).click();
+=======
+        await expect(page.locator(".column-selectors input:checked")).toHaveCount(3);
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
         await page.locator(".column-selectors > li").nth(2).click();
         await page.locator(".column-selectors > li").nth(1).click();
         await expect(page.locator(".column-selectors input:checked")).toHaveCount(1);
@@ -188,6 +207,18 @@ test.describe("a11y testing:", () => {
         await page.waitForLoadState("networkidle");
         const accessibilityScanResults = await new AxeBuilder({ page })
             .withTags(["wcag21aa"])
+<<<<<<< HEAD
+=======
+            .disableRules([
+                "aria-required-children",
+                "label",
+                "aria-roles",
+                "button-name",
+                "duplicate-id-active",
+                "duplicate-id",
+                "aria-allowed-attr"
+            ])
+>>>>>>> daa3fce04 (Add DE localization to rich-text-web)
             .exclude(".mx-name-navigationTree3")
             .analyze();
 
